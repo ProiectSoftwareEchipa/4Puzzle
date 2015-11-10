@@ -1,1 +1,1 @@
-C:\Users\Andrei\documents\visual studio 2015\Projects\4Puzzle\4Puzzle\4Puzzle.csproj;neutral
+C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\4Puzzle.csproj;neutral
