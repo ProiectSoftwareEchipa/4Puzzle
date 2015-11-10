@@ -9,52 +9,52 @@
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>aa5e98f8-c865-4ef3-a4a3-869d783dcc14</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\Andrei\documents\visual studio 2015\Projects\4Puzzle\4Puzzle\obj\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\obj\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Andrei\documents\visual studio 2015\Projects\4Puzzle\4Puzzle\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Andrei\documents\visual studio 2015\Projects\4Puzzle\4Puzzle\bin\Debug\4Puzzle.exe">
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\4Puzzle.exe">
       <PackagePath>4Puzzle.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\documents\visual studio 2015\Projects\4Puzzle\4Puzzle\Assets\Logo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Assets\Logo.scale-240.png">
       <PackagePath>Assets\Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\documents\visual studio 2015\Projects\4Puzzle\4Puzzle\Assets\SmallLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Assets\SmallLogo.scale-240.png">
       <PackagePath>Assets\SmallLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\documents\visual studio 2015\Projects\4Puzzle\4Puzzle\Assets\SplashScreen.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Assets\SplashScreen.scale-240.png">
       <PackagePath>Assets\SplashScreen.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\documents\visual studio 2015\Projects\4Puzzle\4Puzzle\Assets\Square71x71Logo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Assets\Square71x71Logo.scale-240.png">
       <PackagePath>Assets\Square71x71Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\documents\visual studio 2015\Projects\4Puzzle\4Puzzle\Assets\StoreLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Assets\StoreLogo.scale-240.png">
       <PackagePath>Assets\StoreLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\documents\visual studio 2015\Projects\4Puzzle\4Puzzle\Assets\WideLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Assets\WideLogo.scale-240.png">
       <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\documents\visual studio 2015\Projects\4Puzzle\4Puzzle\bin\Debug\4Puzzle.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\4Puzzle.xr.xml">
       <PackagePath>4Puzzle.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\documents\visual studio 2015\Projects\4Puzzle\4Puzzle\bin\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\documents\visual studio 2015\Projects\4Puzzle\4Puzzle\bin\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\documents\visual studio 2015\Projects\4Puzzle\4Puzzle\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

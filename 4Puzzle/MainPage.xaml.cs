@@ -24,17 +24,23 @@ namespace _4Puzzle
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private SolidColorBrush solidColorBrushYellow = new SolidColorBrush(Color.FromArgb(255, 255, 255, 0));
+        #region Private Members
 
-        private SolidColorBrush solidColorBrushRed = new SolidColorBrush(Color.FromArgb(120, 255, 0, 0));
+        private SolidColorBrush solidColorBrushYellow;
 
-        private SolidColorBrush solidColorBrushBlue = new SolidColorBrush(Color.FromArgb(120, 0, 0, 255));
+        private SolidColorBrush solidColorBrushRed;
 
-        private SolidColorBrush solidColorBrushPurple = new SolidColorBrush(Color.FromArgb(255, 125, 0, 255));
+        private SolidColorBrush solidColorBrushBlue;
 
-        private SolidColorBrush solidColorBrushWhite = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
+        private SolidColorBrush solidColorBrushPurple;
 
-        private Rectangle[,] rectangleMatrix = new Rectangle[4, 4];
+        private SolidColorBrush solidColorBrushWhite;
+
+        private Rectangle[,] rectangleMatrix;
+
+        #endregion Private Members
+
+        #region Constructors
 
         public MainPage()
         {
@@ -42,10 +48,26 @@ namespace _4Puzzle
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
 
+            this.rectangleMatrix = new Rectangle[4, 4];
+
+            this.solidColorBrushYellow = new SolidColorBrush(Color.FromArgb(255, 255, 255, 0));
+
+            this.solidColorBrushRed = new SolidColorBrush(Color.FromArgb(120, 255, 0, 0));
+
+            this.solidColorBrushBlue = new SolidColorBrush(Color.FromArgb(120, 0, 0, 255));
+
+            this.solidColorBrushPurple = new SolidColorBrush(Color.FromArgb(255, 125, 0, 255));
+
+            this.solidColorBrushWhite = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
+
             InitializeMatrix();
 
             InitializeTutorialColors();
         }
+
+        #endregion Constructors
+
+        #region Overrides
 
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.
@@ -54,30 +76,40 @@ namespace _4Puzzle
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            // TODO: Prepare page for display here.
-
-            // TODO: If your application contains multiple pages, ensure that you are
-            // handling the hardware Back button by registering for the
-            // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
-            // If you are using the NavigationHelper provided by some templates,
-            // this event is handled for you.
-
         }
 
+        #endregion Overrides
+
+        #region Event Handlers
+
+        /// <summary>
+        /// Metoda declansata cand se selecteaza un rectangle
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Rectangle_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Rectangle rectangle = sender as Rectangle;
             Tuple<int, int> rectangleIndex = GetRectangleIndex(rectangle);
-            Random random = new Random();
+            CheckNeighbours(rectangleIndex);
 
-            if(rectangle.Fill == solidColorBrushWhite)
+            if(CheckEndGame)
             {
-                return;
+                validationBlock.Text = "End game";
             }
-
-            rectangleMatrix[rectangleIndex.Item1, rectangleIndex.Item2].Fill = new SolidColorBrush(Color.FromArgb((byte)random.Next(0,255), (byte)random.Next(0, 255), (byte)random.Next(0, 255), (byte)random.Next(0, 255)));
+            else
+            {
+                validationBlock.Text = String.Empty;
+            }
         }
 
+        #endregion Event Handlers
+
+        #region Private Methods
+
+        /// <summary>
+        /// Initializarea matricii
+        /// </summary>
         private void InitializeMatrix()
         {
             rectangleMatrix[0, 0] = Rectangle11;
@@ -98,6 +130,9 @@ namespace _4Puzzle
             rectangleMatrix[3, 3] = Rectangle44;
         }
 
+        /// <summary>
+        /// Initializarea culorilor pentru versiunea de tutorial
+        /// </summary>
         private void InitializeTutorialColors()
         {
             rectangleMatrix[0, 0].Fill = solidColorBrushWhite;
@@ -110,14 +145,19 @@ namespace _4Puzzle
             rectangleMatrix[1, 3].Fill = solidColorBrushWhite;
             rectangleMatrix[2, 0].Fill = solidColorBrushRed;
             rectangleMatrix[2, 1].Fill = solidColorBrushYellow;
-            rectangleMatrix[2, 2].Fill = solidColorBrushBlue;
+            rectangleMatrix[2, 2].Fill = solidColorBrushYellow;
             rectangleMatrix[2, 3].Fill = solidColorBrushPurple;
             rectangleMatrix[3, 0].Fill = solidColorBrushWhite;
             rectangleMatrix[3, 1].Fill = solidColorBrushBlue;
-            rectangleMatrix[3, 2].Fill = solidColorBrushYellow;
-            rectangleMatrix[3, 3].Fill = solidColorBrushWhite;
+            rectangleMatrix[3, 2].Fill = solidColorBrushWhite;
+            rectangleMatrix[3, 3].Fill = solidColorBrushBlue;
         }
 
+        /// <summary>
+        /// Metoda ce intoarce indecsi rectangle-ului curent
+        /// </summary>
+        /// <param name="rectangle"></param>
+        /// <returns>Tuplul de indecsi</returns>
         private Tuple<int, int> GetRectangleIndex(Rectangle rectangle)
         {
             Tuple<int, int> rectangleIndex;
@@ -136,5 +176,103 @@ namespace _4Puzzle
 
             return null;
         }
+
+        /// <summary>
+        /// Metoda ce verifica vecinii si daca este cazul face swap de culori
+        /// </summary>
+        /// <param name="rectangleIndex">Indecsi rectangle-ului curent</param>
+        private void CheckNeighbours(Tuple<int, int> rectangleIndex)
+        {
+            int i = rectangleIndex.Item1;
+            int j = rectangleIndex.Item2;
+
+            if((i == 0 && j == 0) || (i == 0 && j == 2) || (i == 2 && j == 0) || (i == 2 && j == 2))
+            {
+                if(rectangleMatrix[i, j + 1].Fill == solidColorBrushWhite)
+                {
+                    SwapRectanglesColors(rectangleMatrix[i, j], rectangleMatrix[i, j + 1]);
+                }
+                if (rectangleMatrix[i + 1, j].Fill == solidColorBrushWhite)
+                {
+                    SwapRectanglesColors(rectangleMatrix[i, j], rectangleMatrix[i + 1, j]);
+                }
+            }
+
+            if ((i == 0 && j == 1) || (i == 0 && j == 3) || (i == 2 && j == 1) || (i == 2 && j == 3))
+            {
+                if (rectangleMatrix[i, j - 1].Fill == solidColorBrushWhite)
+                {
+                    SwapRectanglesColors(rectangleMatrix[i, j], rectangleMatrix[i, j - 1]);
+                }
+                if (rectangleMatrix[i + 1, j].Fill == solidColorBrushWhite)
+                {
+                    SwapRectanglesColors(rectangleMatrix[i, j], rectangleMatrix[i + 1, j]);
+                }
+            }
+
+            if ((i == 1 && j == 0) || (i == 1 && j == 2) || (i == 3 && j == 0) || (i == 3 && j == 2))
+            {
+                if (rectangleMatrix[i, j + 1].Fill == solidColorBrushWhite)
+                {
+                    SwapRectanglesColors(rectangleMatrix[i, j], rectangleMatrix[i, j + 1]);
+                }
+                if (rectangleMatrix[i - 1, j].Fill == solidColorBrushWhite)
+                {
+                    SwapRectanglesColors(rectangleMatrix[i, j], rectangleMatrix[i - 1, j]);
+                }
+            }
+
+            if ((i == 1 && j == 1) || (i == 1 && j == 3) || (i == 3 && j == 1) || (i == 3 && j == 3))
+            {
+                if (rectangleMatrix[i, j - 1].Fill == solidColorBrushWhite)
+                {
+                    SwapRectanglesColors(rectangleMatrix[i, j], rectangleMatrix[i, j - 1]);
+                }
+                if (rectangleMatrix[i - 1, j].Fill == solidColorBrushWhite)
+                {
+                    SwapRectanglesColors(rectangleMatrix[i, j], rectangleMatrix[i - 1, j]);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Proprietatea ce verifica daca sa ajuns in situatia de sfarsit a jocului
+        /// </summary>
+        private bool CheckEndGame
+        {
+            get
+            {
+                for (int i = 0; i <= 2; i++)
+                {
+                    for (int j = i + 1; j <= 3; j++)
+                    {
+                        if (rectangleMatrix[0, i].Fill == solidColorBrushWhite || rectangleMatrix[0, j].Fill == solidColorBrushWhite
+                           || rectangleMatrix[3, i].Fill == solidColorBrushWhite || rectangleMatrix[3, j].Fill == solidColorBrushWhite
+                           || rectangleMatrix[i, 0].Fill == solidColorBrushWhite || rectangleMatrix[j, 0].Fill == solidColorBrushWhite
+                           || rectangleMatrix[i, 3].Fill == solidColorBrushWhite || rectangleMatrix[j, 3].Fill == solidColorBrushWhite)
+                            return false;
+
+                        if ((rectangleMatrix[0, i].Fill == rectangleMatrix[0, j].Fill) || (rectangleMatrix[3, i].Fill == rectangleMatrix[3, j].Fill)
+                            || (rectangleMatrix[i, 0].Fill == rectangleMatrix[j, 0].Fill) || (rectangleMatrix[i, 3].Fill == rectangleMatrix[j, 3].Fill))
+                            return false;
+                    }
+                }
+
+                return true;
+            }
+        }
+
+        /// <summary>
+        /// Metoda ce inverseaza culorile intre 2 rectangle-uri
+        /// </summary>
+        /// <param name="colorRectangle">Rectangle-ul colorat</param>
+        /// <param name="whiteRectangle">Rectangle-ul alb</param>
+        private void SwapRectanglesColors(Rectangle colorRectangle, Rectangle whiteRectangle)
+        {
+            whiteRectangle.Fill = colorRectangle.Fill;
+            colorRectangle.Fill = solidColorBrushWhite;
+        }
+
+        #endregion Private Methods
     }
 }
