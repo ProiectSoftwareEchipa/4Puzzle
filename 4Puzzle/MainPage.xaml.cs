@@ -37,6 +37,15 @@ namespace _4Puzzle
         private SolidColorBrush solidColorBrushWhite;
 
         private Rectangle[,] rectangleMatrix;
+        
+        private struct Tile {
+            public int i;
+            public int j;
+        }
+
+        private int GameSize;
+
+        private Tile[] WhiteTilePositions = new Tile[4];
 
         #endregion Private Members
 
@@ -151,6 +160,15 @@ namespace _4Puzzle
             rectangleMatrix[3, 1].Fill = solidColorBrushBlue;
             rectangleMatrix[3, 2].Fill = solidColorBrushWhite;
             rectangleMatrix[3, 3].Fill = solidColorBrushBlue;
+            WhiteTilePositions[0].i = 0;
+            WhiteTilePositions[0].j = 0;
+            WhiteTilePositions[1].i = 1;
+            WhiteTilePositions[1].j = 3;
+            WhiteTilePositions[2].i = 3;
+            WhiteTilePositions[2].j = 0;
+            WhiteTilePositions[3].i = 3;
+            WhiteTilePositions[3].j = 2;
+            GameSize = 3;
         }
 
         /// <summary>
@@ -181,58 +199,19 @@ namespace _4Puzzle
         /// Metoda ce verifica vecinii si daca este cazul face swap de culori
         /// </summary>
         /// <param name="rectangleIndex">Indecsi rectangle-ului curent</param>
-        private void CheckNeighbours(Tuple<int, int> rectangleIndex)
-        {
+        private void CheckNeighbours(Tuple<int, int> rectangleIndex) {
             int i = rectangleIndex.Item1;
             int j = rectangleIndex.Item2;
 
-            if((i == 0 && j == 0) || (i == 0 && j == 2) || (i == 2 && j == 0) || (i == 2 && j == 2))
-            {
-                if(rectangleMatrix[i, j + 1].Fill == solidColorBrushWhite)
-                {
-                    SwapRectanglesColors(rectangleMatrix[i, j], rectangleMatrix[i, j + 1]);
-                }
-                if (rectangleMatrix[i + 1, j].Fill == solidColorBrushWhite)
-                {
-                    SwapRectanglesColors(rectangleMatrix[i, j], rectangleMatrix[i + 1, j]);
-                }
-            }
+            if (!IsNearWhiteTile(i, j))
+                return;
 
-            if ((i == 0 && j == 1) || (i == 0 && j == 3) || (i == 2 && j == 1) || (i == 2 && j == 3))
-            {
-                if (rectangleMatrix[i, j - 1].Fill == solidColorBrushWhite)
-                {
-                    SwapRectanglesColors(rectangleMatrix[i, j], rectangleMatrix[i, j - 1]);
-                }
-                if (rectangleMatrix[i + 1, j].Fill == solidColorBrushWhite)
-                {
-                    SwapRectanglesColors(rectangleMatrix[i, j], rectangleMatrix[i + 1, j]);
-                }
-            }
+            int areaNumber = GetSelectedAreaNumber(i, j);
 
-            if ((i == 1 && j == 0) || (i == 1 && j == 2) || (i == 3 && j == 0) || (i == 3 && j == 2))
-            {
-                if (rectangleMatrix[i, j + 1].Fill == solidColorBrushWhite)
-                {
-                    SwapRectanglesColors(rectangleMatrix[i, j], rectangleMatrix[i, j + 1]);
-                }
-                if (rectangleMatrix[i - 1, j].Fill == solidColorBrushWhite)
-                {
-                    SwapRectanglesColors(rectangleMatrix[i, j], rectangleMatrix[i - 1, j]);
-                }
-            }
+            SwapRectanglesColors(rectangleMatrix[i, j], rectangleMatrix[WhiteTilePositions[areaNumber].i, WhiteTilePositions[areaNumber].j]);
+            WhiteTilePositions[areaNumber].i = i;
+            WhiteTilePositions[areaNumber].j = j;
 
-            if ((i == 1 && j == 1) || (i == 1 && j == 3) || (i == 3 && j == 1) || (i == 3 && j == 3))
-            {
-                if (rectangleMatrix[i, j - 1].Fill == solidColorBrushWhite)
-                {
-                    SwapRectanglesColors(rectangleMatrix[i, j], rectangleMatrix[i, j - 1]);
-                }
-                if (rectangleMatrix[i - 1, j].Fill == solidColorBrushWhite)
-                {
-                    SwapRectanglesColors(rectangleMatrix[i, j], rectangleMatrix[i - 1, j]);
-                }
-            }
         }
 
         /// <summary>
@@ -271,6 +250,30 @@ namespace _4Puzzle
         {
             whiteRectangle.Fill = colorRectangle.Fill;
             colorRectangle.Fill = solidColorBrushWhite;
+        }
+
+        private int GetSelectedAreaNumber(int i, int j) {
+
+            if (i <= GameSize / 2 && j <= GameSize / 2)
+                return 0;
+
+            if (i <= GameSize / 2 && j > GameSize / 2)
+                return 1;
+
+            if (i > GameSize / 2 && j <= GameSize / 2)
+                return 2;
+
+            return 3;
+        }
+
+        private bool IsNearWhiteTile(int i, int j) {
+
+            int areaNumber = GetSelectedAreaNumber(i,j);
+
+            if (Math.Abs(WhiteTilePositions[areaNumber].i - i) + Math.Abs(WhiteTilePositions[areaNumber].j - j) == 1)
+                return true;
+
+            return false;
         }
 
         #endregion Private Methods
