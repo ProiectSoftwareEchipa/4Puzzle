@@ -168,7 +168,7 @@ namespace _4Puzzle
             WhiteTilePositions[2].j = 0;
             WhiteTilePositions[3].i = 3;
             WhiteTilePositions[3].j = 2;
-            GameSize = 3;
+            GameSize = 4;
         }
 
         /// <summary>
@@ -221,20 +221,35 @@ namespace _4Puzzle
         {
             get
             {
-                for (int i = 0; i <= 2; i++)
-                {
-                    for (int j = i + 1; j <= 3; j++)
-                    {
-                        if (rectangleMatrix[0, i].Fill == solidColorBrushWhite || rectangleMatrix[0, j].Fill == solidColorBrushWhite
-                           || rectangleMatrix[3, i].Fill == solidColorBrushWhite || rectangleMatrix[3, j].Fill == solidColorBrushWhite
-                           || rectangleMatrix[i, 0].Fill == solidColorBrushWhite || rectangleMatrix[j, 0].Fill == solidColorBrushWhite
-                           || rectangleMatrix[i, 3].Fill == solidColorBrushWhite || rectangleMatrix[j, 3].Fill == solidColorBrushWhite)
-                            return false;
+                //white tiles are not in the center
+                foreach (var tile in WhiteTilePositions)
+                    if (!IsPositionInTheCenter(tile.i) || !IsPositionInTheCenter(tile.j))
+                        return false;
 
-                        if ((rectangleMatrix[0, i].Fill == rectangleMatrix[0, j].Fill) || (rectangleMatrix[3, i].Fill == rectangleMatrix[3, j].Fill)
-                            || (rectangleMatrix[i, 0].Fill == rectangleMatrix[j, 0].Fill) || (rectangleMatrix[i, 3].Fill == rectangleMatrix[j, 3].Fill))
-                            return false;
-                    }
+                List<Brush> currentList;
+
+                //check per line
+                for (int i = 0; i < GameSize; i++) {
+                    if (IsPositionInTheCenter(i))
+                        continue;
+                    currentList = new List<Brush>();
+                    for (int j = 0; j < GameSize; j++)
+                        if (!currentList.Contains(rectangleMatrix[i, j].Fill))
+                            currentList.Add(rectangleMatrix[i, j].Fill);
+                    if (currentList.Count < GameSize)
+                        return false;
+                }
+
+                //check per column
+                for (int j = 0; j < GameSize; j++) {
+                    if (IsPositionInTheCenter(j))
+                        continue; 
+                    currentList = new List<Brush>();
+                    for (int i = 0; i < GameSize; i++)
+                        if (!currentList.Contains(rectangleMatrix[i, j].Fill))
+                            currentList.Add(rectangleMatrix[i, j].Fill);
+                    if (currentList.Count < GameSize)
+                        return false;
                 }
 
                 return true;
@@ -252,15 +267,23 @@ namespace _4Puzzle
             colorRectangle.Fill = solidColorBrushWhite;
         }
 
+        private bool IsPositionInTheCenter(int position) {
+
+            if (position == GameSize / 2 || position == GameSize / 2 - 1)
+                return true;
+
+            return false;
+        }
+
         private int GetSelectedAreaNumber(int i, int j) {
 
-            if (i <= GameSize / 2 && j <= GameSize / 2)
+            if (i < GameSize / 2 && j < GameSize / 2)
                 return 0;
 
-            if (i <= GameSize / 2 && j > GameSize / 2)
+            if (i < GameSize / 2 && j >= GameSize / 2)
                 return 1;
 
-            if (i > GameSize / 2 && j <= GameSize / 2)
+            if (i >= GameSize / 2 && j < GameSize / 2)
                 return 2;
 
             return 3;
