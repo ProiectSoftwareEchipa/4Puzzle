@@ -104,7 +104,7 @@ namespace _4Puzzle
 
             if(CheckEndGame)
             {
-                validationBlock.Text = "End game";
+                validationBlock.Text = "Victory!";
             }
             else
             {
