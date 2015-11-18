@@ -10,23 +10,7 @@
 
     <Grid>
         <TextBlock x:Name="title" HorizontalAlignment="Center" Margin="10,10,10,0" TextWrapping="Wrap" Text="4Puzzle" VerticalAlignment="Top" Height="52" Width="380" FontSize="48" TextAlignment="Center"/>
-        <Rectangle x:Name="Rectangle11" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Margin="10,166,0,0" Stroke="Black" VerticalAlignment="Top" Width="90" Tapped="Rectangle_Tapped"/>
-        <Rectangle x:Name="Rectangle12" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Margin="105,166,0,0" Stroke="Black" VerticalAlignment="Top" Width="90" Tapped="Rectangle_Tapped"/>
-        <Rectangle x:Name="Rectangle14" Fill="#FFF4F4F5" Height="90" Margin="300,166,10,0" Stroke="Black" VerticalAlignment="Top" Width="90" HorizontalAlignment="Right" Tapped="Rectangle_Tapped"/>
-        <Rectangle x:Name="Rectangle13" Fill="#FFF4F4F5" Height="90" Margin="205,166,105,0" Stroke="Black" VerticalAlignment="Top" Width="90" HorizontalAlignment="Right" Tapped="Rectangle_Tapped"/>
-        <Rectangle x:Name="Rectangle21" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Margin="10,261,0,0" Stroke="Black" VerticalAlignment="Top" Width="90" Tapped="Rectangle_Tapped"/>
-        <Rectangle x:Name="Rectangle22" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Margin="105,261,0,0" Stroke="Black" VerticalAlignment="Top" Width="90" Tapped="Rectangle_Tapped"/>
-        <Rectangle x:Name="Rectangle23" Fill="#FFF4F4F5" Height="90" Margin="205,261,105,0" Stroke="Black" VerticalAlignment="Top" Width="90" HorizontalAlignment="Right" Tapped="Rectangle_Tapped"/>
-        <Rectangle x:Name="Rectangle24" Fill="#FFF4F4F5" Height="90" Margin="300,261,10,0" Stroke="Black" VerticalAlignment="Top" Width="90" HorizontalAlignment="Right" Tapped="Rectangle_Tapped"/>
-        <Rectangle x:Name="Rectangle31" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Margin="10,0,0,184" Stroke="Black" VerticalAlignment="Bottom" Width="90" Tapped="Rectangle_Tapped"/>
-        <Rectangle x:Name="Rectangle32" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Margin="105,0,0,184" Stroke="Black" VerticalAlignment="Bottom" Width="90" Tapped="Rectangle_Tapped"/>
-        <Rectangle x:Name="Rectangle34" Fill="#FFF4F4F5" Height="90" Margin="0,0,10,184" Stroke="Black" VerticalAlignment="Bottom" Width="90" HorizontalAlignment="Right" Tapped="Rectangle_Tapped"/>
-        <Rectangle x:Name="Rectangle33" Fill="#FFF4F4F5" Height="90" Margin="0,0,105,184" Stroke="Black" VerticalAlignment="Bottom" Width="90" HorizontalAlignment="Right" Tapped="Rectangle_Tapped"/>
-        <Rectangle x:Name="Rectangle44" Fill="#FFF4F4F5" Height="90" Margin="0,0,10,89" Stroke="Black" VerticalAlignment="Bottom" Width="90" HorizontalAlignment="Right" Tapped="Rectangle_Tapped"/>
-        <Rectangle x:Name="Rectangle43" Fill="#FFF4F4F5" Height="90" Margin="0,0,105,89" Stroke="Black" VerticalAlignment="Bottom" Width="90" HorizontalAlignment="Right" Tapped="Rectangle_Tapped"/>
-        <Rectangle x:Name="Rectangle41" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Margin="10,0,0,89" Stroke="Black" VerticalAlignment="Bottom" Width="90" Tapped="Rectangle_Tapped"/>
-        <Rectangle x:Name="Rectangle42" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Margin="105,0,0,89" Stroke="Black" VerticalAlignment="Bottom" Width="90" Tapped="Rectangle_Tapped"/>
-        <TextBlock x:Name="validationBlock" HorizontalAlignment="Left" Margin="10,595,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="29.333" Width="380" TextAlignment="Center"/>
-
+        <Button x:Name="Tutorial" Content="Tutorial" HorizontalAlignment="Left" Margin="93,159,0,0" VerticalAlignment="Top" Width="236" Height="103" FontSize="29.333" Click="Tutorial_Click" Tag="/Tutorial.xaml"/>
+        <Button x:Name="SinglePlayer" Content="Single Player" HorizontalAlignment="Left" Margin="93,266,0,0" VerticalAlignment="Top" Width="236" Height="103" FontSize="29.333" Click="SinglePlayer_Click"/>
     </Grid>
 </Page>

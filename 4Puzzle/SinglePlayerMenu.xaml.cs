@@ -6,7 +6,6 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Phone.UI.Input;
-using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -14,24 +13,21 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Windows.UI.Xaml.Shapes;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
 namespace _4Puzzle
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class SinglePlayerMenu : Page
     {
         #region Constructors
 
-        public MainPage()
+        public SinglePlayerMenu()
         {
             this.InitializeComponent();
-
-            this.NavigationCacheMode = NavigationCacheMode.Required;
         }
 
         #endregion Constructors
@@ -59,14 +55,19 @@ namespace _4Puzzle
                 Frame.GoBack();
         }
 
-        private void Tutorial_Click(object sender, RoutedEventArgs e)
+        private void SinglePlayerEasy_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Tutorial), null);
+            this.Frame.Navigate(typeof(SinglePlayerEasy), null);
         }
 
-        private void SinglePlayer_Click(object sender, RoutedEventArgs e)
+        private void SinglePlayerMedium_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(SinglePlayerMenu), null);
+            this.Frame.Navigate(typeof(SinglePlayerMedium), null);
+        }
+
+        private void SinglePlayerHard_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SinglePlayerHard), null);
         }
 
         #endregion Private Event Handlers
