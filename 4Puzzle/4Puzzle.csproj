@@ -89,16 +89,16 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SinglePlayerEasy.xaml.cs">
+    <Compile Include="SinglePlayer\SinglePlayerEasy.xaml.cs">
       <DependentUpon>SinglePlayerEasy.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SinglePlayerHard.xaml.cs">
+    <Compile Include="SinglePlayer\SinglePlayerHard.xaml.cs">
       <DependentUpon>SinglePlayerHard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SinglePlayerMedium.xaml.cs">
+    <Compile Include="SinglePlayer\SinglePlayerMedium.xaml.cs">
       <DependentUpon>SinglePlayerMedium.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SinglePlayerMenu.xaml.cs">
+    <Compile Include="SinglePlayer\SinglePlayerMenu.xaml.cs">
       <DependentUpon>SinglePlayerMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tutorial.xaml.cs">
@@ -127,19 +127,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="SinglePlayerEasy.xaml">
+    <Page Include="SinglePlayer\SinglePlayerEasy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SinglePlayerHard.xaml">
+    <Page Include="SinglePlayer\SinglePlayerHard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SinglePlayerMedium.xaml">
+    <Page Include="SinglePlayer\SinglePlayerMedium.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SinglePlayerMenu.xaml">
+    <Page Include="SinglePlayer\SinglePlayerMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

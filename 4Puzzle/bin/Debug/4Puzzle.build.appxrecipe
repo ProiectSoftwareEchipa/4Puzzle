@@ -54,17 +54,17 @@
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\SinglePlayerEasy.xbf">
-      <PackagePath>SinglePlayerEasy.xbf</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\SinglePlayer\SinglePlayerEasy.xbf">
+      <PackagePath>SinglePlayer\SinglePlayerEasy.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\SinglePlayerHard.xbf">
-      <PackagePath>SinglePlayerHard.xbf</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\SinglePlayer\SinglePlayerHard.xbf">
+      <PackagePath>SinglePlayer\SinglePlayerHard.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\SinglePlayerMedium.xbf">
-      <PackagePath>SinglePlayerMedium.xbf</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\SinglePlayer\SinglePlayerMedium.xbf">
+      <PackagePath>SinglePlayer\SinglePlayerMedium.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\SinglePlayerMenu.xbf">
-      <PackagePath>SinglePlayerMenu.xbf</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\SinglePlayer\SinglePlayerMenu.xbf">
+      <PackagePath>SinglePlayer\SinglePlayerMenu.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\Tutorial.xbf">
       <PackagePath>Tutorial.xbf</PackagePath>
