@@ -7,3 +7,8 @@ Assets\WideLogo.scale-240.png
 4Puzzle.xr.xml
 App.xbf
 MainPage.xbf
+SinglePlayer\SinglePlayerEasy.xbf
+SinglePlayer\SinglePlayerHard.xbf
+SinglePlayer\SinglePlayerMedium.xbf
+SinglePlayer\SinglePlayerMenu.xbf
+Tutorial.xbf

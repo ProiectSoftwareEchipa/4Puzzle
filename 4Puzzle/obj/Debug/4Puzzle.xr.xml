@@ -10,9 +10,21 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="Children" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Viewbox">
+      <RootProperty Name="Stretch" />
+      <RootProperty Name="Child" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Canvas">
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Children" />
+      <RootMethod Name="GetTop" />
+      <RootMethod Name="SetTop" />
+      <RootMethod Name="GetLeft" />
+      <RootMethod Name="SetLeft" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
       <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Margin" />
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="Text" />
       <RootProperty Name="VerticalAlignment" />
@@ -20,7 +32,20 @@
       <RootProperty Name="Width" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="TextAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Foreground" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="Content" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Tag" />
+      <RootEvent Name="Click" />
+    </RootType>
+    <RootType FullName="_4Puzzle.MainPage" />
     <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
       <RootProperty Name="Fill" />
       <RootProperty Name="HorizontalAlignment" />
@@ -31,6 +56,10 @@
       <RootProperty Name="Width" />
       <RootEvent Name="Tapped" />
     </RootType>
-    <RootType FullName="_4Puzzle.MainPage" />
+    <RootType FullName="_4Puzzle.SinglePlayerEasy" />
+    <RootType FullName="_4Puzzle.SinglePlayerHard" />
+    <RootType FullName="_4Puzzle.SinglePlayerMedium" />
+    <RootType FullName="_4Puzzle.SinglePlayerMenu" />
+    <RootType FullName="_4Puzzle.Tutorial" />
   </Roots.RootTypes>
 </Roots>
