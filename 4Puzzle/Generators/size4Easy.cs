@@ -20,7 +20,7 @@ namespace _4Puzzle.Generators {
             }
         }
 
-        public static void Generate(ref Rectangle[,] puzzle, ref _4Puzzle.Tutorial.Tile[] whiteTilePositions) {
+        public static void Generate(ref Rectangle[,] puzzle, ref _4Puzzle.SinglePlayerEasy.Tile[] whiteTilePositions) {
             SolidColorBrush[] colorsWithoutWhite = new SolidColorBrush[] { new SolidColorBrush(Color.FromArgb(255, 255, 255, 0)), 
                 new SolidColorBrush(Color.FromArgb(120, 255, 0, 0)), 
                 new SolidColorBrush(Color.FromArgb(120, 0, 0, 255)), 
@@ -35,7 +35,7 @@ namespace _4Puzzle.Generators {
                 colorsWithoutWhite[1], 
                 colorsWithoutWhite[2], 
                 colorsWithoutWhite[3], 
-            new SolidColorBrush(Color.FromArgb(255, 255, 255, 255))
+            new SolidColorBrush(Color.FromArgb(255, 101, 67, 33))
             };
 
             puzzle[0, 0].Fill = colors[4];
@@ -83,10 +83,13 @@ namespace _4Puzzle.Generators {
                 for (int j = 2; j < 4; j++)
                     puzzle[i + 2, j].Fill = puzzleCopy[i, j];
         }
-        static void RecalculateWhiteTilePositions(ref _4Puzzle.Tutorial.Tile[] whiteTilePositions, Rectangle[,] puzzle) {
+        static void RecalculateWhiteTilePositions(ref _4Puzzle.SinglePlayerEasy.Tile[] whiteTilePositions, Rectangle[,] puzzle) {
+
+            SolidColorBrush solidColorBrushBlank = new SolidColorBrush(Color.FromArgb(255, 101, 67, 33));;
+
             for (int i = 0; i < 2; i++)
                 for (int j = 0; j < 2; j++)
-                    if (((SolidColorBrush)puzzle[i, j].Fill).Color.ToString() == "#FFFFFFFF") {
+                    if (((SolidColorBrush)puzzle[i, j].Fill).Color == solidColorBrushBlank.Color) {
                         whiteTilePositions[0].i = i;
                         whiteTilePositions[0].j = j;
                         break;
@@ -94,7 +97,8 @@ namespace _4Puzzle.Generators {
 
             for (int i = 0; i < 2; i++)
                 for (int j = 2; j < 4; j++)
-                    if (((SolidColorBrush)puzzle[i, j].Fill).Color.ToString() == "#FFFFFFFF") {
+                    if (((SolidColorBrush)puzzle[i, j].Fill).Color == solidColorBrushBlank.Color)
+                    {
                         whiteTilePositions[1].i = i;
                         whiteTilePositions[1].j = j;
                         break;
@@ -102,7 +106,8 @@ namespace _4Puzzle.Generators {
 
             for (int i = 2; i < 4; i++)
                 for (int j = 0; j < 2; j++)
-                    if (((SolidColorBrush)puzzle[i, j].Fill).Color.ToString() == "#FFFFFFFF") {
+                    if (((SolidColorBrush)puzzle[i, j].Fill).Color == solidColorBrushBlank.Color)
+                    {
                         whiteTilePositions[2].i = i;
                         whiteTilePositions[2].j = j;
                         break;
@@ -110,7 +115,8 @@ namespace _4Puzzle.Generators {
 
             for (int i = 2; i < 4; i++)
                 for (int j = 2; j < 4; j++)
-                    if (((SolidColorBrush)puzzle[i, j].Fill).Color.ToString() == "#FFFFFFFF") {
+                    if (((SolidColorBrush)puzzle[i, j].Fill).Color == solidColorBrushBlank.Color)
+                    {
                         whiteTilePositions[3].i = i;
                         whiteTilePositions[3].j = j;
                         break;

@@ -45,6 +45,9 @@
       <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\4Puzzle Background.jpg">
+      <PackagePath>Images\4Puzzle Background.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\4Puzzle.xr.xml">
       <PackagePath>4Puzzle.xr.xml</PackagePath>
     </AppxPackagedFile>

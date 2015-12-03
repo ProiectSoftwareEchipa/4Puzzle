@@ -9,26 +9,34 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid x:Name="GridSinglePlayerEasy">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Images/4Puzzle Background.jpg"/>
+        </Grid.Background>
         <Viewbox Stretch="Fill">
             <Canvas Width="400" Height="640">
-                <TextBlock x:Name="title" HorizontalAlignment="Center" TextWrapping="Wrap" Text="4Puzzle" VerticalAlignment="Top" Height="52" Width="398" FontSize="48" TextAlignment="Center" Canvas.Top="33"/>
-                <Rectangle x:Name="Rectangle11" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Margin="10,166,0,0" Stroke="Black" VerticalAlignment="Top" Width="90" Tapped="Rectangle_Tapped"/>
-                <Rectangle x:Name="Rectangle12" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Margin="105,166,0,0" Stroke="Black" VerticalAlignment="Top" Width="90" Tapped="Rectangle_Tapped"/>
-                <Rectangle x:Name="Rectangle14" Fill="#FFF4F4F5" Height="90" Margin="300,166,10,0" Stroke="Black" VerticalAlignment="Top" HorizontalAlignment="Right" Tapped="Rectangle_Tapped" Width="90"/>
-                <Rectangle x:Name="Rectangle13" Fill="#FFF4F4F5" Height="90" Margin="205,166,105,0" Stroke="Black" VerticalAlignment="Top" Width="90" HorizontalAlignment="Right" Tapped="Rectangle_Tapped"/>
-                <Rectangle x:Name="Rectangle21" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Margin="10,261,0,0" Stroke="Black" VerticalAlignment="Top" Width="90" Tapped="Rectangle_Tapped"/>
-                <Rectangle x:Name="Rectangle22" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Margin="105,261,0,0" Stroke="Black" VerticalAlignment="Top" Width="90" Tapped="Rectangle_Tapped"/>
-                <Rectangle x:Name="Rectangle23" Fill="#FFF4F4F5" Height="90" Margin="205,261,105,0" Stroke="Black" VerticalAlignment="Top" Width="90" HorizontalAlignment="Right" Tapped="Rectangle_Tapped"/>
-                <Rectangle x:Name="Rectangle24" Fill="#FFF4F4F5" Height="90" Margin="300,261,10,0" Stroke="Black" VerticalAlignment="Top" Width="90" HorizontalAlignment="Right" Tapped="Rectangle_Tapped"/>
-                <Rectangle x:Name="Rectangle31" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Stroke="Black" VerticalAlignment="Bottom" Width="90" Tapped="Rectangle_Tapped" Canvas.Left="10" Canvas.Top="373"/>
-                <Rectangle x:Name="Rectangle32" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Stroke="Black" VerticalAlignment="Bottom" Width="90" Tapped="Rectangle_Tapped" Canvas.Left="105" Canvas.Top="373"/>
-                <Rectangle x:Name="Rectangle34" Fill="#FFF4F4F5" Height="90" Stroke="Black" VerticalAlignment="Bottom" Width="90" HorizontalAlignment="Right" Tapped="Rectangle_Tapped" Canvas.Left="300" Canvas.Top="373"/>
-                <Rectangle x:Name="Rectangle33" Fill="#FFF4F4F5" Height="90" Stroke="Black" VerticalAlignment="Bottom" Width="90" HorizontalAlignment="Right" Tapped="Rectangle_Tapped" Canvas.Left="205" Canvas.Top="373"/>
-                <Rectangle x:Name="Rectangle44" Fill="#FFF4F4F5" Height="90" Stroke="Black" VerticalAlignment="Bottom" Width="90" HorizontalAlignment="Right" Tapped="Rectangle_Tapped" Canvas.Left="300" Canvas.Top="468"/>
-                <Rectangle x:Name="Rectangle43" Fill="#FFF4F4F5" Height="90" Stroke="Black" VerticalAlignment="Bottom" Width="90" HorizontalAlignment="Right" Tapped="Rectangle_Tapped" Canvas.Left="205" Canvas.Top="468"/>
-                <Rectangle x:Name="Rectangle41" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Stroke="Black" VerticalAlignment="Bottom" Width="90" Tapped="Rectangle_Tapped" Canvas.Left="10" Canvas.Top="468"/>
-                <Rectangle x:Name="Rectangle42" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Stroke="Black" VerticalAlignment="Bottom" Width="90" Tapped="Rectangle_Tapped" Canvas.Left="105" Canvas.Top="468"/>
-                <TextBlock x:Name="validationBlock" HorizontalAlignment="Left" Margin="10,579,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="29.333" Width="380" TextAlignment="Center"/>
+                <TextBlock x:Name="title" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Easy" VerticalAlignment="Top" Height="52" Width="398" FontSize="48" TextAlignment="Center" Canvas.Top="33" Foreground="White"/>
+                <Rectangle x:Name="BackgroundRectangle" Fill="#3f2a14" Height="400" Stroke="Black" Canvas.Top="158" Width="395" Canvas.Left="2" RadiusX="20" RadiusY="20" StrokeThickness="3"/>
+                <Rectangle x:Name="BackgroundZone1" Fill="#654321" Height="191" Canvas.Left="7" RadiusY="20" RadiusX="20" Stroke="Black" Canvas.Top="163" Width="191" Canvas.ZIndex="2" HorizontalAlignment="Left" StrokeThickness="3"/>
+                <Rectangle x:Name="BackgroundZone2" Fill="#654321" Height="191" Canvas.Left="202" RadiusY="20" RadiusX="20" Stroke="Black" Canvas.Top="163" Width="191" Canvas.ZIndex="1" HorizontalAlignment="Left" StrokeThickness="3"/>
+                <Rectangle x:Name="BackgroundZone3" Fill="#654321" Height="191" Canvas.Left="202" RadiusY="20" RadiusX="20" Stroke="Black" Canvas.Top="361" Width="191" Canvas.ZIndex="1" HorizontalAlignment="Left" StrokeThickness="3"/>
+                <Rectangle x:Name="BackgroundZone4" Fill="#654321" Height="191" Canvas.Left="7" RadiusY="20" RadiusX="20" Stroke="Black" Canvas.Top="361" Width="191" Canvas.ZIndex="1" HorizontalAlignment="Left" StrokeThickness="3"/>
+                <Rectangle x:Name="Rectangle11" HorizontalAlignment="Left" Height="90" Stroke="Black" VerticalAlignment="Top" Width="90" Tapped="Rectangle_Tapped" Fill="#FFF4F4F5" RadiusX="20" RadiusY="20" Canvas.ZIndex="2" Canvas.Left="12" Canvas.Top="168" StrokeThickness="2"/>
+                <Rectangle x:Name="Rectangle12" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Stroke="Black" VerticalAlignment="Top" Width="90" Tapped="Rectangle_Tapped" RadiusX="20" RadiusY="20" Canvas.Left="103" Canvas.Top="168" Canvas.ZIndex="2" StrokeThickness="2"/>
+                <Rectangle x:Name="Rectangle14" Fill="#FFF4F4F5" Height="90" Stroke="Black" VerticalAlignment="Top" HorizontalAlignment="Right" Tapped="Rectangle_Tapped" Width="90" RadiusX="20" RadiusY="20" Canvas.ZIndex="2" Canvas.Left="298" Canvas.Top="168" StrokeThickness="2"/>
+                <Rectangle x:Name="Rectangle13" Fill="#FFF4F4F5" Height="90" Stroke="Black" VerticalAlignment="Top" Width="90" HorizontalAlignment="Right" Tapped="Rectangle_Tapped" RadiusX="20" RadiusY="20" Canvas.ZIndex="2" Canvas.Left="207" Canvas.Top="168" StrokeThickness="2"/>
+                <Rectangle x:Name="Rectangle21" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Stroke="Black" VerticalAlignment="Top" Width="90" Tapped="Rectangle_Tapped" RadiusX="20" RadiusY="20" Canvas.ZIndex="2" Canvas.Left="12" Canvas.Top="259" StrokeThickness="2"/>
+                <Rectangle x:Name="Rectangle22" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Stroke="Black" VerticalAlignment="Top" Width="90" Tapped="Rectangle_Tapped" RadiusX="20" RadiusY="20" Canvas.ZIndex="2" Canvas.Left="103" Canvas.Top="259" StrokeThickness="2"/>
+                <Rectangle x:Name="Rectangle23" Fill="#FFF4F4F5" Height="90" Stroke="Black" VerticalAlignment="Top" Width="90" HorizontalAlignment="Right" Tapped="Rectangle_Tapped" RadiusX="20" RadiusY="20" Canvas.ZIndex="2" Canvas.Left="207" Canvas.Top="259" StrokeThickness="2"/>
+                <Rectangle x:Name="Rectangle24" Fill="#FFF4F4F5" Height="90" Stroke="Black" VerticalAlignment="Top" Width="90" HorizontalAlignment="Right" Tapped="Rectangle_Tapped" RadiusX="20" RadiusY="20" Canvas.ZIndex="2" Canvas.Left="298" Canvas.Top="259" StrokeThickness="2"/>
+                <Rectangle x:Name="Rectangle31" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Stroke="Black" VerticalAlignment="Bottom" Width="90" Tapped="Rectangle_Tapped" Canvas.Left="12" Canvas.Top="366" RadiusX="20" RadiusY="20" Canvas.ZIndex="2" StrokeThickness="2"/>
+                <Rectangle x:Name="Rectangle32" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Stroke="Black" VerticalAlignment="Bottom" Width="90" Tapped="Rectangle_Tapped" Canvas.Left="103" Canvas.Top="366" RadiusX="20" RadiusY="20" Canvas.ZIndex="2" StrokeThickness="2"/>
+                <Rectangle x:Name="Rectangle34" Fill="#FFF4F4F5" Height="90" Stroke="Black" VerticalAlignment="Bottom" Width="90" HorizontalAlignment="Right" Tapped="Rectangle_Tapped" Canvas.Left="298" Canvas.Top="366" RadiusX="20" RadiusY="20" Canvas.ZIndex="2" StrokeThickness="2"/>
+                <Rectangle x:Name="Rectangle33" Fill="#FFF4F4F5" Height="90" Stroke="Black" VerticalAlignment="Bottom" Width="90" HorizontalAlignment="Right" Tapped="Rectangle_Tapped" Canvas.Left="207" Canvas.Top="366" RadiusX="20" RadiusY="20" Canvas.ZIndex="2" StrokeThickness="2"/>
+                <Rectangle x:Name="Rectangle44" Fill="#FFF4F4F5" Height="90" Stroke="Black" VerticalAlignment="Bottom" Width="90" HorizontalAlignment="Right" Tapped="Rectangle_Tapped" Canvas.Left="298" Canvas.Top="457" RadiusX="20" RadiusY="20" Canvas.ZIndex="2" StrokeThickness="2"/>
+                <Rectangle x:Name="Rectangle43" Fill="#FFF4F4F5" Height="90" Stroke="Black" VerticalAlignment="Bottom" Width="90" HorizontalAlignment="Right" Tapped="Rectangle_Tapped" Canvas.Left="207" Canvas.Top="457" RadiusX="20" RadiusY="20" Canvas.ZIndex="2" StrokeThickness="2"/>
+                <Rectangle x:Name="Rectangle41" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Stroke="Black" VerticalAlignment="Bottom" Width="90" Tapped="Rectangle_Tapped" Canvas.Left="12" Canvas.Top="457" RadiusX="20" RadiusY="20" Canvas.ZIndex="2" StrokeThickness="2"/>
+                <Rectangle x:Name="Rectangle42" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Stroke="Black" VerticalAlignment="Bottom" Width="90" Tapped="Rectangle_Tapped" Canvas.Left="103" Canvas.Top="457" RadiusX="20" RadiusY="20" Canvas.ZIndex="2" StrokeThickness="2"/>
+                <TextBlock x:Name="validationBlock" HorizontalAlignment="Left" Margin="10,579,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="29.333" Width="380" TextAlignment="Center" Foreground="#FF865D34"/>
             </Canvas>
         </Viewbox>
     </Grid>
