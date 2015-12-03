@@ -9,11 +9,15 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Images/4Puzzle Background.jpg"/>
+        </Grid.Background>
         <Viewbox Stretch="Fill">
             <Canvas Width="400" Height="640">
-                <TextBlock x:Name="title" HorizontalAlignment="Center" TextWrapping="Wrap" Text="4Puzzle" VerticalAlignment="Top" Height="52" Width="398" FontSize="48" TextAlignment="Center" Canvas.Top="33"/>
-                <Button x:ConnectionId='1' x:Name="Tutorial" Content="Tutorial" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="103" FontSize="29.333"                        Tag="/Tutorial.xaml" Canvas.Left="80" Canvas.Top="159"/>
-                <Button x:ConnectionId='2' x:Name="SinglePlayer" Content="Single Player" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="103" FontSize="29.333"                            Canvas.Left="80" Canvas.Top="267"/>
+                <TextBlock x:Name="title" HorizontalAlignment="Center" TextWrapping="Wrap" Text="4Puzzle" VerticalAlignment="Top" Height="52" Width="398" FontSize="48" TextAlignment="Center" Canvas.Top="33" Foreground="#FF865D34" SelectionHighlightColor="White"/>
+                <Button x:ConnectionId='1' x:Name="Tutorial" Content="Tutorial" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="103" FontSize="29.333"                        Tag="/Tutorial.xaml" Canvas.Left="80" Canvas.Top="159" Background="#FF654321" BorderBrush="Black" Foreground="Black"/>
+                <Button x:ConnectionId='2' x:Name="SinglePlayer" Content="New Game" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="103" FontSize="29.333"                            Canvas.Left="80" Canvas.Top="267" Background="#FF654321" BorderBrush="Black" Foreground="Black"/>
+                <Button x:Name="Rankings" Content="Rankings" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="103" FontSize="29.333" Canvas.Left="80" Canvas.Top="373" Background="#FF654321" BorderBrush="Black" Foreground="Black"/>
             </Canvas>
         </Viewbox>
     </Grid>

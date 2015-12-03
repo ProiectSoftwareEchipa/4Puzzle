@@ -41,7 +41,7 @@ namespace _4Puzzle
 
         private SolidColorBrush solidColorBrushPurple;
 
-        private SolidColorBrush solidColorBrushWhite;
+        private SolidColorBrush solidColorBrushBlank;
 
         private Rectangle[,] rectangleMatrix;
 
@@ -51,7 +51,7 @@ namespace _4Puzzle
             public int j;
         }
 
-        private Tile[] whiteTilePositions;
+        private Tile[] blankTilePositions;
 
         #endregion Private Members
 
@@ -73,9 +73,9 @@ namespace _4Puzzle
 
             this.solidColorBrushPurple = new SolidColorBrush(Color.FromArgb(255, 125, 0, 255));
 
-            this.solidColorBrushWhite = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
+            this.solidColorBrushBlank = new SolidColorBrush(Color.FromArgb(255, 101, 67, 33));
 
-            this.whiteTilePositions = new Tile[4];
+            this.blankTilePositions = new Tile[4];
 
             this.NavigationCacheMode = NavigationCacheMode.Disabled;
 
@@ -125,6 +125,7 @@ namespace _4Puzzle
             if (CheckEndGame)
             {
                 validationBlock.Text = "Victory!";
+                StopGame();
             }
             else
             {
@@ -164,30 +165,46 @@ namespace _4Puzzle
         /// </summary>
         private void InitializeTutorialColors()
         {
-            rectangleMatrix[0, 0].Fill = solidColorBrushWhite;
+            rectangleMatrix[0, 0].Fill = solidColorBrushBlank;
+            rectangleMatrix[0, 0].StrokeThickness = 0;
             rectangleMatrix[0, 1].Fill = solidColorBrushRed;
             rectangleMatrix[0, 2].Fill = solidColorBrushBlue;
             rectangleMatrix[0, 3].Fill = solidColorBrushRed;
             rectangleMatrix[1, 0].Fill = solidColorBrushYellow;
             rectangleMatrix[1, 1].Fill = solidColorBrushPurple;
             rectangleMatrix[1, 2].Fill = solidColorBrushBlue;
-            rectangleMatrix[1, 3].Fill = solidColorBrushWhite;
+            rectangleMatrix[1, 3].Fill = solidColorBrushBlank;
+            rectangleMatrix[1, 3].StrokeThickness = 0;
             rectangleMatrix[2, 0].Fill = solidColorBrushRed;
             rectangleMatrix[2, 1].Fill = solidColorBrushYellow;
             rectangleMatrix[2, 2].Fill = solidColorBrushYellow;
             rectangleMatrix[2, 3].Fill = solidColorBrushPurple;
-            rectangleMatrix[3, 0].Fill = solidColorBrushWhite;
+            rectangleMatrix[3, 0].Fill = solidColorBrushBlank;
+            rectangleMatrix[3, 0].StrokeThickness = 0;
             rectangleMatrix[3, 1].Fill = solidColorBrushBlue;
-            rectangleMatrix[3, 2].Fill = solidColorBrushWhite;
+            rectangleMatrix[3, 2].Fill = solidColorBrushBlank;
+            rectangleMatrix[3, 2].StrokeThickness = 0;
             rectangleMatrix[3, 3].Fill = solidColorBrushBlue;
-            whiteTilePositions[0].i = 0;
-            whiteTilePositions[0].j = 0;
-            whiteTilePositions[1].i = 1;
-            whiteTilePositions[1].j = 3;
-            whiteTilePositions[2].i = 3;
-            whiteTilePositions[2].j = 0;
-            whiteTilePositions[3].i = 3;
-            whiteTilePositions[3].j = 2;
+            blankTilePositions[0].i = 0;
+            blankTilePositions[0].j = 0;
+            blankTilePositions[1].i = 1;
+            blankTilePositions[1].j = 3;
+            blankTilePositions[2].i = 3;
+            blankTilePositions[2].j = 0;
+            blankTilePositions[3].i = 3;
+            blankTilePositions[3].j = 2;
+        }
+
+        /// <summary>
+        /// Opreste jocul prin eliminarea eventului de tapped
+        /// </summary>
+        private void StopGame()
+        {
+            for (int i = 0; i < gameSize; i++)
+                for (int j = 0; j < gameSize; j++)
+                {
+                    rectangleMatrix[i, j].Tapped -= Rectangle_Tapped;
+                }
         }
 
         /// <summary>
@@ -228,9 +245,9 @@ namespace _4Puzzle
 
             int areaNumber = GetSelectedAreaNumber(i, j);
 
-            SwapRectanglesColors(rectangleMatrix[i, j], rectangleMatrix[whiteTilePositions[areaNumber].i, whiteTilePositions[areaNumber].j]);
-            whiteTilePositions[areaNumber].i = i;
-            whiteTilePositions[areaNumber].j = j;
+            SwapRectanglesColors(rectangleMatrix[i, j], rectangleMatrix[blankTilePositions[areaNumber].i, blankTilePositions[areaNumber].j]);
+            blankTilePositions[areaNumber].i = i;
+            blankTilePositions[areaNumber].j = j;
 
         }
 
@@ -242,7 +259,7 @@ namespace _4Puzzle
             get
             {
                 //white tiles are not in the center
-                foreach (Tile tile in whiteTilePositions)
+                foreach (Tile tile in blankTilePositions)
                     if (!IsPositionInTheCenter(tile.i) || !IsPositionInTheCenter(tile.j))
                         return false;
 
@@ -283,10 +300,12 @@ namespace _4Puzzle
         /// </summary>
         /// <param name="colorRectangle">Rectangle-ul colorat</param>
         /// <param name="whiteRectangle">Rectangle-ul alb</param>
-        private void SwapRectanglesColors(Rectangle colorRectangle, Rectangle whiteRectangle)
+        private void SwapRectanglesColors(Rectangle colorRectangle, Rectangle blankRectangle)
         {
-            whiteRectangle.Fill = colorRectangle.Fill;
-            colorRectangle.Fill = solidColorBrushWhite;
+            blankRectangle.Fill = colorRectangle.Fill;
+            blankRectangle.StrokeThickness = 2;
+            colorRectangle.Fill = solidColorBrushBlank;
+            colorRectangle.StrokeThickness = 0;
         }
 
         private bool IsPositionInTheCenter(int position)
@@ -318,7 +337,7 @@ namespace _4Puzzle
 
             int areaNumber = GetSelectedAreaNumber(i, j);
 
-            if (Math.Abs(whiteTilePositions[areaNumber].i - i) + Math.Abs(whiteTilePositions[areaNumber].j - j) == 1)
+            if (Math.Abs(blankTilePositions[areaNumber].i - i) + Math.Abs(blankTilePositions[areaNumber].j - j) == 1)
                 return true;
 
             return false;
