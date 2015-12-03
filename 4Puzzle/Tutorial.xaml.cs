@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _4Puzzle.Generators;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -45,7 +46,7 @@ namespace _4Puzzle
 
         private Rectangle[,] rectangleMatrix;
 
-        private struct Tile
+        public struct Tile
         {
             public int i;
             public int j;
@@ -158,6 +159,7 @@ namespace _4Puzzle
             rectangleMatrix[3, 1] = Rectangle42;
             rectangleMatrix[3, 2] = Rectangle43;
             rectangleMatrix[3, 3] = Rectangle44;
+            //size4Easy.Generate(ref rectangleMatrix, ref whiteTilePositions);
         }
 
         /// <summary>
