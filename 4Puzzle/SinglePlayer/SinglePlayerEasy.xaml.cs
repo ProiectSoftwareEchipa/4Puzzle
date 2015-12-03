@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _4Puzzle.Generators;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -45,7 +46,7 @@ namespace _4Puzzle
 
         private Rectangle[,] rectangleMatrix;
 
-        private struct Tile
+        public struct Tile
         {
             public int i;
             public int j;
@@ -165,8 +166,7 @@ namespace _4Puzzle
         /// </summary>
         private void InitializeTutorialColors()
         {
-            rectangleMatrix[0, 0].Fill = solidColorBrushBlank;
-            rectangleMatrix[0, 0].StrokeThickness = 0;
+           /* rectangleMatrix[0, 0].Fill = solidColorBrushBlank;
             rectangleMatrix[0, 1].Fill = solidColorBrushRed;
             rectangleMatrix[0, 2].Fill = solidColorBrushBlue;
             rectangleMatrix[0, 3].Fill = solidColorBrushRed;
@@ -174,16 +174,13 @@ namespace _4Puzzle
             rectangleMatrix[1, 1].Fill = solidColorBrushPurple;
             rectangleMatrix[1, 2].Fill = solidColorBrushBlue;
             rectangleMatrix[1, 3].Fill = solidColorBrushBlank;
-            rectangleMatrix[1, 3].StrokeThickness = 0;
             rectangleMatrix[2, 0].Fill = solidColorBrushRed;
             rectangleMatrix[2, 1].Fill = solidColorBrushYellow;
             rectangleMatrix[2, 2].Fill = solidColorBrushYellow;
             rectangleMatrix[2, 3].Fill = solidColorBrushPurple;
             rectangleMatrix[3, 0].Fill = solidColorBrushBlank;
-            rectangleMatrix[3, 0].StrokeThickness = 0;
             rectangleMatrix[3, 1].Fill = solidColorBrushBlue;
             rectangleMatrix[3, 2].Fill = solidColorBrushBlank;
-            rectangleMatrix[3, 2].StrokeThickness = 0;
             rectangleMatrix[3, 3].Fill = solidColorBrushBlue;
             blankTilePositions[0].i = 0;
             blankTilePositions[0].j = 0;
@@ -192,7 +189,12 @@ namespace _4Puzzle
             blankTilePositions[2].i = 3;
             blankTilePositions[2].j = 0;
             blankTilePositions[3].i = 3;
-            blankTilePositions[3].j = 2;
+            blankTilePositions[3].j = 2;*/
+            size4Easy.Generate(ref rectangleMatrix, ref blankTilePositions);
+            for(int i = 0; i < 4; i++)
+            {
+                rectangleMatrix[blankTilePositions[i].i, blankTilePositions[i].j].StrokeThickness = 0;
+            }
         }
 
         /// <summary>
