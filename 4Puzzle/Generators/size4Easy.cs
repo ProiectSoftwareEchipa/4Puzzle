@@ -44,19 +44,19 @@ namespace _4Puzzle.Generators {
             //1 over 2
             for (int i = 0; i < gameSize / 2; i++)
                 for (int j = 0; j < gameSize / 2; j++)
-                    puzzle[i, j + 2].Fill = puzzleCopy[i, j];
+                    puzzle[i, j + gameSize / 2].Fill = puzzleCopy[i, j];
             //4 over 3
             for (int i = gameSize / 2; i < gameSize; i++)
                 for (int j = 0; j < gameSize / 2; j++)
-                    puzzle[i, j].Fill = puzzleCopy[i, j + 2];
+                    puzzle[i, j].Fill = puzzleCopy[i, j + gameSize / 2];
             //3 over 1
             for (int i = 0; i < gameSize / 2; i++)
                 for (int j = 0; j < gameSize / 2; j++)
-                    puzzle[i, j].Fill = puzzleCopy[i + 2, j];
+                    puzzle[i, j].Fill = puzzleCopy[i + gameSize / 2, j];
             //2 over 4
             for (int i = 0; i < gameSize / 2; i++)
                 for (int j = gameSize / 2; j < gameSize; j++)
-                    puzzle[i + 2, j].Fill = puzzleCopy[i, j];
+                    puzzle[i + gameSize / 2, j].Fill = puzzleCopy[i, j];
         }
         static void RecalculateWhiteTilePositions(ref _4Puzzle.SinglePlayerEasy.Tile[] whiteTilePositions, Rectangle[,] puzzle, int gameSize) {
 
