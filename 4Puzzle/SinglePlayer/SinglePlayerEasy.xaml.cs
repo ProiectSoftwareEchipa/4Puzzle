@@ -82,7 +82,7 @@ namespace _4Puzzle
 
             InitializeMatrix();
 
-            InitializeTutorialColors();
+            InitializeColors();
         }
 
         #endregion Constructors
@@ -164,34 +164,12 @@ namespace _4Puzzle
         /// <summary>
         /// Initializarea culorilor pentru versiunea de tutorial
         /// </summary>
-        private void InitializeTutorialColors()
+        private void InitializeColors()
         {
-           /* rectangleMatrix[0, 0].Fill = solidColorBrushBlank;
-            rectangleMatrix[0, 1].Fill = solidColorBrushRed;
-            rectangleMatrix[0, 2].Fill = solidColorBrushBlue;
-            rectangleMatrix[0, 3].Fill = solidColorBrushRed;
-            rectangleMatrix[1, 0].Fill = solidColorBrushYellow;
-            rectangleMatrix[1, 1].Fill = solidColorBrushPurple;
-            rectangleMatrix[1, 2].Fill = solidColorBrushBlue;
-            rectangleMatrix[1, 3].Fill = solidColorBrushBlank;
-            rectangleMatrix[2, 0].Fill = solidColorBrushRed;
-            rectangleMatrix[2, 1].Fill = solidColorBrushYellow;
-            rectangleMatrix[2, 2].Fill = solidColorBrushYellow;
-            rectangleMatrix[2, 3].Fill = solidColorBrushPurple;
-            rectangleMatrix[3, 0].Fill = solidColorBrushBlank;
-            rectangleMatrix[3, 1].Fill = solidColorBrushBlue;
-            rectangleMatrix[3, 2].Fill = solidColorBrushBlank;
-            rectangleMatrix[3, 3].Fill = solidColorBrushBlue;
-            blankTilePositions[0].i = 0;
-            blankTilePositions[0].j = 0;
-            blankTilePositions[1].i = 1;
-            blankTilePositions[1].j = 3;
-            blankTilePositions[2].i = 3;
-            blankTilePositions[2].j = 0;
-            blankTilePositions[3].i = 3;
-            blankTilePositions[3].j = 2;*/
-            size4Easy.Generate(ref rectangleMatrix, ref blankTilePositions);
-            for(int i = 0; i < 4; i++)
+            SolidColorBrush[] colors = new SolidColorBrush[] { solidColorBrushRed, solidColorBrushBlue, solidColorBrushYellow, solidColorBrushPurple };
+
+            size4Easy.Generate(ref rectangleMatrix, ref blankTilePositions, gameSize, colors, 1);
+            for (int i = 0; i < 4; i++)
             {
                 rectangleMatrix[blankTilePositions[i].i, blankTilePositions[i].j].StrokeThickness = 0;
             }
