@@ -225,6 +225,9 @@ namespace _4Puzzle.Generators {
                 case 2:
                     InitialSetupMedium1(puzzle, colors);
                     break;
+                case 3:
+                    InitialSetupHard1(puzzle, colors);
+                    break;
                 default:
                     break;
             }
@@ -263,17 +266,17 @@ namespace _4Puzzle.Generators {
             puzzle[2, 0].Fill = colors[4];
             puzzle[2, 1].Fill = colors[5];
             puzzle[2, 2].Fill = colors[6];
-            puzzle[2, 2].StrokeThickness = 0;
+            //puzzle[2, 2].StrokeThickness = 0;
             puzzle[2, 3].Fill = colors[2];
             puzzle[2, 4].Fill = colors[6];
-            puzzle[2, 4].StrokeThickness = 0;
+            //puzzle[2, 4].StrokeThickness = 0;
             puzzle[2, 5].Fill = colors[3];
             puzzle[3, 0].Fill = colors[3];
             puzzle[3, 1].Fill = colors[4];
             puzzle[3, 2].Fill = colors[6];
-            puzzle[3, 2].StrokeThickness = 0;
+            //puzzle[3, 2].StrokeThickness = 0;
             puzzle[3, 3].Fill = colors[6];
-            puzzle[3, 3].StrokeThickness = 0;
+            //puzzle[3, 3].StrokeThickness = 0;
             puzzle[3, 4].Fill = colors[1];
             puzzle[3, 5].Fill = colors[2];
             puzzle[4, 0].Fill = colors[2];
@@ -288,6 +291,76 @@ namespace _4Puzzle.Generators {
             puzzle[5, 3].Fill = colors[4];
             puzzle[5, 4].Fill = colors[5];
             puzzle[5, 5].Fill = colors[0];
+        }
+        public static void InitialSetupHard1(Rectangle[,] puzzle, SolidColorBrush[] colors) {
+            puzzle[0, 0].Fill = colors[0];
+            puzzle[0, 1].Fill = colors[1];
+            puzzle[0, 2].Fill = colors[2];
+            puzzle[0, 3].Fill = colors[3];
+            puzzle[0, 4].Fill = colors[4];
+            puzzle[0, 5].Fill = colors[5];
+            puzzle[0, 6].Fill = colors[6];
+            puzzle[0, 7].Fill = colors[7];
+            puzzle[1, 0].Fill = colors[7];
+            puzzle[1, 1].Fill = colors[0];
+            puzzle[1, 2].Fill = colors[1];
+            puzzle[1, 3].Fill = colors[2];
+            puzzle[1, 4].Fill = colors[3];
+            puzzle[1, 5].Fill = colors[4];
+            puzzle[1, 6].Fill = colors[5];
+            puzzle[1, 7].Fill = colors[6];
+            puzzle[2, 0].Fill = colors[6];
+            puzzle[2, 1].Fill = colors[7];
+            puzzle[2, 2].Fill = colors[0];
+            puzzle[2, 3].Fill = colors[1];
+            puzzle[2, 4].Fill = colors[2];
+            puzzle[2, 5].Fill = colors[3];
+            puzzle[2, 6].Fill = colors[4];
+            puzzle[2, 7].Fill = colors[5];
+            puzzle[3, 0].Fill = colors[5];
+            puzzle[3, 1].Fill = colors[6];
+            puzzle[3, 2].Fill = colors[7];
+            puzzle[3, 3].Fill = colors[8];
+            //puzzle[3, 3].StrokeThickness = 0;
+            puzzle[3, 4].Fill = colors[2];
+            puzzle[3, 5].Fill = colors[8];
+            //puzzle[3, 5].StrokeThickness = 0;
+            puzzle[3, 6].Fill = colors[3];
+            puzzle[3, 7].Fill = colors[4];
+            puzzle[4, 0].Fill = colors[4];
+            puzzle[4, 1].Fill = colors[5];
+            puzzle[4, 2].Fill = colors[6];
+            puzzle[4, 3].Fill = colors[8];
+            //puzzle[4, 3].StrokeThickness = 0;
+            puzzle[4, 4].Fill = colors[8];
+            //puzzle[4, 4].StrokeThickness = 0;
+            puzzle[4, 5].Fill = colors[1];
+            puzzle[4, 6].Fill = colors[2];
+            puzzle[4, 7].Fill = colors[3];
+            puzzle[5, 0].Fill = colors[3];
+            puzzle[5, 1].Fill = colors[4];
+            puzzle[5, 2].Fill = colors[5];
+            puzzle[5, 3].Fill = colors[6];
+            puzzle[5, 4].Fill = colors[7];
+            puzzle[5, 5].Fill = colors[0];
+            puzzle[5, 6].Fill = colors[1];
+            puzzle[5, 7].Fill = colors[2];
+            puzzle[6, 0].Fill = colors[2];
+            puzzle[6, 1].Fill = colors[3];
+            puzzle[6, 2].Fill = colors[4];
+            puzzle[6, 3].Fill = colors[5];
+            puzzle[6, 4].Fill = colors[6];
+            puzzle[6, 5].Fill = colors[7];
+            puzzle[6, 6].Fill = colors[0];
+            puzzle[6, 7].Fill = colors[1];
+            puzzle[7, 0].Fill = colors[1];
+            puzzle[7, 1].Fill = colors[2];
+            puzzle[7, 2].Fill = colors[3];
+            puzzle[7, 3].Fill = colors[4];
+            puzzle[7, 4].Fill = colors[5];
+            puzzle[7, 5].Fill = colors[6];
+            puzzle[7, 6].Fill = colors[7];
+            puzzle[7, 7].Fill = colors[0];
         }
     }
 }
