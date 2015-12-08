@@ -159,7 +159,6 @@ namespace _4Puzzle
             rectangleMatrix[3, 1] = Rectangle42;
             rectangleMatrix[3, 2] = Rectangle43;
             rectangleMatrix[3, 3] = Rectangle44;
-            //size4Easy.Generate(ref rectangleMatrix, ref whiteTilePositions);
         }
 
         /// <summary>

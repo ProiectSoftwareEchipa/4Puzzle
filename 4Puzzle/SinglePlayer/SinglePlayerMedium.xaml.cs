@@ -49,6 +49,16 @@ namespace _4Puzzle
 
         private Rectangle[,] rectangleMatrix;
 
+        private int singlePlayerMediumWins;
+
+        private int singlePlayerMediumTimer;
+
+        private int singlePlayerMediumBestTime;
+
+        private DispatcherTimer dispatcherTimer;
+
+        Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+
         private struct Tile
         {
             public int i;
@@ -86,6 +96,10 @@ namespace _4Puzzle
             this.NavigationCacheMode = NavigationCacheMode.Disabled;
 
             this.blankTilePositions = new Tile[4];
+
+            LoadStoredData();
+
+            InitializeDispatcherTimer();
 
             InitializeMatrix();
 
@@ -133,6 +147,15 @@ namespace _4Puzzle
             if (CheckEndGame)
             {
                 validationBlock.Text = "Victory!";
+                dispatcherTimer.Stop();
+
+                singlePlayerMediumWins++;
+                if(singlePlayerMediumTimer < singlePlayerMediumBestTime)
+                {
+                    singlePlayerMediumBestTime = singlePlayerMediumTimer;
+                }
+
+                SaveStoredData();
                 StopGame();
             }
             else
@@ -141,9 +164,85 @@ namespace _4Puzzle
             }
         }
 
+        /// <summary>
+        /// Metoda ce incrementeaza timpul trecut cu 1 secunda.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DispatcherTimer_Tick(object sender, object e)
+        {
+            singlePlayerMediumTimer++;
+
+            singlePlayerMediumTimeText.Text = String.Format("{0}:{1}", (singlePlayerMediumTimer / 60).ToString("00"), (singlePlayerMediumTimer % 60).ToString("00"));
+        }
+
         #endregion Event Handlers
 
         #region Private Methods
+
+        /// <summary>
+        /// Incarca datele stocate local
+        /// </summary>
+        private void LoadStoredData()
+        {
+            object wins = localSettings.Values["SinglePlayerMediumWins"];
+
+            object bestTime = localSettings.Values["SinglePlayerMediumBestTime"];
+
+            if (wins != null)
+            {
+                this.singlePlayerMediumWins = (int)wins;
+            }
+            else
+            {
+                this.singlePlayerMediumWins = 0;
+            }
+
+            if (bestTime != null)
+            {
+                this.singlePlayerMediumBestTime = (int)bestTime;
+            }
+            else
+            {
+                this.singlePlayerMediumBestTime = int.MaxValue;
+            }
+
+            this.singlePlayerMediumTimer = 0;
+
+            singlePlayerMediumWinsText.Text = singlePlayerMediumWins.ToString();
+
+            singlePlayerMediumTimeText.Text = String.Format("{0}:{1}", (singlePlayerMediumTimer / 60).ToString("00"), (singlePlayerMediumTimer % 60).ToString("00"));
+
+            if (singlePlayerMediumBestTime != int.MaxValue)
+            {
+                singlePlayerMediumBestTimeText.Text = String.Format("{0}:{1}", (singlePlayerMediumBestTime / 60).ToString("00"), (singlePlayerMediumBestTime % 60).ToString("00"));
+            }
+            else
+            {
+                singlePlayerMediumBestTimeText.Text = "N/A";
+            }
+        }
+
+        /// <summary>
+        /// Salveaza datele local
+        /// </summary>
+        private void SaveStoredData()
+        {
+            localSettings.Values["SinglePlayerMediumWins"] = singlePlayerMediumWins;
+
+            localSettings.Values["SinglePlayerMediumBestTime"] = singlePlayerMediumBestTime;
+        }
+
+        /// <summary>
+        /// Initializeaza timer-ul
+        /// </summary>
+        private void InitializeDispatcherTimer()
+        {
+            dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += DispatcherTimer_Tick;
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
+            dispatcherTimer.Start();
+        }
 
         /// <summary>
         /// Initializarea matricii

@@ -46,6 +46,16 @@ namespace _4Puzzle
 
         private Rectangle[,] rectangleMatrix;
 
+        private int singlePlayerEasyWins;
+
+        private int singlePlayerEasyTimer;
+
+        private int singlePlayerEasyBestTime;
+
+        private DispatcherTimer dispatcherTimer;
+
+        Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+
         public struct Tile
         {
             public int i;
@@ -79,6 +89,10 @@ namespace _4Puzzle
             this.blankTilePositions = new Tile[4];
 
             this.NavigationCacheMode = NavigationCacheMode.Disabled;
+
+            LoadStoredData();
+
+            InitializeDispatcherTimer();
 
             InitializeMatrix();
 
@@ -126,6 +140,15 @@ namespace _4Puzzle
             if (CheckEndGame)
             {
                 validationBlock.Text = "Victory!";
+                dispatcherTimer.Stop();
+
+                singlePlayerEasyWins++;
+                if(singlePlayerEasyTimer < singlePlayerEasyBestTime)
+                {
+                    singlePlayerEasyBestTime = singlePlayerEasyTimer;
+                }
+
+                SaveStoredData();
                 StopGame();
             }
             else
@@ -134,10 +157,86 @@ namespace _4Puzzle
             }
         }
 
+        /// <summary>
+        /// Metoda ce incrementeaza timpul trecut cu 1 secunda.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DispatcherTimer_Tick(object sender, object e)
+        {
+            singlePlayerEasyTimer++;
+
+            singlePlayerEasyTimeText.Text = String.Format("{0}:{1}", (singlePlayerEasyTimer / 60).ToString("00"), (singlePlayerEasyTimer % 60).ToString("00"));
+        }
+
         #endregion Event Handlers
 
         #region Private Methods
 
+        /// <summary>
+        /// Incarca datele stocate local
+        /// </summary>
+        private void LoadStoredData()
+        {
+            object wins = localSettings.Values["SinglePlayerEasyWins"];
+
+            object bestTime = localSettings.Values["SinglePlayerEasyBestTime"];
+
+            if (wins != null)
+            {
+                this.singlePlayerEasyWins = (int)wins;
+            }
+            else
+            {
+                this.singlePlayerEasyWins = 0;
+            }
+
+            if (bestTime != null)
+            {
+                this.singlePlayerEasyBestTime = (int)bestTime;
+            }
+            else
+            {
+                this.singlePlayerEasyBestTime = int.MaxValue;
+            }
+
+            this.singlePlayerEasyTimer = 0;
+
+            singlePlayerEasyWinsText.Text = singlePlayerEasyWins.ToString();
+
+            singlePlayerEasyTimeText.Text = String.Format("{0}:{1}", (singlePlayerEasyTimer / 60).ToString("00"), (singlePlayerEasyTimer % 60).ToString("00"));
+
+            if (singlePlayerEasyBestTime != int.MaxValue)
+            {
+                singlePlayerEasyBestTimeText.Text = String.Format("{0}:{1}", (singlePlayerEasyBestTime / 60).ToString("00"), (singlePlayerEasyBestTime % 60).ToString("00"));
+            }
+            else
+            {
+                singlePlayerEasyBestTimeText.Text = "N/A";
+            }
+        }
+
+        /// <summary>
+        /// Salveaza datele local
+        /// </summary>
+        private void SaveStoredData()
+        {
+            localSettings.Values["SinglePlayerEasyWins"] = singlePlayerEasyWins;
+
+            localSettings.Values["SinglePlayerEasyBestTime"] = singlePlayerEasyBestTime;
+        }
+
+        /// <summary>
+        /// Initializeaza timer-ul
+        /// </summary>
+        private void InitializeDispatcherTimer()
+        {
+            dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += DispatcherTimer_Tick;
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
+            dispatcherTimer.Start();
+        }
+        
         /// <summary>
         /// Initializarea matricii
         /// </summary>

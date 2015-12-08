@@ -53,6 +53,16 @@ namespace _4Puzzle
 
         private Rectangle[,] rectangleMatrix;
 
+        private int singlePlayerHardWins;
+
+        private int singlePlayerHardTimer;
+
+        private int singlePlayerHardBestTime;
+
+        private DispatcherTimer dispatcherTimer;
+
+        Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+
         private struct Tile
         {
             public int i;
@@ -94,6 +104,10 @@ namespace _4Puzzle
             this.NavigationCacheMode = NavigationCacheMode.Disabled;
 
             this.blankTilePositions = new Tile[4];
+
+            LoadStoredData();
+
+            InitializeDispatcherTimer();
 
             InitializeMatrix();
 
@@ -141,6 +155,15 @@ namespace _4Puzzle
             if (CheckEndGame)
             {
                 validationBlock.Text = "Victory!";
+                dispatcherTimer.Stop();
+
+                singlePlayerHardWins++;
+                if (singlePlayerHardTimer < singlePlayerHardBestTime)
+                {
+                    singlePlayerHardBestTime = singlePlayerHardTimer;
+                }
+
+                SaveStoredData();
                 StopGame();
             }
             else
@@ -149,9 +172,85 @@ namespace _4Puzzle
             }
         }
 
+        /// <summary>
+        /// Metoda ce incrementeaza timpul trecut cu 1 secunda.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DispatcherTimer_Tick(object sender, object e)
+        {
+            singlePlayerHardTimer++;
+
+            singlePlayerHardTimeText.Text = String.Format("{0}:{1}", (singlePlayerHardTimer / 60).ToString("00"), (singlePlayerHardTimer % 60).ToString("00"));
+        }
+
         #endregion Event Handlers
 
         #region Private Methods
+
+        /// <summary>
+        /// Incarca datele stocate local
+        /// </summary>
+        private void LoadStoredData()
+        {
+            object wins = localSettings.Values["SinglePlayerHardWins"];
+
+            object bestTime = localSettings.Values["SinglePlayerHardBestTime"];
+
+            if (wins != null)
+            {
+                this.singlePlayerHardWins = (int)wins;
+            }
+            else
+            {
+                this.singlePlayerHardWins = 0;
+            }
+
+            if (bestTime != null)
+            {
+                this.singlePlayerHardBestTime = (int)bestTime;
+            }
+            else
+            {
+                this.singlePlayerHardBestTime = int.MaxValue;
+            }
+
+            this.singlePlayerHardTimer = 0;
+
+            singlePlayerHardWinsText.Text = singlePlayerHardWins.ToString();
+
+            singlePlayerHardTimeText.Text = String.Format("{0}:{1}", (singlePlayerHardTimer / 60).ToString("00"), (singlePlayerHardTimer % 60).ToString("00"));
+
+            if (singlePlayerHardBestTime != int.MaxValue)
+            {
+                singlePlayerHardBestTimeText.Text = String.Format("{0}:{1}", (singlePlayerHardBestTime / 60).ToString("00"), (singlePlayerHardBestTime % 60).ToString("00"));
+            }
+            else
+            {
+                singlePlayerHardBestTimeText.Text = "N/A";
+            }
+        }
+
+        /// <summary>
+        /// Salveaza datele local
+        /// </summary>
+        private void SaveStoredData()
+        {
+            localSettings.Values["SinglePlayerHardWins"] = singlePlayerHardWins;
+
+            localSettings.Values["SinglePlayerHardBestTime"] = singlePlayerHardBestTime;
+        }
+
+        /// <summary>
+        /// Initializeaza timer-ul
+        /// </summary>
+        private void InitializeDispatcherTimer()
+        {
+            dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += DispatcherTimer_Tick;
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
+            dispatcherTimer.Start();
+        }
 
         /// <summary>
         /// Initializarea matricii
