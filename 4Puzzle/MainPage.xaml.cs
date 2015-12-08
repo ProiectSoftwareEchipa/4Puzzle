@@ -32,6 +32,20 @@ namespace _4Puzzle
             this.InitializeComponent();
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
+
+            /*Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+
+            localSettings.Values["SinglePlayerEasyWins"] = 0;
+
+            localSettings.Values["SinglePlayerEasyBestTime"] = int.MaxValue;
+
+            localSettings.Values["SinglePlayerMediumWins"] = 0;
+
+            localSettings.Values["SinglePlayerMediumBestTime"] = int.MaxValue;
+
+            localSettings.Values["SinglePlayerHardWins"] = 0;
+
+            localSettings.Values["SinglePlayerHardBestTime"] = int.MaxValue;*/
         }
 
         #endregion Constructors

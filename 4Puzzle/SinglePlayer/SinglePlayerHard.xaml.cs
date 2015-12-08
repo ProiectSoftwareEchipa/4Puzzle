@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _4Puzzle.Generators;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -69,7 +70,9 @@ namespace _4Puzzle
             public int j;
         }
 
-        private Tile[] blankTilePositions;
+        //private Tile[] blankTilePositions;
+
+        private _4Puzzle.SinglePlayerEasy.Tile[] blankTilePositions;
 
         #endregion Private Members
 
@@ -103,7 +106,7 @@ namespace _4Puzzle
 
             this.NavigationCacheMode = NavigationCacheMode.Disabled;
 
-            this.blankTilePositions = new Tile[4];
+            this.blankTilePositions = new _4Puzzle.SinglePlayerEasy.Tile[4];
 
             LoadStoredData();
 
@@ -111,7 +114,7 @@ namespace _4Puzzle
 
             InitializeMatrix();
 
-            InitializeTutorialColors();
+            InitializeColors();
         }
 
         #endregion Constructors
@@ -326,84 +329,14 @@ namespace _4Puzzle
         /// <summary>
         /// Initializarea culorilor pentru versiunea de tutorial
         /// </summary>
-        private void InitializeTutorialColors()
+        private void InitializeColors()
         {
-            rectangleMatrix[0, 0].Fill = solidColorBrushYellow;
-            rectangleMatrix[0, 1].Fill = solidColorBrushRed;
-            rectangleMatrix[0, 2].Fill = solidColorBrushBlue;
-            rectangleMatrix[0, 3].Fill = solidColorBrushPurple;
-            rectangleMatrix[0, 4].Fill = solidColorBrushOrange;
-            rectangleMatrix[0, 5].Fill = solidColorBrushGreen;
-            rectangleMatrix[0, 6].Fill = solidColorBrushBrown;
-            rectangleMatrix[0, 7].Fill = solidColorBrushPink;
-            rectangleMatrix[1, 0].Fill = solidColorBrushPink;
-            rectangleMatrix[1, 1].Fill = solidColorBrushYellow;
-            rectangleMatrix[1, 2].Fill = solidColorBrushRed;
-            rectangleMatrix[1, 3].Fill = solidColorBrushBlue;
-            rectangleMatrix[1, 4].Fill = solidColorBrushPurple;
-            rectangleMatrix[1, 5].Fill = solidColorBrushOrange;
-            rectangleMatrix[1, 6].Fill = solidColorBrushGreen;
-            rectangleMatrix[1, 7].Fill = solidColorBrushBrown;
-            rectangleMatrix[2, 0].Fill = solidColorBrushBrown;
-            rectangleMatrix[2, 1].Fill = solidColorBrushPink;
-            rectangleMatrix[2, 2].Fill = solidColorBrushYellow;
-            rectangleMatrix[2, 3].Fill = solidColorBrushRed;
-            rectangleMatrix[2, 4].Fill = solidColorBrushBlue;
-            rectangleMatrix[2, 5].Fill = solidColorBrushPurple;
-            rectangleMatrix[2, 6].Fill = solidColorBrushOrange;
-            rectangleMatrix[2, 7].Fill = solidColorBrushGreen;
-            rectangleMatrix[3, 0].Fill = solidColorBrushGreen;
-            rectangleMatrix[3, 1].Fill = solidColorBrushBrown;
-            rectangleMatrix[3, 2].Fill = solidColorBrushPink;
-            rectangleMatrix[3, 3].Fill = solidColorBrushBlank;
-            rectangleMatrix[3, 3].StrokeThickness = 0;
-            rectangleMatrix[3, 4].Fill = solidColorBrushBlue;
-            rectangleMatrix[3, 5].Fill = solidColorBrushBlank;
-            rectangleMatrix[3, 5].StrokeThickness = 0;
-            rectangleMatrix[3, 6].Fill = solidColorBrushPurple;
-            rectangleMatrix[3, 7].Fill = solidColorBrushOrange;
-            rectangleMatrix[4, 0].Fill = solidColorBrushOrange;
-            rectangleMatrix[4, 1].Fill = solidColorBrushGreen;
-            rectangleMatrix[4, 2].Fill = solidColorBrushBrown;
-            rectangleMatrix[4, 3].Fill = solidColorBrushBlank;
-            rectangleMatrix[4, 3].StrokeThickness = 0;
-            rectangleMatrix[4, 4].Fill = solidColorBrushBlank;
-            rectangleMatrix[4, 4].StrokeThickness = 0;
-            rectangleMatrix[4, 5].Fill = solidColorBrushRed;
-            rectangleMatrix[4, 6].Fill = solidColorBrushBlue;
-            rectangleMatrix[4, 7].Fill = solidColorBrushPurple;
-            rectangleMatrix[5, 0].Fill = solidColorBrushPurple;
-            rectangleMatrix[5, 1].Fill = solidColorBrushOrange;
-            rectangleMatrix[5, 2].Fill = solidColorBrushGreen;
-            rectangleMatrix[5, 3].Fill = solidColorBrushBrown;
-            rectangleMatrix[5, 4].Fill = solidColorBrushPink;
-            rectangleMatrix[5, 5].Fill = solidColorBrushYellow;
-            rectangleMatrix[5, 6].Fill = solidColorBrushRed;
-            rectangleMatrix[5, 7].Fill = solidColorBrushBlue;
-            rectangleMatrix[6, 0].Fill = solidColorBrushBlue;
-            rectangleMatrix[6, 1].Fill = solidColorBrushPurple;
-            rectangleMatrix[6, 2].Fill = solidColorBrushOrange;
-            rectangleMatrix[6, 3].Fill = solidColorBrushGreen;
-            rectangleMatrix[6, 4].Fill = solidColorBrushBrown;
-            rectangleMatrix[6, 5].Fill = solidColorBrushPink;
-            rectangleMatrix[6, 6].Fill = solidColorBrushYellow;
-            rectangleMatrix[6, 7].Fill = solidColorBrushRed;
-            rectangleMatrix[7, 0].Fill = solidColorBrushRed;
-            rectangleMatrix[7, 1].Fill = solidColorBrushBlue;
-            rectangleMatrix[7, 2].Fill = solidColorBrushPurple;
-            rectangleMatrix[7, 3].Fill = solidColorBrushOrange;
-            rectangleMatrix[7, 4].Fill = solidColorBrushGreen;
-            rectangleMatrix[7, 5].Fill = solidColorBrushBrown;
-            rectangleMatrix[7, 6].Fill = solidColorBrushPink;
-            rectangleMatrix[7, 7].Fill = solidColorBrushYellow;
-            blankTilePositions[0].i = 3;
-            blankTilePositions[0].j = 3;
-            blankTilePositions[1].i = 3;
-            blankTilePositions[1].j = 5;
-            blankTilePositions[2].i = 4;
-            blankTilePositions[2].j = 3;
-            blankTilePositions[3].i = 4;
-            blankTilePositions[3].j = 4;
+            SolidColorBrush[] colors = new SolidColorBrush[] { solidColorBrushBrown, solidColorBrushPink, solidColorBrushRed, solidColorBrushBlue, solidColorBrushYellow, solidColorBrushPurple, solidColorBrushGreen, solidColorBrushOrange };
+
+            size4Easy.Generate(ref rectangleMatrix, ref blankTilePositions, gameSize, colors, 3);
+            for (int i = 0; i < 4; i++) {
+                rectangleMatrix[blankTilePositions[i].i, blankTilePositions[i].j].StrokeThickness = 0;
+            }
         }
 
         /// <summary>
@@ -470,7 +403,7 @@ namespace _4Puzzle
             get
             {
                 //white tiles are not in the center
-                foreach (Tile tile in blankTilePositions)
+                foreach (_4Puzzle.SinglePlayerEasy.Tile tile in blankTilePositions)
                     if (!IsPositionInTheCenter(tile.i) || !IsPositionInTheCenter(tile.j))
                         return false;
 
