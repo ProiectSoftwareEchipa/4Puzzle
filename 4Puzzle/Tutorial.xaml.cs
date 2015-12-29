@@ -159,7 +159,6 @@ namespace _4Puzzle
             rectangleMatrix[3, 1] = Rectangle42;
             rectangleMatrix[3, 2] = Rectangle43;
             rectangleMatrix[3, 3] = Rectangle44;
-            //size4Easy.Generate(ref rectangleMatrix, ref whiteTilePositions);
         }
 
         /// <summary>
@@ -167,7 +166,7 @@ namespace _4Puzzle
         /// </summary>
         private void InitializeTutorialColors()
         {
-            rectangleMatrix[0, 0].Fill = solidColorBrushBlank;
+            /*rectangleMatrix[0, 0].Fill = solidColorBrushBlank;
             rectangleMatrix[0, 0].StrokeThickness = 0;
             rectangleMatrix[0, 1].Fill = solidColorBrushRed;
             rectangleMatrix[0, 2].Fill = solidColorBrushBlue;
@@ -192,6 +191,35 @@ namespace _4Puzzle
             blankTilePositions[1].i = 1;
             blankTilePositions[1].j = 3;
             blankTilePositions[2].i = 3;
+            blankTilePositions[2].j = 0;
+            blankTilePositions[3].i = 3;
+            blankTilePositions[3].j = 2;*/
+
+            rectangleMatrix[0, 0].Fill = solidColorBrushBlue;
+            rectangleMatrix[0, 1].Fill = solidColorBrushRed;
+            rectangleMatrix[0, 2].Fill = solidColorBrushRed;
+            rectangleMatrix[0, 3].Fill = solidColorBrushYellow;
+            rectangleMatrix[1, 0].Fill = solidColorBrushBlank;
+            rectangleMatrix[1, 0].StrokeThickness = 0;
+            rectangleMatrix[1, 1].Fill = solidColorBrushBlue;
+            rectangleMatrix[1, 2].Fill = solidColorBrushPurple;
+            rectangleMatrix[1, 3].Fill = solidColorBrushBlank;
+            rectangleMatrix[1, 3].StrokeThickness = 0;
+            rectangleMatrix[2, 0].Fill = solidColorBrushBlank;
+            rectangleMatrix[2, 0].StrokeThickness = 0;
+            rectangleMatrix[2, 1].Fill = solidColorBrushRed;
+            rectangleMatrix[2, 2].Fill = solidColorBrushYellow;
+            rectangleMatrix[2, 3].Fill = solidColorBrushBlue;
+            rectangleMatrix[3, 0].Fill = solidColorBrushYellow;
+            rectangleMatrix[3, 1].Fill = solidColorBrushPurple;
+            rectangleMatrix[3, 2].Fill = solidColorBrushBlank;
+            rectangleMatrix[3, 2].StrokeThickness = 0;
+            rectangleMatrix[3, 3].Fill = solidColorBrushBlue;
+            blankTilePositions[0].i = 1;
+            blankTilePositions[0].j = 0;
+            blankTilePositions[1].i = 1;
+            blankTilePositions[1].j = 3;
+            blankTilePositions[2].i = 2;
             blankTilePositions[2].j = 0;
             blankTilePositions[3].i = 3;
             blankTilePositions[3].j = 2;
