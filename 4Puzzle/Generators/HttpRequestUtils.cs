@@ -9,11 +9,8 @@ namespace _4Puzzle.Generators {
     public class HttpRequestUtils {
 
         public static string Select(string gameType) {
-            var task = Get(gameType);
-            task.Wait(); // Blocks current thread until GetFooAsync task completes
-            // For pedagogical use only: in general, don't do this!
-            string result = task.Result;
-            return task.Result;
+            string result = Task.Run(() => Get(gameType)).Result;
+            return result;
         }
 
         static async Task<string> Get(string gameType) {
