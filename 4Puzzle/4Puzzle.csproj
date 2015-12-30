@@ -91,6 +91,9 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rankings.xaml.cs">
+      <DependentUpon>Rankings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SinglePlayer\SinglePlayerEasy.xaml.cs">
       <DependentUpon>SinglePlayerEasy.xaml</DependentUpon>
     </Compile>
@@ -129,6 +132,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Rankings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SinglePlayer\SinglePlayerEasy.xaml">
       <SubType>Designer</SubType>

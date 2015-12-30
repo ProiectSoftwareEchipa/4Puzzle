@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Shapes;
+using Windows.Graphics.Display;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
@@ -32,6 +33,8 @@ namespace _4Puzzle
             this.InitializeComponent();
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
+
+            DisplayInformation.AutoRotationPreferences = DisplayOrientations.Portrait;
 
             /*Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
 
@@ -81,6 +84,11 @@ namespace _4Puzzle
         private void SinglePlayer_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(SinglePlayerMenu), null);
+        }
+
+        private void Rankings_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Rankings), null);
         }
 
         #endregion Private Event Handlers

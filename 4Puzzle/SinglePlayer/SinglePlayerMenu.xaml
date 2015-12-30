@@ -15,9 +15,9 @@
         <Viewbox Stretch="Fill">
             <Canvas Width="400" Height="640">
                 <TextBlock x:Name="title" HorizontalAlignment="Center" TextWrapping="Wrap" Text="New Game" VerticalAlignment="Top" Height="52" Width="398" FontSize="48" TextAlignment="Center" Canvas.Top="33" Foreground="White"/>
-                <Button x:Name="SinglePlayerEasy" Content="Easy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="103" FontSize="29.333" Click="SinglePlayerEasy_Click" Canvas.Left="80" Canvas.Top="160" Background="#FF248B03" Foreground="Black" BorderBrush="Black"/>
-                <Button x:Name="SinglePlayerMedium" Content="Medium" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="103" FontSize="29.333" Click="SinglePlayerMedium_Click" Canvas.Left="80" Canvas.Top="263" Background="#FF248B03" BorderBrush="Black" Foreground="Black"/>
-                <Button x:Name="SinglePlayerHard" Content="Hard" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="103" FontSize="29.333" Click="SinglePlayerHard_Click" Canvas.Left="80" Canvas.Top="366" Background="#FF248B03" Foreground="Black" BorderBrush="Black"/>
+                <Button x:Name="SinglePlayerEasy" Content="Easy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="103" FontSize="29.333" Click="SinglePlayerEasy_Click" Canvas.Left="80" Canvas.Top="160" Background="#FF7C3A00" Foreground="White" BorderBrush="White"/>
+                <Button x:Name="SinglePlayerMedium" Content="Medium" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="103" FontSize="29.333" Click="SinglePlayerMedium_Click" Canvas.Left="80" Canvas.Top="263" Background="#FF7C3A00" BorderBrush="White" Foreground="White"/>
+                <Button x:Name="SinglePlayerHard" Content="Hard" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="103" FontSize="29.333" Click="SinglePlayerHard_Click" Canvas.Left="80" Canvas.Top="366" Background="#FF7C3A00" Foreground="White" BorderBrush="White"/>
             </Canvas>
         </Viewbox>
     </Grid>

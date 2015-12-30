@@ -470,46 +470,6 @@ namespace _4Puzzle.Generators {
 
         public static void InitialSetupMedium3(Rectangle[,] puzzle, SolidColorBrush[] colors)
         {
-            puzzle[0, 0].Fill = colors[4];
-            puzzle[0, 1].Fill = colors[0];
-            puzzle[0, 2].Fill = colors[1];
-            puzzle[0, 3].Fill = colors[2];
-            puzzle[0, 4].Fill = colors[5];
-            puzzle[0, 5].Fill = colors[3];
-            puzzle[1, 0].Fill = colors[5];
-            puzzle[1, 1].Fill = colors[1];
-            puzzle[1, 2].Fill = colors[2];
-            puzzle[1, 3].Fill = colors[3];
-            puzzle[1, 4].Fill = colors[0];
-            puzzle[1, 5].Fill = colors[4];
-            puzzle[2, 0].Fill = colors[0];
-            puzzle[2, 1].Fill = colors[2];
-            puzzle[2, 2].Fill = colors[6];
-            puzzle[2, 3].Fill = colors[6];
-            puzzle[2, 4].Fill = colors[1];
-            puzzle[2, 5].Fill = colors[5];
-            puzzle[3, 0].Fill = colors[1];
-            puzzle[3, 1].Fill = colors[3];
-            puzzle[3, 2].Fill = colors[6];
-            puzzle[3, 3].Fill = colors[6];
-            puzzle[3, 4].Fill = colors[2];
-            puzzle[3, 5].Fill = colors[0];
-            puzzle[4, 0].Fill = colors[2];
-            puzzle[4, 1].Fill = colors[4];
-            puzzle[4, 2].Fill = colors[5];
-            puzzle[4, 3].Fill = colors[0];
-            puzzle[4, 4].Fill = colors[3];
-            puzzle[4, 5].Fill = colors[1];
-            puzzle[5, 0].Fill = colors[3];
-            puzzle[5, 1].Fill = colors[5];
-            puzzle[5, 2].Fill = colors[0];
-            puzzle[5, 3].Fill = colors[1];
-            puzzle[5, 4].Fill = colors[4];
-            puzzle[5, 5].Fill = colors[2];
-        }
-
-        public static void InitialSetupMedium4(Rectangle[,] puzzle, SolidColorBrush[] colors)
-        {
             puzzle[0, 0].Fill = colors[2];
             puzzle[0, 1].Fill = colors[0];
             puzzle[0, 2].Fill = colors[5];
@@ -545,6 +505,46 @@ namespace _4Puzzle.Generators {
             puzzle[5, 2].Fill = colors[3];
             puzzle[5, 3].Fill = colors[1];
             puzzle[5, 4].Fill = colors[5];
+            puzzle[5, 5].Fill = colors[2];
+        }
+
+        public static void InitialSetupMedium4(Rectangle[,] puzzle, SolidColorBrush[] colors)
+        {
+            puzzle[0, 0].Fill = colors[4];
+            puzzle[0, 1].Fill = colors[0];
+            puzzle[0, 2].Fill = colors[1];
+            puzzle[0, 3].Fill = colors[2];
+            puzzle[0, 4].Fill = colors[5];
+            puzzle[0, 5].Fill = colors[3];
+            puzzle[1, 0].Fill = colors[5];
+            puzzle[1, 1].Fill = colors[1];
+            puzzle[1, 2].Fill = colors[2];
+            puzzle[1, 3].Fill = colors[3];
+            puzzle[1, 4].Fill = colors[0];
+            puzzle[1, 5].Fill = colors[4];
+            puzzle[2, 0].Fill = colors[0];
+            puzzle[2, 1].Fill = colors[2];
+            puzzle[2, 2].Fill = colors[6];
+            puzzle[2, 3].Fill = colors[6];
+            puzzle[2, 4].Fill = colors[1];
+            puzzle[2, 5].Fill = colors[5];
+            puzzle[3, 0].Fill = colors[1];
+            puzzle[3, 1].Fill = colors[3];
+            puzzle[3, 2].Fill = colors[6];
+            puzzle[3, 3].Fill = colors[6];
+            puzzle[3, 4].Fill = colors[2];
+            puzzle[3, 5].Fill = colors[0];
+            puzzle[4, 0].Fill = colors[2];
+            puzzle[4, 1].Fill = colors[4];
+            puzzle[4, 2].Fill = colors[5];
+            puzzle[4, 3].Fill = colors[0];
+            puzzle[4, 4].Fill = colors[3];
+            puzzle[4, 5].Fill = colors[1];
+            puzzle[5, 0].Fill = colors[3];
+            puzzle[5, 1].Fill = colors[5];
+            puzzle[5, 2].Fill = colors[0];
+            puzzle[5, 3].Fill = colors[1];
+            puzzle[5, 4].Fill = colors[4];
             puzzle[5, 5].Fill = colors[2];
         }
 

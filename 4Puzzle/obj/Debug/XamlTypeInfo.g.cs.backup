@@ -124,25 +124,27 @@ namespace _4Puzzle._Puzzle_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[8];
+            _typeNameTable = new string[9];
             _typeNameTable[0] = "_4Puzzle.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "_4Puzzle.SinglePlayerEasy";
-            _typeNameTable[4] = "_4Puzzle.SinglePlayerHard";
-            _typeNameTable[5] = "_4Puzzle.SinglePlayerMedium";
-            _typeNameTable[6] = "_4Puzzle.SinglePlayerMenu";
-            _typeNameTable[7] = "_4Puzzle.Tutorial";
+            _typeNameTable[3] = "_4Puzzle.Rankings";
+            _typeNameTable[4] = "_4Puzzle.SinglePlayerEasy";
+            _typeNameTable[5] = "_4Puzzle.SinglePlayerHard";
+            _typeNameTable[6] = "_4Puzzle.SinglePlayerMedium";
+            _typeNameTable[7] = "_4Puzzle.SinglePlayerMenu";
+            _typeNameTable[8] = "_4Puzzle.Tutorial";
 
-            _typeTable = new global::System.Type[8];
+            _typeTable = new global::System.Type[9];
             _typeTable[0] = typeof(global::_4Puzzle.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::_4Puzzle.SinglePlayerEasy);
-            _typeTable[4] = typeof(global::_4Puzzle.SinglePlayerHard);
-            _typeTable[5] = typeof(global::_4Puzzle.SinglePlayerMedium);
-            _typeTable[6] = typeof(global::_4Puzzle.SinglePlayerMenu);
-            _typeTable[7] = typeof(global::_4Puzzle.Tutorial);
+            _typeTable[3] = typeof(global::_4Puzzle.Rankings);
+            _typeTable[4] = typeof(global::_4Puzzle.SinglePlayerEasy);
+            _typeTable[5] = typeof(global::_4Puzzle.SinglePlayerHard);
+            _typeTable[6] = typeof(global::_4Puzzle.SinglePlayerMedium);
+            _typeTable[7] = typeof(global::_4Puzzle.SinglePlayerMenu);
+            _typeTable[8] = typeof(global::_4Puzzle.Tutorial);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -178,11 +180,12 @@ namespace _4Puzzle._Puzzle_XamlTypeInfo
         }
 
         private object Activate_0_MainPage() { return new global::_4Puzzle.MainPage(); }
-        private object Activate_3_SinglePlayerEasy() { return new global::_4Puzzle.SinglePlayerEasy(); }
-        private object Activate_4_SinglePlayerHard() { return new global::_4Puzzle.SinglePlayerHard(); }
-        private object Activate_5_SinglePlayerMedium() { return new global::_4Puzzle.SinglePlayerMedium(); }
-        private object Activate_6_SinglePlayerMenu() { return new global::_4Puzzle.SinglePlayerMenu(); }
-        private object Activate_7_Tutorial() { return new global::_4Puzzle.Tutorial(); }
+        private object Activate_3_Rankings() { return new global::_4Puzzle.Rankings(); }
+        private object Activate_4_SinglePlayerEasy() { return new global::_4Puzzle.SinglePlayerEasy(); }
+        private object Activate_5_SinglePlayerHard() { return new global::_4Puzzle.SinglePlayerHard(); }
+        private object Activate_6_SinglePlayerMedium() { return new global::_4Puzzle.SinglePlayerMedium(); }
+        private object Activate_7_SinglePlayerMenu() { return new global::_4Puzzle.SinglePlayerMenu(); }
+        private object Activate_8_Tutorial() { return new global::_4Puzzle.Tutorial(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -209,37 +212,44 @@ namespace _4Puzzle._Puzzle_XamlTypeInfo
                 xamlType = new global::_4Puzzle._Puzzle_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  _4Puzzle.SinglePlayerEasy
+            case 3:   //  _4Puzzle.Rankings
                 userType = new global::_4Puzzle._Puzzle_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_SinglePlayerEasy;
+                userType.Activator = Activate_3_Rankings;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 4:   //  _4Puzzle.SinglePlayerHard
+            case 4:   //  _4Puzzle.SinglePlayerEasy
                 userType = new global::_4Puzzle._Puzzle_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_4_SinglePlayerHard;
+                userType.Activator = Activate_4_SinglePlayerEasy;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 5:   //  _4Puzzle.SinglePlayerMedium
+            case 5:   //  _4Puzzle.SinglePlayerHard
                 userType = new global::_4Puzzle._Puzzle_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_5_SinglePlayerMedium;
+                userType.Activator = Activate_5_SinglePlayerHard;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 6:   //  _4Puzzle.SinglePlayerMenu
+            case 6:   //  _4Puzzle.SinglePlayerMedium
                 userType = new global::_4Puzzle._Puzzle_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_6_SinglePlayerMenu;
+                userType.Activator = Activate_6_SinglePlayerMedium;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 7:   //  _4Puzzle.Tutorial
+            case 7:   //  _4Puzzle.SinglePlayerMenu
                 userType = new global::_4Puzzle._Puzzle_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_7_Tutorial;
+                userType.Activator = Activate_7_SinglePlayerMenu;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 8:   //  _4Puzzle.Tutorial
+                userType = new global::_4Puzzle._Puzzle_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_8_Tutorial;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

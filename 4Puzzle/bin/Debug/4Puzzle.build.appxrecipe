@@ -57,6 +57,9 @@
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\Rankings.xbf">
+      <PackagePath>Rankings.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\SinglePlayer\SinglePlayerEasy.xbf">
       <PackagePath>SinglePlayer\SinglePlayerEasy.xbf</PackagePath>
     </AppxPackagedFile>
