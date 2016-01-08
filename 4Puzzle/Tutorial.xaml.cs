@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Shapes;
 
@@ -34,15 +35,15 @@ namespace _4Puzzle
 
         #region Private Members
 
-        private SolidColorBrush solidColorBrushYellow;
+        private ImageBrush imageBrushFig1;
 
-        private SolidColorBrush solidColorBrushRed;
+        private ImageBrush imageBrushFig2;
 
-        private SolidColorBrush solidColorBrushBlue;
+        private ImageBrush imageBrushFig3;
 
-        private SolidColorBrush solidColorBrushPurple;
+        private ImageBrush imageBrushFig4;
 
-        private SolidColorBrush solidColorBrushBlank;
+        private ImageBrush imageBrushBlank;
 
         private Rectangle[,] rectangleMatrix;
 
@@ -66,15 +67,19 @@ namespace _4Puzzle
 
             this.rectangleMatrix = new Rectangle[gameSize, gameSize];
 
-            this.solidColorBrushYellow = new SolidColorBrush(Color.FromArgb(255, 255, 255, 0));
+            this.imageBrushFig1 = new ImageBrush();
+            imageBrushFig1.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/fig1.png"));
 
-            this.solidColorBrushRed = new SolidColorBrush(Color.FromArgb(120, 255, 0, 0));
+            this.imageBrushFig2 = new ImageBrush();
+            imageBrushFig2.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/fig2.png"));
 
-            this.solidColorBrushBlue = new SolidColorBrush(Color.FromArgb(120, 0, 0, 255));
+            this.imageBrushFig3 = new ImageBrush();
+            imageBrushFig3.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/fig3.png"));
 
-            this.solidColorBrushPurple = new SolidColorBrush(Color.FromArgb(255, 125, 0, 255));
+            this.imageBrushFig4 = new ImageBrush();
+            imageBrushFig4.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/fig4.png"));
 
-            this.solidColorBrushBlank = new SolidColorBrush(Color.FromArgb(255, 101, 67, 33));
+            this.imageBrushBlank = new ImageBrush();
 
             this.blankTilePositions = new Tile[4];
 
@@ -82,7 +87,7 @@ namespace _4Puzzle
 
             InitializeMatrix();
 
-            InitializeTutorialColors();
+            InitializeTutorialImages();
         }
 
         #endregion Constructors
@@ -164,57 +169,24 @@ namespace _4Puzzle
         /// <summary>
         /// Initializarea culorilor pentru versiunea de tutorial
         /// </summary>
-        private void InitializeTutorialColors()
+        private void InitializeTutorialImages()
         {
-            /*rectangleMatrix[0, 0].Fill = solidColorBrushBlank;
-            rectangleMatrix[0, 0].StrokeThickness = 0;
-            rectangleMatrix[0, 1].Fill = solidColorBrushRed;
-            rectangleMatrix[0, 2].Fill = solidColorBrushBlue;
-            rectangleMatrix[0, 3].Fill = solidColorBrushRed;
-            rectangleMatrix[1, 0].Fill = solidColorBrushYellow;
-            rectangleMatrix[1, 1].Fill = solidColorBrushPurple;
-            rectangleMatrix[1, 2].Fill = solidColorBrushBlue;
-            rectangleMatrix[1, 3].Fill = solidColorBrushBlank;
-            rectangleMatrix[1, 3].StrokeThickness = 0;
-            rectangleMatrix[2, 0].Fill = solidColorBrushRed;
-            rectangleMatrix[2, 1].Fill = solidColorBrushYellow;
-            rectangleMatrix[2, 2].Fill = solidColorBrushYellow;
-            rectangleMatrix[2, 3].Fill = solidColorBrushPurple;
-            rectangleMatrix[3, 0].Fill = solidColorBrushBlank;
-            rectangleMatrix[3, 0].StrokeThickness = 0;
-            rectangleMatrix[3, 1].Fill = solidColorBrushBlue;
-            rectangleMatrix[3, 2].Fill = solidColorBrushBlank;
-            rectangleMatrix[3, 2].StrokeThickness = 0;
-            rectangleMatrix[3, 3].Fill = solidColorBrushBlue;
-            blankTilePositions[0].i = 0;
-            blankTilePositions[0].j = 0;
-            blankTilePositions[1].i = 1;
-            blankTilePositions[1].j = 3;
-            blankTilePositions[2].i = 3;
-            blankTilePositions[2].j = 0;
-            blankTilePositions[3].i = 3;
-            blankTilePositions[3].j = 2;*/
-
-            rectangleMatrix[0, 0].Fill = solidColorBrushBlue;
-            rectangleMatrix[0, 1].Fill = solidColorBrushRed;
-            rectangleMatrix[0, 2].Fill = solidColorBrushRed;
-            rectangleMatrix[0, 3].Fill = solidColorBrushYellow;
-            rectangleMatrix[1, 0].Fill = solidColorBrushBlank;
-            rectangleMatrix[1, 0].StrokeThickness = 0;
-            rectangleMatrix[1, 1].Fill = solidColorBrushBlue;
-            rectangleMatrix[1, 2].Fill = solidColorBrushPurple;
-            rectangleMatrix[1, 3].Fill = solidColorBrushBlank;
-            rectangleMatrix[1, 3].StrokeThickness = 0;
-            rectangleMatrix[2, 0].Fill = solidColorBrushBlank;
-            rectangleMatrix[2, 0].StrokeThickness = 0;
-            rectangleMatrix[2, 1].Fill = solidColorBrushRed;
-            rectangleMatrix[2, 2].Fill = solidColorBrushYellow;
-            rectangleMatrix[2, 3].Fill = solidColorBrushBlue;
-            rectangleMatrix[3, 0].Fill = solidColorBrushYellow;
-            rectangleMatrix[3, 1].Fill = solidColorBrushPurple;
-            rectangleMatrix[3, 2].Fill = solidColorBrushBlank;
-            rectangleMatrix[3, 2].StrokeThickness = 0;
-            rectangleMatrix[3, 3].Fill = solidColorBrushBlue;
+            rectangleMatrix[0, 0].Fill = imageBrushFig3;
+            rectangleMatrix[0, 1].Fill = imageBrushFig1;
+            rectangleMatrix[0, 2].Fill = imageBrushFig1;
+            rectangleMatrix[0, 3].Fill = imageBrushFig2;
+            rectangleMatrix[1, 0].Fill = imageBrushBlank;
+            rectangleMatrix[1, 1].Fill = imageBrushFig3;
+            rectangleMatrix[1, 2].Fill = imageBrushFig4;
+            rectangleMatrix[1, 3].Fill = imageBrushBlank;
+            rectangleMatrix[2, 0].Fill = imageBrushBlank;
+            rectangleMatrix[2, 1].Fill = imageBrushFig1;
+            rectangleMatrix[2, 2].Fill = imageBrushFig2;
+            rectangleMatrix[2, 3].Fill = imageBrushFig3;
+            rectangleMatrix[3, 0].Fill = imageBrushFig2;
+            rectangleMatrix[3, 1].Fill = imageBrushFig4;
+            rectangleMatrix[3, 2].Fill = imageBrushBlank;
+            rectangleMatrix[3, 3].Fill = imageBrushFig3;
             blankTilePositions[0].i = 1;
             blankTilePositions[0].j = 0;
             blankTilePositions[1].i = 1;
@@ -275,7 +247,7 @@ namespace _4Puzzle
 
             int areaNumber = GetSelectedAreaNumber(i, j);
 
-            SwapRectanglesColors(rectangleMatrix[i, j], rectangleMatrix[blankTilePositions[areaNumber].i, blankTilePositions[areaNumber].j]);
+            SwapRectanglesImages(rectangleMatrix[i, j], rectangleMatrix[blankTilePositions[areaNumber].i, blankTilePositions[areaNumber].j]);
             blankTilePositions[areaNumber].i = i;
             blankTilePositions[areaNumber].j = j;
 
@@ -328,14 +300,12 @@ namespace _4Puzzle
         /// <summary>
         /// Metoda ce inverseaza culorile intre 2 rectangle-uri
         /// </summary>
-        /// <param name="colorRectangle">Rectangle-ul colorat</param>
+        /// <param name="imagesRectangle">Rectangle-ul colorat</param>
         /// <param name="blankRectangle">Rectangle-ul alb</param>
-        private void SwapRectanglesColors(Rectangle colorRectangle, Rectangle blankRectangle)
+        private void SwapRectanglesImages(Rectangle imagesRectangle, Rectangle blankRectangle)
         {
-            blankRectangle.Fill = colorRectangle.Fill;
-            blankRectangle.StrokeThickness = 2;
-            colorRectangle.Fill = solidColorBrushBlank;
-            colorRectangle.StrokeThickness = 0;
+            blankRectangle.Fill = imagesRectangle.Fill;
+            imagesRectangle.Fill = imageBrushBlank;
         }
 
         private bool IsPositionInTheCenter(int position)

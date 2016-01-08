@@ -10,14 +10,35 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Images/4Puzzle Background.jpg"/>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Images/background.png"/>
         </Grid.Background>
         <Viewbox Stretch="Fill">
             <Canvas Width="400" Height="640">
-                <TextBlock x:Name="title" HorizontalAlignment="Center" TextWrapping="Wrap" Text="4Puzzle" VerticalAlignment="Top" Height="52" Width="398" FontSize="48" TextAlignment="Center" Canvas.Top="33" Foreground="White" SelectionHighlightColor="White"/>
-                <Button x:ConnectionId='1' x:Name="Tutorial" Content="Tutorial" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="103" FontSize="29.333"                        Tag="/Tutorial.xaml" Canvas.Left="80" Canvas.Top="159" Background="#FF7C3A00" BorderBrush="White" Foreground="White"/>
-                <Button x:ConnectionId='2' x:Name="SinglePlayer" Content="New Game" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="103" FontSize="29.333"                            Canvas.Left="80" Canvas.Top="267" Background="#FF7C3A00" BorderBrush="White" Foreground="White"/>
-                <Button x:ConnectionId='3' x:Name="Rankings" Content="Rankings" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="103" FontSize="29.333" Canvas.Left="80" Canvas.Top="373" Background="#FF7C3A00" BorderBrush="White" Foreground="White"                       />
+                <Button x:ConnectionId='1' x:Name="Tutorial" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="316" Height="88" FontSize="29.333"                        Tag="/Tutorial.xaml" Canvas.Left="42" Canvas.Top="409" Foreground="White">
+                    <Button.BorderBrush>
+                        <ImageBrush Stretch="Fill"/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <ImageBrush Stretch="Fill" ImageSource="Images/button_Tutorial.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:ConnectionId='2' x:Name="SinglePlayer" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="316" Height="89" FontSize="29.333"                            Canvas.Left="42" Canvas.Top="327" Foreground="White">
+                    <Button.BorderBrush>
+                        <ImageBrush Stretch="Fill"/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <ImageBrush Stretch="Fill" ImageSource="Images/button_NewGame.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:ConnectionId='3' x:Name="Rankings" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="316" Height="88" FontSize="29.333" Canvas.Left="42" Canvas.Top="491" Foreground="White"                       >
+                    <Button.BorderBrush>
+                        <ImageBrush Stretch="Fill"/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <ImageBrush Stretch="Fill" ImageSource="Images/button_Rankings.png"/>
+                    </Button.Background>
+                </Button>
+                <Image x:Name="imageLogo" Height="338" Canvas.Left="10" Width="380" Source="Images/logo.png" Canvas.Top="28" />
             </Canvas>
         </Viewbox>
     </Grid>

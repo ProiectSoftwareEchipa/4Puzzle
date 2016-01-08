@@ -36,7 +36,7 @@ namespace _4Puzzle
 
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Portrait;
 
-            /*Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
 
             localSettings.Values["SinglePlayerEasyWins"] = 0;
 
@@ -48,7 +48,7 @@ namespace _4Puzzle
 
             localSettings.Values["SinglePlayerHardWins"] = 0;
 
-            localSettings.Values["SinglePlayerHardBestTime"] = int.MaxValue;*/
+            localSettings.Values["SinglePlayerHardBestTime"] = int.MaxValue;
         }
 
         #endregion Constructors

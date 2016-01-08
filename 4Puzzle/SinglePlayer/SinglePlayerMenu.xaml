@@ -10,14 +10,35 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Images/4Puzzle Background.jpg"/>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Images/background.png"/>
         </Grid.Background>
         <Viewbox Stretch="Fill">
             <Canvas Width="400" Height="640">
-                <TextBlock x:Name="title" HorizontalAlignment="Center" TextWrapping="Wrap" Text="New Game" VerticalAlignment="Top" Height="52" Width="398" FontSize="48" TextAlignment="Center" Canvas.Top="33" Foreground="White"/>
-                <Button x:Name="SinglePlayerEasy" Content="Easy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="103" FontSize="29.333" Click="SinglePlayerEasy_Click" Canvas.Left="80" Canvas.Top="160" Background="#FF7C3A00" Foreground="White" BorderBrush="White"/>
-                <Button x:Name="SinglePlayerMedium" Content="Medium" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="103" FontSize="29.333" Click="SinglePlayerMedium_Click" Canvas.Left="80" Canvas.Top="263" Background="#FF7C3A00" BorderBrush="White" Foreground="White"/>
-                <Button x:Name="SinglePlayerHard" Content="Hard" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="103" FontSize="29.333" Click="SinglePlayerHard_Click" Canvas.Left="80" Canvas.Top="366" Background="#FF7C3A00" Foreground="White" BorderBrush="White"/>
+                <Button x:Name="SinglePlayerEasy" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="316" Height="89" FontSize="29.333" Click="SinglePlayerEasy_Click" Canvas.Left="42" Canvas.Top="327" Foreground="White">
+                    <Button.BorderBrush>
+                        <ImageBrush Stretch="Fill"/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Images/button_Easy.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="SinglePlayerMedium" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="316" Height="89" FontSize="29.333" Click="SinglePlayerMedium_Click" Canvas.Left="42" Canvas.Top="409" Foreground="White">
+                    <Button.BorderBrush>
+                        <ImageBrush Stretch="Fill"/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Images/button_Medium.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="SinglePlayerHard" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="316" Height="89" FontSize="29.333" Click="SinglePlayerHard_Click" Canvas.Left="42" Canvas.Top="491" Foreground="White">
+                    <Button.BorderBrush>
+                        <ImageBrush Stretch="Fill"/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Images/button_Hard.png"/>
+                    </Button.Background>
+                </Button>
+                <Image x:Name="imageLogo" Height="338" Canvas.Left="10" Width="380" Source="ms-appx:///Images/logo.png" Canvas.Top="28" />
             </Canvas>
         </Viewbox>
     </Grid>

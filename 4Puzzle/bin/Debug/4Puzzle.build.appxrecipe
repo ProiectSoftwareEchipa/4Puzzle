@@ -45,6 +45,66 @@
       <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\background.png">
+      <PackagePath>Images\background.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\back_game.png">
+      <PackagePath>Images\back_game.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\button_Easy.png">
+      <PackagePath>Images\button_Easy.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\button_Hard.png">
+      <PackagePath>Images\button_Hard.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\button_Medium.png">
+      <PackagePath>Images\button_Medium.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\button_NewGame.png">
+      <PackagePath>Images\button_NewGame.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\button_Rankings.png">
+      <PackagePath>Images\button_Rankings.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\button_Tutorial.png">
+      <PackagePath>Images\button_Tutorial.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\easy_game.png">
+      <PackagePath>Images\easy_game.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig1.png">
+      <PackagePath>Images\fig1.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig2.png">
+      <PackagePath>Images\fig2.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig3.png">
+      <PackagePath>Images\fig3.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig4.png">
+      <PackagePath>Images\fig4.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig5.png">
+      <PackagePath>Images\fig5.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig6.png">
+      <PackagePath>Images\fig6.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig7.png">
+      <PackagePath>Images\fig7.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig8.png">
+      <PackagePath>Images\fig8.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\hard_game.png">
+      <PackagePath>Images\hard_game.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\logo.png">
+      <PackagePath>Images\logo.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\medium_game.png">
+      <PackagePath>Images\medium_game.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\4Puzzle Background.jpg">
       <PackagePath>Images\4Puzzle Background.jpg</PackagePath>
     </AppxPackagedFile>

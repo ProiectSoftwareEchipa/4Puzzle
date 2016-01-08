@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Shapes;
 
@@ -34,23 +35,23 @@ namespace _4Puzzle
 
         #region Private Members
 
-        private SolidColorBrush solidColorBrushYellow;
+        private ImageBrush imageBrushFig1;
 
-        private SolidColorBrush solidColorBrushRed;
+        private ImageBrush imageBrushFig2;
 
-        private SolidColorBrush solidColorBrushBlue;
+        private ImageBrush imageBrushFig3;
 
-        private SolidColorBrush solidColorBrushPurple;
+        private ImageBrush imageBrushFig4;
 
-        private SolidColorBrush solidColorBrushBlank;
+        private ImageBrush imageBrushFig5;
 
-        private SolidColorBrush solidColorBrushOrange;
+        private ImageBrush imageBrushFig6;
 
-        private SolidColorBrush solidColorBrushGreen;
+        private ImageBrush imageBrushFig7;
 
-        private SolidColorBrush solidColorBrushBrown;
+        private ImageBrush imageBrushFig8;
 
-        private SolidColorBrush solidColorBrushPink;
+        private ImageBrush imageBrushBlank;
 
         private Rectangle[,] rectangleMatrix;
 
@@ -86,27 +87,43 @@ namespace _4Puzzle
 
             this.rectangleMatrix = new Rectangle[gameSize, gameSize];
 
-            this.solidColorBrushYellow = new SolidColorBrush(Color.FromArgb(255, 255, 255, 0));
+            this.imageBrushFig1 = new ImageBrush();
+            imageBrushFig1.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/fig1.png"));
 
-            this.solidColorBrushRed = new SolidColorBrush(Color.FromArgb(120, 255, 0, 0));
+            this.imageBrushFig2 = new ImageBrush();
+            imageBrushFig2.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/fig2.png"));
 
-            this.solidColorBrushBlue = new SolidColorBrush(Color.FromArgb(120, 0, 0, 255));
+            this.imageBrushFig3 = new ImageBrush();
+            imageBrushFig3.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/fig3.png"));
 
-            this.solidColorBrushPurple = new SolidColorBrush(Color.FromArgb(255, 125, 0, 255));
+            this.imageBrushFig4 = new ImageBrush();
+            imageBrushFig4.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/fig4.png"));
 
-            this.solidColorBrushBlank = new SolidColorBrush(Color.FromArgb(255, 101, 67, 33));
+            this.imageBrushFig5 = new ImageBrush();
+            imageBrushFig5.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/fig5.png"));
 
-            this.solidColorBrushOrange = new SolidColorBrush(Color.FromArgb(255, 255, 125, 0));
+            this.imageBrushFig6 = new ImageBrush();
+            imageBrushFig6.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/fig6.png"));
 
-            this.solidColorBrushGreen = new SolidColorBrush(Color.FromArgb(255, 0, 255, 0));
+            this.imageBrushFig7 = new ImageBrush();
+            imageBrushFig7.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/fig7.png"));
 
-            this.solidColorBrushBrown = new SolidColorBrush(Color.FromArgb(153, 76, 0, 0));
+            this.imageBrushFig8 = new ImageBrush();
+            imageBrushFig8.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/fig8.png"));
 
-            this.solidColorBrushPink = new SolidColorBrush(Color.FromArgb(255, 128, 0, 128));
+            this.imageBrushBlank = new ImageBrush();
 
             this.NavigationCacheMode = NavigationCacheMode.Disabled;
 
             this.blankTilePositions = new _4Puzzle.SinglePlayerEasy.Tile[4];
+
+            //Popup elemets
+            PopupButtonCancel.Visibility = Visibility.Collapsed;
+            PopupButtonOk.Visibility = Visibility.Collapsed;
+            PopupRectangle.Visibility = Visibility.Collapsed;
+            PopupTextBlockMessage.Visibility = Visibility.Collapsed;
+            PopupTextBlockVictory.Visibility = Visibility.Collapsed;
+            PopupTextBoxUsername.Visibility = Visibility.Collapsed;
 
             LoadStoredData();
 
@@ -114,7 +131,7 @@ namespace _4Puzzle
 
             InitializeMatrix();
 
-            InitializeColors();
+            InitializeImages();
         }
 
         #endregion Constructors
@@ -134,6 +151,29 @@ namespace _4Puzzle
         #endregion Overrides
 
         #region Event Handlers
+
+        private void buttonPopupCancel_Click(object sender, RoutedEventArgs e)
+        {
+            PopupButtonCancel.Visibility = Visibility.Collapsed;
+            PopupButtonOk.Visibility = Visibility.Collapsed;
+            PopupRectangle.Visibility = Visibility.Collapsed;
+            PopupTextBlockMessage.Visibility = Visibility.Collapsed;
+            PopupTextBlockVictory.Visibility = Visibility.Collapsed;
+            PopupTextBoxUsername.Visibility = Visibility.Collapsed;
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
+        }
+
+        private void buttonPopupOk_Click(object sender, RoutedEventArgs e)
+        {
+            if (singlePlayerHardTimer <= singlePlayerHardBestTime && singlePlayerHardWins > 3)
+            {
+                HttpRequestUtils.Insert(PopupTextBoxUsername.Text, "SinglePlayerHard", singlePlayerHardTimer.ToString());
+            }
+            this.Frame.Navigate(typeof(SinglePlayerHard), null);
+        }
 
         private void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
         {
@@ -157,13 +197,28 @@ namespace _4Puzzle
 
             if (CheckEndGame)
             {
-                validationBlock.Text = "Victory!";
                 dispatcherTimer.Stop();
 
                 singlePlayerHardWins++;
-                if (singlePlayerHardTimer < singlePlayerHardBestTime)
+                if (singlePlayerHardTimer < singlePlayerHardBestTime && singlePlayerHardWins > 3)
                 {
+                    PopupButtonCancel.Visibility = Visibility.Visible;
+                    PopupButtonOk.Visibility = Visibility.Visible;
+                    PopupRectangle.Visibility = Visibility.Visible;
+                    PopupTextBlockMessage.Visibility = Visibility.Visible;
+                    PopupTextBlockVictory.Visibility = Visibility.Visible;
+                    PopupTextBlockMessage.Text = "New highscore!";
+                    PopupTextBoxUsername.Visibility = Visibility.Visible;
                     singlePlayerHardBestTime = singlePlayerHardTimer;
+                }
+                else
+                {
+                    PopupButtonCancel.Visibility = Visibility.Visible;
+                    PopupButtonOk.Visibility = Visibility.Visible;
+                    PopupRectangle.Visibility = Visibility.Visible;
+                    PopupTextBlockMessage.Visibility = Visibility.Visible;
+                    PopupTextBlockVictory.Visibility = Visibility.Visible;
+                    PopupTextBlockMessage.Text = "Try again?";
                 }
 
                 SaveStoredData();
@@ -185,6 +240,13 @@ namespace _4Puzzle
             singlePlayerHardTimer++;
 
             singlePlayerHardTimeText.Text = String.Format("{0}:{1}", (singlePlayerHardTimer / 60).ToString("00"), (singlePlayerHardTimer % 60).ToString("00"));
+        }
+
+        private void PopupTextBoxUsername_GotFocus(object sender, RoutedEventArgs e)
+        {
+           TextBox textBox = (TextBox)sender;
+            textBox.Text = String.Empty;
+            textBox.GotFocus -= PopupTextBoxUsername_GotFocus;
         }
 
         #endregion Event Handlers
@@ -329,14 +391,11 @@ namespace _4Puzzle
         /// <summary>
         /// Initializarea culorilor pentru versiunea de tutorial
         /// </summary>
-        private void InitializeColors()
+        private void InitializeImages()
         {
-            SolidColorBrush[] colors = new SolidColorBrush[] { solidColorBrushBrown, solidColorBrushPink, solidColorBrushRed, solidColorBrushBlue, solidColorBrushYellow, solidColorBrushPurple, solidColorBrushGreen, solidColorBrushOrange };
+            ImageBrush[] images = new ImageBrush[] { imageBrushFig1, imageBrushFig2, imageBrushFig3, imageBrushFig4, imageBrushFig5, imageBrushFig6, imageBrushFig7, imageBrushFig8 };
 
-            size4Easy.Generate(ref rectangleMatrix, ref blankTilePositions, gameSize, colors, 3);
-            for (int i = 0; i < 4; i++) {
-                rectangleMatrix[blankTilePositions[i].i, blankTilePositions[i].j].StrokeThickness = 0;
-            }
+            size4Easy.Generate(ref rectangleMatrix, ref blankTilePositions, gameSize, images, 3);
         }
 
         /// <summary>
@@ -389,7 +448,7 @@ namespace _4Puzzle
 
             int areaNumber = GetSelectedAreaNumber(i, j);
 
-            SwapRectanglesColors(rectangleMatrix[i, j], rectangleMatrix[blankTilePositions[areaNumber].i, blankTilePositions[areaNumber].j]);
+            SwapRectanglesImages(rectangleMatrix[i, j], rectangleMatrix[blankTilePositions[areaNumber].i, blankTilePositions[areaNumber].j]);
             blankTilePositions[areaNumber].i = i;
             blankTilePositions[areaNumber].j = j;
 
@@ -442,14 +501,12 @@ namespace _4Puzzle
         /// <summary>
         /// Metoda ce inverseaza culorile intre 2 rectangle-uri
         /// </summary>
-        /// <param name="colorRectangle">Rectangle-ul colorat</param>
+        /// <param name="imageRectangle">Rectangle-ul colorat</param>
         /// <param name="whiteRectangle">Rectangle-ul alb</param>
-        private void SwapRectanglesColors(Rectangle colorRectangle, Rectangle blankRectangle)
+        private void SwapRectanglesImages(Rectangle imageRectangle, Rectangle blankRectangle)
         {
-            blankRectangle.Fill = colorRectangle.Fill;
-            blankRectangle.StrokeThickness = 2;
-            colorRectangle.Fill = solidColorBrushBlank;
-            colorRectangle.StrokeThickness = 0;
+            blankRectangle.Fill = imageRectangle.Fill;
+            imageRectangle.Fill = imageBrushBlank;
         }
 
         private bool IsPositionInTheCenter(int position)
