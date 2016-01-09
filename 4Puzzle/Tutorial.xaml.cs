@@ -88,6 +88,8 @@ namespace _4Puzzle
             InitializeMatrix();
 
             InitializeTutorialImages();
+
+            _4puzzleUtils.TrySendOfflineScore();
         }
 
         #endregion Constructors

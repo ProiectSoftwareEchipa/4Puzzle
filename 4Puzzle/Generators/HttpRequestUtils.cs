@@ -25,7 +25,7 @@ namespace _4Puzzle.Generators {
                 //Create Client 
                 var client = new HttpClient();
 
-                var uri = new Uri(getHighScoresUrl);
+                var uri = new Uri(url);
 
                 //Call. Get response by Async
                 var Response = await client.GetAsync(uri);
