@@ -18,6 +18,7 @@ namespace _4Puzzle.Generators {
             public string Score { get; set; }
             public string DateTime { get; set; }
             public string GameType { get; set; }
+            public string PhoneGuid { get; set; }
         }
 
         public static string FilterName(string name) {
@@ -47,7 +48,8 @@ namespace _4Puzzle.Generators {
                 Name = FilterName(name),
                 Score = score,
                 GameType = gameType,
-                DateTime = DateTime.Now.ToString()
+                DateTime = DateTime.Now.ToString(),
+                PhoneGuid = new EasClientDeviceInformation().Id.ToString()
             });
 
             SaveScoreList(scoreList);
@@ -59,7 +61,7 @@ namespace _4Puzzle.Generators {
 
             List<Score> scoreList = GetScoreList();
             foreach (Score score in scoreList) {
-                HttpRequestUtils.InsertStatistics(score.Score, score.GameType, score.DateTime);
+                HttpRequestUtils.InsertStatistics(score.PhoneGuid, score.GameType, score.DateTime);
                 if (score.Name != null)
                     HttpRequestUtils.InsertHighScore(score.Name.ToString(), score.GameType, score.Score);
             }

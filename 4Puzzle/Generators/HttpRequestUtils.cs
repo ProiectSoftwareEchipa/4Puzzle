@@ -50,8 +50,8 @@ namespace _4Puzzle.Generators {
             myRequest.BeginGetRequestStream(new AsyncCallback(GetRequestStreamCallbackHighScore), Tuple.Create(myRequest, values));
         }
 
-        public static async void InsertStatistics(string playerScore, string gameType, string dateTime) {
-            string[] values = new string[] { dateTime, gameType, playerScore };
+        public static async void InsertStatistics(string phoneGuid, string gameType, string dateTime) {
+            string[] values = new string[] { dateTime, gameType, phoneGuid };
             HttpWebRequest myRequest = CreateHttpWebRequest(postStatsUrl);
             myRequest.BeginGetRequestStream(new AsyncCallback(GetRequestStreamCallbackStats), Tuple.Create(myRequest, values));
         }
@@ -82,14 +82,14 @@ namespace _4Puzzle.Generators {
             Tuple<HttpWebRequest, string[]> state = (Tuple<HttpWebRequest, string[]>)callbackResult.AsyncState;
             string dateTime = state.Item2[0];
             string gameType = state.Item2[1];
-            string playerScore = state.Item2[2];
+            string phoneGuid = state.Item2[2];
 
             HttpWebRequest myRequest = state.Item1;
             // End the stream request operation
             Stream postStream = myRequest.EndGetRequestStream(callbackResult);
 
             // Create the post data
-            string postData = "DateTime=" + dateTime + "&GameType=" + gameType + "&PlayerScore=" + playerScore;
+            string postData = "DateTime=" + dateTime + "&GameType=" + gameType + "&PhoneGuid=" + phoneGuid;
             byte[] byteArray = Encoding.UTF8.GetBytes(postData);
 
             // Add the post data to the web request
