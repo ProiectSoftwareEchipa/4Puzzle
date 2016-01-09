@@ -12,15 +12,15 @@ namespace _4Puzzle.Generators {
 
         const string postStatsUrl = "http://puzzle.win2012r2.oasis.dnnsharp.com/DesktopModules/DnnSharp/DnnApiEndpoint/Api.ashx?method=PostStats";
 
-        const string getHighScoresUrl = "http://puzzle.win2012r2.oasis.dnnsharp.com/DesktopModules/DnnSharp/DnnApiEndpoint/Api.ashx?method=PostStats";
-
         public static string Select(string gameType) {
             string result = Task.Run(() => Get(gameType)).Result;
             return result;
         }
 
         static async Task<string> Get(string gameType) {
-
+            
+            string url = "http://puzzle.win2012r2.oasis.dnnsharp.com/DesktopModules/DnnSharp/DnnApiEndpoint/Api.ashx?method=Highscore&GameType=" + gameType; 
+            
             try {
                 //Create Client 
                 var client = new HttpClient();
