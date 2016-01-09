@@ -100,8 +100,8 @@ namespace _4Puzzle
             PopupButtonOk.Visibility = Visibility.Collapsed;
             PopupRectangle.Visibility = Visibility.Collapsed;
             PopupTextBlockMessage.Visibility = Visibility.Collapsed;
-            PopupTextBlockVictory.Visibility = Visibility.Collapsed;
             PopupTextBoxUsername.Visibility = Visibility.Collapsed;
+            PopupTextBlockMessagePlayAgain.Visibility = Visibility.Collapsed;
 
             LoadStoredData();
 
@@ -136,8 +136,8 @@ namespace _4Puzzle
             PopupButtonOk.Visibility = Visibility.Collapsed;
             PopupRectangle.Visibility = Visibility.Collapsed;
             PopupTextBlockMessage.Visibility = Visibility.Collapsed;
-            PopupTextBlockVictory.Visibility = Visibility.Collapsed;
             PopupTextBoxUsername.Visibility = Visibility.Collapsed;
+            PopupTextBlockMessagePlayAgain.Visibility = Visibility.Collapsed;
             if (Frame.CanGoBack)
             {
                 Frame.GoBack();
@@ -184,8 +184,6 @@ namespace _4Puzzle
                     PopupButtonOk.Visibility = Visibility.Visible;
                     PopupRectangle.Visibility = Visibility.Visible;
                     PopupTextBlockMessage.Visibility = Visibility.Visible;
-                    PopupTextBlockVictory.Visibility = Visibility.Visible;
-                    PopupTextBlockMessage.Text = "New highscore!";
                     PopupTextBoxUsername.Visibility = Visibility.Visible;
                     singlePlayerEasyBestTime = singlePlayerEasyTimer;
                 }
@@ -194,9 +192,7 @@ namespace _4Puzzle
                     PopupButtonCancel.Visibility = Visibility.Visible;
                     PopupButtonOk.Visibility = Visibility.Visible;
                     PopupRectangle.Visibility = Visibility.Visible;
-                    PopupTextBlockMessage.Visibility = Visibility.Visible;
-                    PopupTextBlockVictory.Visibility = Visibility.Visible;
-                    PopupTextBlockMessage.Text = "Try again?";
+                    PopupTextBlockMessagePlayAgain.Visibility = Visibility.Visible;
                 }
 
                 SaveStoredData();

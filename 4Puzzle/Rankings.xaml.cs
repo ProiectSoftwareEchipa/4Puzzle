@@ -28,6 +28,8 @@ namespace _4Puzzle
 
         private string apiData;
 
+        private List<string> listNumbers;
+
         private List<string> listPlayers;
 
         private List<string> listScores;
@@ -43,6 +45,14 @@ namespace _4Puzzle
             this.listPlayers = new List<string>();
 
             this.listScores = new List<string>();
+
+            this.listNumbers = new List<string>();
+
+            for (int i = 1; i <= 10; i++)
+            {
+                string number = String.Format("{0}.", i);
+                listNumbers.Add(number);
+            }
         }
 
         #endregion Constructors
@@ -78,7 +88,7 @@ namespace _4Puzzle
         {
             apiData = HttpRequestUtils.Select("SinglePlayerEasy");
 
-            textBlockRankings.Text = "Scores Easy";
+            textBlockRankings.Text = "Top 10 Easy";
 
             PopulateListViews(apiData);
         }
@@ -87,7 +97,7 @@ namespace _4Puzzle
         {
             apiData = HttpRequestUtils.Select("SinglePlayerMedium");
 
-            textBlockRankings.Text = "Scores Medium";
+            textBlockRankings.Text = "Top 10 Medium";
 
             PopulateListViews(apiData);
         }
@@ -96,7 +106,7 @@ namespace _4Puzzle
         {
             apiData = HttpRequestUtils.Select("SinglePlayerHard");
 
-            textBlockRankings.Text = "Scores Hard";
+            textBlockRankings.Text = "Top 10 Hard";
 
             PopulateListViews(apiData);
         }
@@ -113,6 +123,7 @@ namespace _4Puzzle
             listScores.Clear();
             listViewPlayerNames.ItemsSource = null;
             listViewPlayerScores.ItemsSource = null;
+            listViewNumbers.ItemsSource = null;
 
             if (apiData == String.Empty)
                 return;
@@ -125,11 +136,14 @@ namespace _4Puzzle
                     continue;
 
                 listPlayers.Add(splitString[0]);
-                listScores.Add(String.Format("{0}:{1}", (Convert.ToInt32(splitString[1]) / 60).ToString("00"), (Convert.ToInt32(splitString[1]) % 60).ToString("00")));
+
+                string time = String.Format("{0}:{1}", (Convert.ToInt32(splitString[1]) / 60).ToString("00"), (Convert.ToInt32(splitString[1]) % 60).ToString("00"));
+                listScores.Add(time);
             }
 
             listViewPlayerNames.ItemsSource = listPlayers;
             listViewPlayerScores.ItemsSource = listScores;
+            listViewNumbers.ItemsSource = listNumbers;
         }
 
         #endregion Private Methods

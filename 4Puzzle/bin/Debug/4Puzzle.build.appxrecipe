@@ -54,11 +54,20 @@
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\button_Easy.png">
       <PackagePath>Images\button_Easy.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\button_Easy_Smaller.png">
+      <PackagePath>Images\button_Easy_Smaller.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\button_Hard.png">
       <PackagePath>Images\button_Hard.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\button_Hard_Smaller.png">
+      <PackagePath>Images\button_Hard_Smaller.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\button_Medium.png">
       <PackagePath>Images\button_Medium.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\button_Medium_Smaller.png">
+      <PackagePath>Images\button_Medium_Smaller.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\button_NewGame.png">
       <PackagePath>Images\button_NewGame.png</PackagePath>
@@ -68,6 +77,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\button_Tutorial.png">
       <PackagePath>Images\button_Tutorial.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\Cancel button.png">
+      <PackagePath>Images\Cancel button.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\Chalckboard rankings.png">
+      <PackagePath>Images\Chalckboard rankings.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\easy_game.png">
       <PackagePath>Images\easy_game.png</PackagePath>
@@ -105,8 +120,20 @@
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\medium_game.png">
       <PackagePath>Images\medium_game.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\Message Box Victory.png">
+      <PackagePath>Images\Message Box Victory.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\Notebook background.png">
+      <PackagePath>Images\Notebook background.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\Ok button.png">
+      <PackagePath>Images\Ok button.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\4Puzzle Background.jpg">
       <PackagePath>Images\4Puzzle Background.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Fonts\RO-D3-Streetism.ttf">
+      <PackagePath>Fonts\RO-D3-Streetism.ttf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\4Puzzle.xr.xml">
       <PackagePath>4Puzzle.xr.xml</PackagePath>

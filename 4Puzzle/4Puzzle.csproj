@@ -79,9 +79,6 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -126,11 +123,16 @@
     <Content Include="Images\background.png" />
     <Content Include="Images\back_game.png" />
     <Content Include="Images\button_Easy.png" />
+    <Content Include="Images\button_Easy_Smaller.png" />
     <Content Include="Images\button_Hard.png" />
+    <Content Include="Images\button_Hard_Smaller.png" />
     <Content Include="Images\button_Medium.png" />
+    <Content Include="Images\button_Medium_Smaller.png" />
     <Content Include="Images\button_NewGame.png" />
     <Content Include="Images\button_Rankings.png" />
     <Content Include="Images\button_Tutorial.png" />
+    <Content Include="Images\Cancel button.png" />
+    <Content Include="Images\Chalckboard rankings.png" />
     <Content Include="Images\easy_game.png" />
     <Content Include="Images\fig1.png" />
     <Content Include="Images\fig2.png" />
@@ -143,6 +145,9 @@
     <Content Include="Images\hard_game.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\medium_game.png" />
+    <Content Include="Images\Message Box Victory.png" />
+    <Content Include="Images\Notebook background.png" />
+    <Content Include="Images\Ok button.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -177,6 +182,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\RO-D3-Streetism.ttf" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>

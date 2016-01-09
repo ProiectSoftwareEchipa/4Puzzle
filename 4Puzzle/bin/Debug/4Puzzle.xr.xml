@@ -60,6 +60,7 @@
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="SelectionHighlightColor" />
+      <RootProperty Name="FontFamily" />
       <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
@@ -68,6 +69,17 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Width" />
       <RootProperty Name="FontSize" />
+      <RootProperty Name="FontFamily" />
+      <RootProperty Name="ItemContainerStyle" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ListViewItem" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Control">
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="FontFamily" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Setter">
+      <RootProperty Name="Property" />
+      <RootProperty Name="Value" />
     </RootType>
     <RootType FullName="_4Puzzle.Rankings" />
     <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
@@ -87,6 +99,8 @@
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="Text" />
       <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="BorderBrush" />
       <RootEvent Name="GotFocus" />
     </RootType>
     <RootType FullName="_4Puzzle.SinglePlayerEasy" />

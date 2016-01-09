@@ -15,12 +15,56 @@
         <Viewbox Stretch="Fill">
             <Canvas Width="400" Height="640">
                 <TextBlock x:Name="title" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Rankings" VerticalAlignment="Top" Height="68" Width="398" FontSize="48" TextAlignment="Center" Canvas.Top="33" Foreground="White" SelectionHighlightColor="White"/>
-                <ListView x:Name="listViewPlayerNames" HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="173" Canvas.Left="84" Canvas.Top="211" FontSize="24"/>
-                <ListView x:Name="listViewPlayerScores" HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="110" Canvas.Left="280" Canvas.Top="211" FontSize="24"/>
-                <Button x:Name="buttonSinglePlayerEasy" Content="Easy" Canvas.Left="11" Canvas.Top="96" Click="buttonSinglePlayerEasy_Click"/>
-                <Button x:Name="buttonbuttonSinglePlayerMedium" Content="Medium" Canvas.Left="148" Canvas.Top="96" Click="buttonbuttonSinglePlayerMedium_Click"/>
-                <Button x:Name="buttonSinglePlayerHard" Content="Hard" Canvas.Left="281" Canvas.Top="96" Click="buttonSinglePlayerHard_Click"/>
-                <TextBlock x:Name="textBlockRankings" Canvas.Left="11" TextWrapping="Wrap" Canvas.Top="165" Height="41" Width="379" FontSize="26.667" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                <ListView x:Name="listViewNumbers" HorizontalAlignment="Left" Height="370" VerticalAlignment="Top" Width="48" Canvas.Left="85" Canvas.Top="234" FontSize="32" Canvas.ZIndex="1" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="FontSize" Value="20"/>
+                            <Setter Property="FontFamily" Value="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+                <ListView x:Name="listViewPlayerNames" HorizontalAlignment="Left" Height="370" VerticalAlignment="Top" Width="119" Canvas.Left="138" Canvas.Top="234" FontSize="32" Canvas.ZIndex="1" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="FontSize" Value="20"/>
+                            <Setter Property="FontFamily" Value="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+                <ListView x:Name="listViewPlayerScores" HorizontalAlignment="Left" Height="370" VerticalAlignment="Top" Width="88" Canvas.Left="257" Canvas.Top="234" FontSize="24" Canvas.ZIndex="1" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="FontSize" Value="20"/>
+                            <Setter Property="FontFamily" Value="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+                <Button x:Name="buttonSinglePlayerEasy" Content="" Canvas.Left="10" Canvas.Top="96" Click="buttonSinglePlayerEasy_Click" Width="124" Height="57">
+                    <Button.BorderBrush>
+                        <ImageBrush Stretch="Fill"/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <ImageBrush ImageSource="Images/button_Easy_Smaller.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="buttonbuttonSinglePlayerMedium" Content="" Canvas.Left="139" Canvas.Top="96" Click="buttonbuttonSinglePlayerMedium_Click" Width="127">
+                    <Button.Background>
+                        <ImageBrush Stretch="Fill" ImageSource="Images/button_Medium_Smaller.png"/>
+                    </Button.Background>
+                    <Button.BorderBrush>
+                        <ImageBrush Stretch="Fill"/>
+                    </Button.BorderBrush>
+                </Button>
+                <Button x:Name="buttonSinglePlayerHard" Content="" Canvas.Left="266" Canvas.Top="96" Click="buttonSinglePlayerHard_Click" Width="124">
+                    <Button.Background>
+                        <ImageBrush Stretch="Fill" ImageSource="Images/button_Hard_Smaller.png"/>
+                    </Button.Background>
+                    <Button.BorderBrush>
+                        <ImageBrush Stretch="Fill"/>
+                    </Button.BorderBrush>
+                </Button>
+                <TextBlock x:Name="textBlockRankings" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="176" Height="53" Width="380" FontSize="37.333" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Text="Top 10 Easy" Canvas.ZIndex="1"/>
+                <Image x:Name="image" Height="481" Canvas.Top="149" Width="350" Source="ms-appx:///Images/Chalckboard rankings.png" Canvas.Left="25"/>
             </Canvas>
         </Viewbox>
     </Grid>
