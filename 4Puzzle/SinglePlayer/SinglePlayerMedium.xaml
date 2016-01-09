@@ -55,19 +55,38 @@
                 <Rectangle x:Name="Rectangle64" Fill="#FFF4F4F5" HorizontalAlignment="Right" Height="60" Stroke="Black" VerticalAlignment="Bottom" Width="60" Tapped="Rectangle_Tapped" Canvas.ZIndex="2" StrokeThickness="0" Canvas.Left="207" Canvas.Top="504"/>
                 <Rectangle x:Name="Rectangle65" Fill="#FFF4F4F5" HorizontalAlignment="Right" Height="60" Stroke="Black" VerticalAlignment="Bottom" Width="60" Tapped="Rectangle_Tapped" Canvas.ZIndex="2" StrokeThickness="0" Canvas.Left="268" Canvas.Top="504"/>
                 <Rectangle x:Name="Rectangle66" Fill="#FFF4F4F5" HorizontalAlignment="Right" Height="60" Stroke="Black" VerticalAlignment="Bottom" Width="60" Tapped="Rectangle_Tapped" Canvas.ZIndex="2" StrokeThickness="0" Canvas.Left="329" Canvas.Top="504"/>
-                <TextBlock x:Name="singlePlayerMediumWinsText" Canvas.Left="90" TextWrapping="Wrap" Canvas.Top="131" FontSize="21.333"/>
-                <TextBlock x:Name="singlePlayerMediumTimeText" Canvas.Left="173" TextWrapping="Wrap" Canvas.Top="131" FontSize="21.333"/>
-                <TextBlock x:Name="singlePlayerMediumBestTimeText" Canvas.Left="277" TextWrapping="Wrap" Canvas.Top="131" FontSize="21.333"/>
-                <TextBlock x:Name="labelTimer" Canvas.Left="171" TextWrapping="Wrap" Text="Timer" Canvas.Top="104" FontSize="21.333"/>
-                <TextBlock x:Name="labelWins" Canvas.Left="74" TextWrapping="Wrap" Text="Wins" Canvas.Top="104" FontSize="21.333"/>
-                <TextBlock x:Name="labelBestTime" Canvas.Left="258" TextWrapping="Wrap" Text="Best Time" Canvas.Top="104" FontSize="21.333"/>
-                <Rectangle x:Name="PopupRectangle" Fill="#FF43CDE8" Height="260" Canvas.Left="35" Stroke="Black" Canvas.Top="187" Width="329" Canvas.ZIndex="3" RadiusX="40" RadiusY="40" StrokeThickness="4"/>
-                <TextBox x:Name="PopupTextBoxUsername" Canvas.Left="59" Margin="0" TextWrapping="Wrap" Text="Register Name" Canvas.Top="304" Width="275" Canvas.ZIndex="4" GotFocus="PopupTextBoxUsername_GotFocus"/>
-                <TextBlock x:Name="PopupTextBlockVictory" Canvas.Left="155" TextWrapping="Wrap" Text="Victory!" Canvas.Top="211" Canvas.ZIndex="4" FontSize="26.667"/>
-                <TextBlock x:Name="PopupTextBlockMessage" Canvas.Left="103" TextWrapping="Wrap" Text="New highscore!" Canvas.Top="253" Canvas.ZIndex="4" FontSize="26.667"/>
-                <Button x:Name="PopupButtonCancel" Content="Cancel" Canvas.Left="219" Canvas.Top="370" Canvas.ZIndex="4" Click="buttonPopupCancel_Click"/>
-                <Button x:Name="PopupButtonOk" Content="Ok" Canvas.Left="68" Canvas.Top="370" Canvas.ZIndex="4" Click="buttonPopupOk_Click"/>
+                <TextBlock x:Name="singlePlayerMediumWinsText" Canvas.Left="105" TextWrapping="Wrap" Canvas.Top="131" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="Black"/>
+                <TextBlock x:Name="singlePlayerMediumTimeText" Canvas.Left="173" TextWrapping="Wrap" Canvas.Top="131" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="Black"/>
+                <TextBlock x:Name="singlePlayerMediumBestTimeText" Canvas.Left="264" TextWrapping="Wrap" Canvas.Top="131" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="Black"/>
+                <TextBlock x:Name="labelTimer" Canvas.Left="171" TextWrapping="Wrap" Text="Timer" Canvas.Top="104" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="Black"/>
+                <TextBlock x:Name="labelWins" Canvas.Left="89" TextWrapping="Wrap" Text="Wins" Canvas.Top="104" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="Black"/>
+                <TextBlock x:Name="labelBestTime" Canvas.Left="245" TextWrapping="Wrap" Text="Best Time" Canvas.Top="104" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="Black"/>
+                <Rectangle x:Name="PopupRectangle" Height="166" Canvas.Left="52" Stroke="Black" Canvas.Top="219" Width="297" Canvas.ZIndex="3" RadiusX="40" RadiusY="40" StrokeThickness="3">
+                    <Rectangle.Fill>
+                        <ImageBrush ImageSource="ms-appx:///Images/Message Box Victory.png"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <TextBox x:Name="PopupTextBoxUsername" Canvas.Left="64" Margin="0" TextWrapping="Wrap" Text="Register Name" Canvas.Top="296" Width="275" Canvas.ZIndex="4" GotFocus="PopupTextBoxUsername_GotFocus" Height="37" BorderBrush="Black"/>
+                <TextBlock x:Name="PopupTextBlockMessage" Canvas.Left="12" TextWrapping="Wrap" Text="New highscore!" Canvas.Top="267" Canvas.ZIndex="4" FontSize="24" Height="34" Foreground="Black" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" TextAlignment="Center" Width="376"/>
+                <TextBlock x:Name="PopupTextBlockMessagePlayAgain" Canvas.Left="12" TextWrapping="Wrap" Text="Play again?" Canvas.Top="282" Canvas.ZIndex="4" FontSize="32" Height="49" Foreground="Black" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" TextAlignment="Center" Width="376"/>
+                <Button x:Name="PopupButtonCancel" Content="" Canvas.Left="205" Canvas.Top="327" Canvas.ZIndex="4" Click="buttonPopupCancel_Click" Height="62">
+                    <Button.BorderBrush>
+                        <ImageBrush Stretch="Fill"/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///Images/Cancel button.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="PopupButtonOk" Content="" Canvas.Left="85" Canvas.Top="328" Canvas.ZIndex="4" Click="buttonPopupOk_Click" Height="60" Width="99">
+                    <Button.BorderBrush>
+                        <ImageBrush Stretch="Fill"/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///Images/Ok button.png"/>
+                    </Button.Background>
+                </Button>
                 <Image x:Name="imageTitle" Height="186" Canvas.Left="95" Canvas.Top="-43" Width="226" Source="ms-appx:///Images/medium_game.png"/>
+                <Image x:Name="imageHeaderBackground" Height="82" Canvas.Left="25" Canvas.Top="90" Width="353" Source="ms-appx:///Images/Notebook background.png"/>
             </Canvas>
         </Viewbox>
     </Grid>

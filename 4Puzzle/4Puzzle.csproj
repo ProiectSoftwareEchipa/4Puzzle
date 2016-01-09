@@ -124,11 +124,16 @@
     <Content Include="Images\background.png" />
     <Content Include="Images\back_game.png" />
     <Content Include="Images\button_Easy.png" />
+    <Content Include="Images\button_Easy_Smaller.png" />
     <Content Include="Images\button_Hard.png" />
+    <Content Include="Images\button_Hard_Smaller.png" />
     <Content Include="Images\button_Medium.png" />
+    <Content Include="Images\button_Medium_Smaller.png" />
     <Content Include="Images\button_NewGame.png" />
     <Content Include="Images\button_Rankings.png" />
     <Content Include="Images\button_Tutorial.png" />
+    <Content Include="Images\Cancel button.png" />
+    <Content Include="Images\Chalckboard rankings.png" />
     <Content Include="Images\easy_game.png" />
     <Content Include="Images\fig1.png" />
     <Content Include="Images\fig2.png" />
@@ -141,6 +146,9 @@
     <Content Include="Images\hard_game.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\medium_game.png" />
+    <Content Include="Images\Message Box Victory.png" />
+    <Content Include="Images\Notebook background.png" />
+    <Content Include="Images\Ok button.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -177,12 +185,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
-    </Reference>
+    <Content Include="Fonts\RO-D3-Streetism.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
