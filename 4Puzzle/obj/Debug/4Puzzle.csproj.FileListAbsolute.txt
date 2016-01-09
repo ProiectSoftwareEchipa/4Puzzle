@@ -93,3 +93,6 @@ C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\obj\Debug\Rankings.g.cs
 C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\obj\Debug\Rankings.xaml
 C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\obj\Debug\Rankings.xbf
 C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\obj\Debug\4Puzzle.csprojResolveAssemblyReference.cache
+C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\obj\Debug\4Puzzle.csproj.GenerateResource.Cache
