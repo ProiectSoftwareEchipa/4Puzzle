@@ -91,6 +91,9 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rankings.xaml.cs">
+      <DependentUpon>Rankings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SinglePlayer\SinglePlayerEasy.xaml.cs">
       <DependentUpon>SinglePlayerEasy.xaml</DependentUpon>
     </Compile>
@@ -120,6 +123,26 @@
     <Content Include="Assets\StoreLogo.scale-240.png" />
     <Content Include="Assets\WideLogo.scale-240.png" />
     <Content Include="Images\4Puzzle Background.jpg" />
+    <Content Include="Images\background.png" />
+    <Content Include="Images\back_game.png" />
+    <Content Include="Images\button_Easy.png" />
+    <Content Include="Images\button_Hard.png" />
+    <Content Include="Images\button_Medium.png" />
+    <Content Include="Images\button_NewGame.png" />
+    <Content Include="Images\button_Rankings.png" />
+    <Content Include="Images\button_Tutorial.png" />
+    <Content Include="Images\easy_game.png" />
+    <Content Include="Images\fig1.png" />
+    <Content Include="Images\fig2.png" />
+    <Content Include="Images\fig3.png" />
+    <Content Include="Images\fig4.png" />
+    <Content Include="Images\fig5.png" />
+    <Content Include="Images\fig6.png" />
+    <Content Include="Images\fig7.png" />
+    <Content Include="Images\fig8.png" />
+    <Content Include="Images\hard_game.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\medium_game.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -129,6 +152,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Rankings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SinglePlayer\SinglePlayerEasy.xaml">
       <SubType>Designer</SubType>
