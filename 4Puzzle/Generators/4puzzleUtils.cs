@@ -20,6 +20,9 @@ namespace _4Puzzle.Generators {
         }
 
         public static string FilterName(string name) {
+            if (name == null)
+                return null;
+
             return Regex.Replace(name, "[^A-Za-z0-9 _]", "");
         }
 
@@ -39,7 +42,7 @@ namespace _4Puzzle.Generators {
             localSettings.Values["PlayerOfflineScores"] = JsonConvert.SerializeObject(scoreList);
         }
 
-        public static void SaveScoreOffline(string name, string score, string gameType) {
+        public static void SaveScoreOffline(string name, string gameType, string score) {
             List<Score> scoreList = GetScoreList();
 
             scoreList.Add(new Score() {
