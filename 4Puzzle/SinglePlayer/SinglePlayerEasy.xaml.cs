@@ -148,7 +148,7 @@ namespace _4Puzzle
         {
             if (singlePlayerEasyTimer <= singlePlayerEasyBestTime && singlePlayerEasyWins > 3)
             {
-                HttpRequestUtils.Insert(PopupTextBoxUsername.Text, "SinglePlayerEasy", singlePlayerEasyTimer.ToString());
+                _4puzzleUtils.SaveScoreOffline(PopupTextBoxUsername.Text, "SinglePlayerEasy", singlePlayerEasyTimer.ToString());
             }
             this.Frame.Navigate(typeof(SinglePlayerEasy), null);
         }
@@ -197,6 +197,8 @@ namespace _4Puzzle
 
                 SaveStoredData();
                 StopGame();
+
+                _4puzzleUtils.SaveScoreOffline(null, "SinglePlayerEasy", singlePlayerEasyTimer.ToString());
             }
         }
 

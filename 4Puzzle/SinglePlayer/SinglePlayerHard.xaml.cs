@@ -170,7 +170,7 @@ namespace _4Puzzle
         {
             if (singlePlayerHardTimer <= singlePlayerHardBestTime && singlePlayerHardWins > 3)
             {
-                HttpRequestUtils.Insert(PopupTextBoxUsername.Text, "SinglePlayerHard", singlePlayerHardTimer.ToString());
+                _4puzzleUtils.SaveScoreOffline(PopupTextBoxUsername.Text, "SinglePlayerHard", singlePlayerHardTimer.ToString());
             }
             this.Frame.Navigate(typeof(SinglePlayerHard), null);
         }
@@ -219,6 +219,8 @@ namespace _4Puzzle
 
                 SaveStoredData();
                 StopGame();
+
+                _4puzzleUtils.SaveScoreOffline(null, "SinglePlayerHard", singlePlayerHardTimer.ToString());
             }
             else
             {

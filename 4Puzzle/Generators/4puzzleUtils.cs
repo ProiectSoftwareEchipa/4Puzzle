@@ -11,11 +11,9 @@ using Windows.Security.ExchangeActiveSyncProvisioning;
 namespace _4Puzzle.Generators {
     class _4puzzleUtils {
 
-        const string PhoneId = new EasClientDeviceInformation().Id.ToString();
-
         class Score {
-            public string? Name { get; set; }
-            public string Score { get; set; }
+            public string Name { get; set; }
+            public string PlayerScore { get; set; }
             public string DateTime { get; set; }
             public string GameType { get; set; }
             public string PhoneGuid { get; set; }
@@ -46,7 +44,7 @@ namespace _4Puzzle.Generators {
 
             scoreList.Add(new Score() {
                 Name = FilterName(name),
-                Score = score,
+                PlayerScore = score,
                 GameType = gameType,
                 DateTime = DateTime.Now.ToString(),
                 PhoneGuid = new EasClientDeviceInformation().Id.ToString()
@@ -61,9 +59,10 @@ namespace _4Puzzle.Generators {
 
             List<Score> scoreList = GetScoreList();
             foreach (Score score in scoreList) {
-                HttpRequestUtils.InsertStatistics(score.PhoneGuid, score.GameType, score.DateTime);
+                if (score.Name == null)
+                    HttpRequestUtils.InsertStatistics(score.PhoneGuid, score.GameType, score.DateTime);
                 if (score.Name != null)
-                    HttpRequestUtils.InsertHighScore(score.Name.ToString(), score.GameType, score.Score);
+                    HttpRequestUtils.InsertHighScore(score.Name.ToString(), score.GameType, score.PlayerScore);
             }
         }
     }

@@ -82,6 +82,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Generators\4puzzleUtils.cs" />
     <Compile Include="Generators\HttpRequestUtils.cs" />
     <Compile Include="Generators\size4Easy.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -185,6 +186,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Fonts\RO-D3-Streetism.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>

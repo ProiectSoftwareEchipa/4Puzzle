@@ -160,7 +160,7 @@ namespace _4Puzzle
         {
             if (singlePlayerMediumTimer < singlePlayerMediumBestTime && singlePlayerMediumWins > 3)
             {
-                HttpRequestUtils.Insert(PopupTextBoxUsername.Text, "SinglePlayerMedium", singlePlayerMediumTimer.ToString());
+                _4puzzleUtils.SaveScoreOffline(PopupTextBoxUsername.Text, "SinglePlayerMedium", singlePlayerMediumTimer.ToString());
             }
             this.Frame.Navigate(typeof(SinglePlayerMedium), null);
         }
@@ -209,6 +209,8 @@ namespace _4Puzzle
 
                 SaveStoredData();
                 StopGame();
+
+                _4puzzleUtils.SaveScoreOffline(null , "SinglePlayerMedium", singlePlayerMediumTimer.ToString());
             }
         }
 
