@@ -43,7 +43,7 @@ namespace _4Puzzle.Generators {
 
         static void SaveScoreList(List<Score> scoreList) {
             Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-            localSettings.Values["PlayerOfflineScores"] = JsonConvert.SerializeObject(scoreList);
+            localSettings.Values["PlayerOfflineScores"] = scoreList != null ? JsonConvert.SerializeObject(scoreList) : null;
         }
 
         public static void SaveScoreOffline(string name, string gameType, string score) {
@@ -57,7 +57,7 @@ namespace _4Puzzle.Generators {
                 PhoneGuid = GetDeviceID()
             });
 
-            SaveScoreList(scoreList);
+            SaveScoreList(null);
         }
 
         public static void TrySendOfflineScore() {
@@ -71,6 +71,8 @@ namespace _4Puzzle.Generators {
                 if (score.Name != null)
                     HttpRequestUtils.InsertHighScore(score.Name.ToString(), score.GameType, score.PlayerScore);
             }
+
+            SaveScoreList(new List<Score>());
         }
         static string GetDeviceID() {
             HardwareToken token = HardwareIdentification.GetPackageSpecificToken(null);

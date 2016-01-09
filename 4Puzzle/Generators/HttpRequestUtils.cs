@@ -89,7 +89,7 @@ namespace _4Puzzle.Generators {
             Stream postStream = myRequest.EndGetRequestStream(callbackResult);
 
             // Create the post data
-            string postData = "DateTime=" + dateTime + "&GameType=" + gameType + "&PhoneGuid=" + phoneGuid;
+            string postData = "DatePlayed=" + dateTime + "&GameType=" + gameType + "&PhoneGuid=" + phoneGuid;
             byte[] byteArray = Encoding.UTF8.GetBytes(postData);
 
             // Add the post data to the web request
