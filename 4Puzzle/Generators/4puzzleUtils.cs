@@ -6,7 +6,11 @@ using System.Net.NetworkInformation;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Windows.Security.Cryptography;
+using Windows.Security.Cryptography.Core;
 using Windows.Security.ExchangeActiveSyncProvisioning;
+using Windows.Storage.Streams;
+using Windows.System.Profile;
 
 namespace _4Puzzle.Generators {
     class _4puzzleUtils {
@@ -50,7 +54,7 @@ namespace _4Puzzle.Generators {
                 PlayerScore = score,
                 GameType = gameType,
                 DateTime = DateTime.Now.ToString(),
-                PhoneGuid = new EasClientDeviceInformation().Id.ToString()
+                PhoneGuid = GetDeviceID()
             });
 
             SaveScoreList(scoreList);
@@ -67,6 +71,16 @@ namespace _4Puzzle.Generators {
                 if (score.Name != null)
                     HttpRequestUtils.InsertHighScore(score.Name.ToString(), score.GameType, score.PlayerScore);
             }
+        }
+        static string GetDeviceID() {
+            HardwareToken token = HardwareIdentification.GetPackageSpecificToken(null);
+            IBuffer hardwareId = token.Id;
+
+            HashAlgorithmProvider hasher = HashAlgorithmProvider.OpenAlgorithm("MD5");
+            IBuffer hashed = hasher.HashData(hardwareId);
+
+            string hashedString = CryptographicBuffer.EncodeToHexString(hashed);
+            return hashedString;
         }
     }
 }
