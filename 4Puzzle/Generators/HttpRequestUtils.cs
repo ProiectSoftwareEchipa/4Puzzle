@@ -8,6 +8,12 @@ using System.IO;
 namespace _4Puzzle.Generators {
     public class HttpRequestUtils {
 
+        const string postHighScoreUrl = "http://puzzle.win2012r2.oasis.dnnsharp.com/DesktopModules/DnnSharp/DnnApiEndpoint/Api.ashx?method=Post4Puzzle";
+
+        const string postStatsUrl = "http://puzzle.win2012r2.oasis.dnnsharp.com/DesktopModules/DnnSharp/DnnApiEndpoint/Api.ashx?method=PostStats";
+
+        const string getHighScoresUrl = "http://puzzle.win2012r2.oasis.dnnsharp.com/DesktopModules/DnnSharp/DnnApiEndpoint/Api.ashx?method=PostStats";
+
         public static string Select(string gameType) {
             string result = Task.Run(() => Get(gameType)).Result;
             return result;
@@ -15,19 +21,11 @@ namespace _4Puzzle.Generators {
 
         static async Task<string> Get(string gameType) {
 
-            string url = "http://puzzle.win2012r2.oasis.dnnsharp.com/DesktopModules/DnnSharp/DnnApiEndpoint/Api.ashx?method=Highscore&GameType=" + gameType;
-
             try {
                 //Create Client 
                 var client = new HttpClient();
 
-                //Define URL. Replace current URL with your URL
-
-                //Current URL is not a valid one
-
-
-
-                var uri = new Uri(url);
+                var uri = new Uri(getHighScoresUrl);
 
                 //Call. Get response by Async
                 var Response = await client.GetAsync(uri);
@@ -39,10 +37,6 @@ namespace _4Puzzle.Generators {
                 //then EnsureSuccessStatusCode will throw an exception
                 Response.EnsureSuccessStatusCode();
 
-                //Read the content of the response.
-                //In here expected response is a string.
-                //Accroding to Response you can change the Reading method.
-                //like ReadAsStreamAsync etc..
                 return await Response.Content.ReadAsStringAsync();
             } catch (Exception ex) {
                 //...
@@ -50,19 +44,19 @@ namespace _4Puzzle.Generators {
             }
         }
 
-        public static async void Insert(string playerName, string gameType, string playerScore) {
-
-            var url = "http://puzzle.win2012r2.oasis.dnnsharp.com/DesktopModules/DnnSharp/DnnApiEndpoint/Api.ashx?method=Post4Puzzle";
+        public static async void InsertHighScore(string playerName, string gameType, string playerScore) {
             string[] values = new string[] { playerName, gameType, playerScore };
-
-            System.Uri myUri = new System.Uri(url);
-            HttpWebRequest myRequest = (HttpWebRequest)HttpWebRequest.Create(myUri);
-            myRequest.Method = "POST";
-            myRequest.ContentType = "application/x-www-form-urlencoded";
-            myRequest.BeginGetRequestStream(new AsyncCallback(GetRequestStreamCallback), Tuple.Create(myRequest, values));
+            HttpWebRequest myRequest = CreateHttpWebRequest(postHighScoreUrl);
+            myRequest.BeginGetRequestStream(new AsyncCallback(GetRequestStreamCallbackHighScore), Tuple.Create(myRequest, values));
         }
 
-        static void GetRequestStreamCallback(IAsyncResult callbackResult) {
+        public static async void InsertStatistics(string phoneGuid, string gameType, string dateTime) {
+            string[] values = new string[] { dateTime, gameType, phoneGuid };
+            HttpWebRequest myRequest = CreateHttpWebRequest(postStatsUrl);
+            myRequest.BeginGetRequestStream(new AsyncCallback(GetRequestStreamCallbackStats), Tuple.Create(myRequest, values));
+        }
+
+        static void GetRequestStreamCallbackHighScore(IAsyncResult callbackResult) {
             Tuple<HttpWebRequest, string[]> state = (Tuple<HttpWebRequest, string[]>)callbackResult.AsyncState;
             string playerName = state.Item2[0];
             string gameType = state.Item2[1];
@@ -84,6 +78,28 @@ namespace _4Puzzle.Generators {
             myRequest.BeginGetResponse(new AsyncCallback(GetResponsetStreamCallback), myRequest);
         }
 
+        static void GetRequestStreamCallbackStats(IAsyncResult callbackResult) {
+            Tuple<HttpWebRequest, string[]> state = (Tuple<HttpWebRequest, string[]>)callbackResult.AsyncState;
+            string dateTime = state.Item2[0];
+            string gameType = state.Item2[1];
+            string phoneGuid = state.Item2[2];
+
+            HttpWebRequest myRequest = state.Item1;
+            // End the stream request operation
+            Stream postStream = myRequest.EndGetRequestStream(callbackResult);
+
+            // Create the post data
+            string postData = "DateTime=" + dateTime + "&GameType=" + gameType + "&PhoneGuid=" + phoneGuid;
+            byte[] byteArray = Encoding.UTF8.GetBytes(postData);
+
+            // Add the post data to the web request
+            postStream.Write(byteArray, 0, byteArray.Length);
+            postStream.Dispose();
+
+            // Start the web request
+            myRequest.BeginGetResponse(new AsyncCallback(GetResponsetStreamCallback), myRequest);
+        }
+
         static void GetResponsetStreamCallback(IAsyncResult callbackResult) {
             HttpWebRequest request = (HttpWebRequest)callbackResult.AsyncState;
             HttpWebResponse response = (HttpWebResponse)request.EndGetResponse(callbackResult);
@@ -92,5 +108,12 @@ namespace _4Puzzle.Generators {
             }
         }
 
+        static HttpWebRequest CreateHttpWebRequest(string url) {
+            System.Uri myUri = new System.Uri(url);
+            HttpWebRequest myRequest = (HttpWebRequest)HttpWebRequest.Create(myUri);
+            myRequest.Method = "POST";
+            myRequest.ContentType = "application/x-www-form-urlencoded";
+            return myRequest;
+        }
     }
 }
