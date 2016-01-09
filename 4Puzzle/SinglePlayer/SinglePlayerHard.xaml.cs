@@ -132,6 +132,8 @@ namespace _4Puzzle
             InitializeMatrix();
 
             InitializeImages();
+
+            _4puzzleUtils.TrySendOfflineScore();
         }
 
         #endregion Constructors

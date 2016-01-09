@@ -15,7 +15,7 @@
         <Viewbox Stretch="Fill">
             <Canvas Width="400" Height="640">
                 <TextBlock x:Name="title" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Rankings" VerticalAlignment="Top" Height="68" Width="398" FontSize="48" TextAlignment="Center" Canvas.Top="33" Foreground="White" SelectionHighlightColor="White"/>
-                <ListView x:Name="listViewNumbers" HorizontalAlignment="Left" Height="370" VerticalAlignment="Top" Width="48" Canvas.Left="85" Canvas.Top="234" FontSize="32" Canvas.ZIndex="1" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism">
+                <ListView x:Name="listViewNumbers" HorizontalAlignment="Left" Height="375" VerticalAlignment="Top" Width="48" Canvas.Left="85" Canvas.Top="229" FontSize="32" Canvas.ZIndex="1" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
                             <Setter Property="FontSize" Value="20"/>
@@ -23,7 +23,7 @@
                         </Style>
                     </ListView.ItemContainerStyle>
                 </ListView>
-                <ListView x:Name="listViewPlayerNames" HorizontalAlignment="Left" Height="370" VerticalAlignment="Top" Width="119" Canvas.Left="138" Canvas.Top="234" FontSize="32" Canvas.ZIndex="1" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism">
+                <ListView x:Name="listViewPlayerNames" HorizontalAlignment="Left" Height="375" VerticalAlignment="Top" Width="119" Canvas.Left="138" Canvas.Top="229" FontSize="32" Canvas.ZIndex="1" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
                             <Setter Property="FontSize" Value="20"/>
@@ -31,7 +31,7 @@
                         </Style>
                     </ListView.ItemContainerStyle>
                 </ListView>
-                <ListView x:Name="listViewPlayerScores" HorizontalAlignment="Left" Height="370" VerticalAlignment="Top" Width="88" Canvas.Left="257" Canvas.Top="234" FontSize="24" Canvas.ZIndex="1" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism">
+                <ListView x:Name="listViewPlayerScores" HorizontalAlignment="Left" Height="375" VerticalAlignment="Top" Width="88" Canvas.Left="257" Canvas.Top="229" FontSize="24" Canvas.ZIndex="1" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
                             <Setter Property="FontSize" Value="20"/>

@@ -110,6 +110,8 @@ namespace _4Puzzle
             InitializeMatrix();
 
             InitializeImages();
+
+            _4puzzleUtils.TrySendOfflineScore();
         }
 
         #endregion Constructors
@@ -271,7 +273,7 @@ namespace _4Puzzle
         /// <summary>
         /// Salveaza datele local
         /// </summary>
-        private void SaveStoredData()
+        private void SaveStoredData()   
         {
             localSettings.Values["SinglePlayerEasyWins"] = singlePlayerEasyWins;
 

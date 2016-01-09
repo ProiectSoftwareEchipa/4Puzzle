@@ -10,3 +10,5 @@ MDIL image C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\obj\Debug\MDIL\4Puz
 File C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\obj\Debug\MSIL\4Puzzle.exe output C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\obj\Debug\MDIL\4Puzzle.exe
 Processing file: C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\obj\Debug\MSIL\AppxManifest.xml
 File C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\obj\Debug\MSIL\AppxManifest.xml is not in the compile filter. Skipping.
+Processing file: C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\obj\Debug\MSIL\Newtonsoft.Json.dll
+File C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\obj\Debug\MSIL\Newtonsoft.Json.dll is not in the compile filter. Skipping.

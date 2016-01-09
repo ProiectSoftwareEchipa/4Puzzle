@@ -48,6 +48,8 @@ namespace _4Puzzle
 
             this.listNumbers = new List<string>();
 
+            _4puzzleUtils.TrySendOfflineScore();
+
             for (int i = 1; i <= 10; i++)
             {
                 string number = String.Format("{0}.", i);

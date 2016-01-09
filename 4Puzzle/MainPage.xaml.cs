@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Shapes;
 using Windows.Graphics.Display;
+using _4Puzzle.Generators;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
@@ -35,6 +36,8 @@ namespace _4Puzzle
             this.NavigationCacheMode = NavigationCacheMode.Required;
 
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Portrait;
+
+            _4puzzleUtils.TrySendOfflineScore();
 
             Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
 
