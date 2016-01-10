@@ -55,6 +55,10 @@ namespace _4Puzzle
 
         private DispatcherTimer dispatcherTimer;
 
+        private bool extraCheckPopupOk;
+
+        private bool extraCheckPopupCancel;
+
         Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
 
         public struct Tile
@@ -95,6 +99,10 @@ namespace _4Puzzle
 
             this.NavigationCacheMode = NavigationCacheMode.Disabled;
 
+            this.extraCheckPopupOk = true;
+
+            this.extraCheckPopupCancel = true;
+
             //Popup elemets
             PopupButtonCancel.Visibility = Visibility.Collapsed;
             PopupButtonOk.Visibility = Visibility.Collapsed;
@@ -134,7 +142,17 @@ namespace _4Puzzle
 
         private void buttonPopupCancel_Click(object sender, RoutedEventArgs e)
         {
-            PopupButtonCancel.Visibility = Visibility.Collapsed;
+            if (singlePlayerEasyTimer <= singlePlayerEasyBestTime && singlePlayerEasyWins > 3)
+            {
+                if (extraCheckPopupCancel)
+                {
+                    PopupTextBlockMessage.Text = "Are you sure?";
+                    extraCheckPopupCancel = false;
+                    return;
+                }
+            }
+
+                PopupButtonCancel.Visibility = Visibility.Collapsed;
             PopupButtonOk.Visibility = Visibility.Collapsed;
             PopupRectangle.Visibility = Visibility.Collapsed;
             PopupTextBlockMessage.Visibility = Visibility.Collapsed;
@@ -150,7 +168,16 @@ namespace _4Puzzle
         {
             if (singlePlayerEasyTimer <= singlePlayerEasyBestTime && singlePlayerEasyWins > 3)
             {
-                _4puzzleUtils.SaveScoreOffline(PopupTextBoxUsername.Text, "SinglePlayerEasy", singlePlayerEasyTimer.ToString());
+                if(extraCheckPopupOk && (PopupTextBoxUsername.Text == "Register Name" || PopupTextBoxUsername.Text == String.Empty))
+                {
+                    PopupTextBlockMessage.Text = "No name inputed!";
+                    extraCheckPopupOk = false;
+                    return;
+                }
+                if (PopupTextBoxUsername.Text != "Register Name" && PopupTextBoxUsername.Text != String.Empty)
+                {
+                    _4puzzleUtils.SaveScoreOffline(PopupTextBoxUsername.Text, "SinglePlayerEasy", singlePlayerEasyTimer.ToString());
+                }
             }
             this.Frame.Navigate(typeof(SinglePlayerEasy), null);
         }

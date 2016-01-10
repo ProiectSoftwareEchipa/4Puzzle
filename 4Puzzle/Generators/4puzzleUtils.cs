@@ -57,7 +57,7 @@ namespace _4Puzzle.Generators {
                 PhoneGuid = GetDeviceID()
             });
 
-            SaveScoreList(null);
+            SaveScoreList(scoreList);
         }
 
         public static void TrySendOfflineScore() {
