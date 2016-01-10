@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
@@ -23,11 +24,55 @@ namespace _4Puzzle
     /// </summary>
     public sealed partial class SinglePlayerMenu : Page
     {
+        #region Private Members
+
+        private int winsEasy;
+
+        private int winsMedium;
+
+        private int winsHard;
+
+        #endregion Private Members
+
+        Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+
         #region Constructors
 
         public SinglePlayerMenu()
         {
             this.InitializeComponent();
+
+            LoadStoredData();
+
+            ImageBrush buttonMediumActive = new ImageBrush();
+            buttonMediumActive.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/button_Medium.png"));
+
+            ImageBrush buttonMediumInactive = new ImageBrush();
+            buttonMediumInactive.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/button_Medium_disabled.png"));
+
+            ImageBrush buttonHardActive = new ImageBrush();
+            buttonHardActive.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/button_Hard.png"));
+
+            ImageBrush buttonHardInactive = new ImageBrush();
+            buttonHardInactive.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/button_Hard_disabled.png"));
+
+            if (winsEasy < 3)
+            {
+                SinglePlayerMedium.Background = buttonMediumInactive;
+            }
+            else
+            {
+                SinglePlayerMedium.Background = buttonMediumActive;
+            }
+
+            if(winsMedium < 3)
+            {
+                SinglePlayerHard.Background = buttonHardInactive;
+            }
+            else
+            {
+                SinglePlayerHard.Background = buttonHardActive;
+            }
         }
 
         #endregion Constructors
@@ -50,26 +95,81 @@ namespace _4Puzzle
 
         private void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
         {
-            e.Handled = true;
-            if (this.Frame.CanGoBack)
-               this.Frame.GoBack();
+            if (Frame.CanGoBack)
+            {
+                e.Handled = true;
+                this.Frame.Navigate(typeof(MainPage), null);
+            }
         }
 
         private void SinglePlayerEasy_Click(object sender, RoutedEventArgs e)
         {
+            textBlockMessage.Text = String.Empty;
             this.Frame.Navigate(typeof(SinglePlayerEasy), null);
         }
 
         private void SinglePlayerMedium_Click(object sender, RoutedEventArgs e)
         {
+            if (winsEasy < 3)
+            {
+                textBlockMessage.Text = "You need at least 3 wins in Easy mode to unlock Medium!";
+                return;
+            }
+            textBlockMessage.Text = String.Empty;
             this.Frame.Navigate(typeof(SinglePlayerMedium), null);
         }
 
         private void SinglePlayerHard_Click(object sender, RoutedEventArgs e)
         {
+            if (winsMedium < 3)
+            {
+                textBlockMessage.Text = "You need at least 3 wins in Medium mode to unlock Hard!";
+                return;
+            }
+            textBlockMessage.Text = String.Empty;
             this.Frame.Navigate(typeof(SinglePlayerHard), null);
         }
 
         #endregion Private Event Handlers
+
+        #region Private Methods
+
+        private void LoadStoredData()
+        {
+            object winsEasy = localSettings.Values["SinglePlayerEasyWins"];
+
+            if (winsEasy != null)
+            {
+                this.winsEasy = (int)winsEasy;
+            }
+            else
+            {
+                this.winsEasy = int.MinValue;
+            }
+
+            object winsMedium = localSettings.Values["SinglePlayerMediumWins"];
+
+            if (winsMedium != null)
+            {
+                this.winsMedium = (int)winsMedium;
+            }
+            else
+            {
+                this.winsMedium = int.MinValue;
+            }
+
+            object winsHard = localSettings.Values["SinglePlayerHardWins"];
+
+            if (winsHard != null)
+            {
+                this.winsHard = (int)winsHard;
+            }
+            else
+            {
+                this.winsHard = int.MinValue;
+            }
+        }
+
+        #endregion Private Methods
     }
 }

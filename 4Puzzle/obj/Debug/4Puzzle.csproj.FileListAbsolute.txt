@@ -96,3 +96,8 @@ C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\obj\Debug\4Puzzle.csprojResolv
 C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\obj\Debug\4Puzzle.csproj.GenerateResource.Cache
+C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\bin\Debug\Tutorial information.xbf
+C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\obj\Debug\Tutorial information.g.i.cs
+C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\obj\Debug\Tutorial information.g.cs
+C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\obj\Debug\Tutorial information.xaml
+C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\obj\Debug\Tutorial information.xbf

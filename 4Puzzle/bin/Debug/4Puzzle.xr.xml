@@ -133,21 +133,19 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Source" />
     </RootType>
-    <RootType FullName="_4Puzzle.MainPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
-      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="TextWrapping" />
-      <RootProperty Name="Text" />
-      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
-      <RootProperty Name="FontSize" />
-      <RootProperty Name="TextAlignment" />
-      <RootProperty Name="Foreground" />
-      <RootProperty Name="SelectionHighlightColor" />
       <RootProperty Name="FontFamily" />
-      <RootProperty Name="Margin" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="TextAlignment" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Text" />
     </RootType>
+    <RootType FullName="_4Puzzle.MainPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Height" />
@@ -180,10 +178,17 @@
       <RootProperty Name="BorderBrush" />
       <RootEvent Name="GotFocus" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.MediaElement">
+      <RootProperty Name="Source" />
+      <RootProperty Name="AutoPlay" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+    </RootType>
     <RootType FullName="_4Puzzle.SinglePlayerEasy" />
     <RootType FullName="_4Puzzle.SinglePlayerHard" />
     <RootType FullName="_4Puzzle.SinglePlayerMedium" />
     <RootType FullName="_4Puzzle.SinglePlayerMenu" />
+    <RootType FullName="_4Puzzle.Tutorial_information" />
     <RootType FullName="_4Puzzle.Tutorial" />
   </Roots.RootTypes>
 </Roots>

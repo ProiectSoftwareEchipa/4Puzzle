@@ -14,7 +14,7 @@
         </Grid.Background>
         <Viewbox Stretch="Fill">
             <Canvas Width="400" Height="640">
-                <Button x:ConnectionId='1' x:Name="Tutorial" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="316" Height="88" FontSize="29.333"                        Tag="/Tutorial.xaml" Canvas.Left="42" Canvas.Top="409" Foreground="White">
+                <Button x:ConnectionId='1' x:Name="Tutorial" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="316" Height="88" FontSize="29.333"                        Tag="/Tutorial.xaml" Canvas.Left="42" Canvas.Top="399" Foreground="White">
                     <Button.BorderBrush>
                         <ImageBrush Stretch="Fill"/>
                     </Button.BorderBrush>
@@ -22,7 +22,7 @@
                         <ImageBrush Stretch="Fill" ImageSource="Images/button_Tutorial.png"/>
                     </Button.Background>
                 </Button>
-                <Button x:ConnectionId='2' x:Name="SinglePlayer" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="316" Height="89" FontSize="29.333"                            Canvas.Left="42" Canvas.Top="327" Foreground="White">
+                <Button x:ConnectionId='2' x:Name="SinglePlayer" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="316" Height="89" FontSize="29.333"                            Canvas.Left="42" Canvas.Top="317" Foreground="White">
                     <Button.BorderBrush>
                         <ImageBrush Stretch="Fill"/>
                     </Button.BorderBrush>
@@ -30,7 +30,7 @@
                         <ImageBrush Stretch="Fill" ImageSource="Images/button_NewGame.png"/>
                     </Button.Background>
                 </Button>
-                <Button x:ConnectionId='3' x:Name="Rankings" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="316" Height="88" FontSize="29.333" Canvas.Left="42" Canvas.Top="491" Foreground="White"                       >
+                <Button x:ConnectionId='3' x:Name="Rankings" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="316" Height="88" FontSize="29.333" Canvas.Left="42" Canvas.Top="481" Foreground="White"                       >
                     <Button.BorderBrush>
                         <ImageBrush Stretch="Fill"/>
                     </Button.BorderBrush>
@@ -39,6 +39,7 @@
                     </Button.Background>
                 </Button>
                 <Image x:Name="imageLogo" Height="338" Canvas.Left="10" Width="380" Source="Images/logo.png" Canvas.Top="28" />
+                <TextBlock x:Name="textBlockMessage" TextWrapping="Wrap" Canvas.Left="10" Canvas.Top="565" Height="65" Width="380" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" FontSize="24" Foreground="Black" TextAlignment="Center"/>
             </Canvas>
         </Viewbox>
     </Grid>

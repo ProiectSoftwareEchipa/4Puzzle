@@ -17,6 +17,7 @@ using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Shapes;
 using Windows.Graphics.Display;
 using _4Puzzle.Generators;
+using System.Net.NetworkInformation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
@@ -27,6 +28,14 @@ namespace _4Puzzle
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        #region Private Members
+
+        private object tutorialWins;
+
+        Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+
+        #endregion Private Members
+
         #region Constructors
 
         public MainPage()
@@ -37,21 +46,21 @@ namespace _4Puzzle
 
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Portrait;
 
+            textBlockMessage.Text = String.Empty;
+
+            //localSettings.Values["TutorialWins"] = 0;
+
+            //localSettings.Values["SinglePlayerEasyBestTime"] = int.MaxValue;
+
+            //localSettings.Values["SinglePlayerMediumWins"] = 0;
+
+            //localSettings.Values["SinglePlayerMediumBestTime"] = int.MaxValue;
+
+            //localSettings.Values["SinglePlayerHardWins"] = 0;
+
+            //localSettings.Values["SinglePlayerHardBestTime"] = int.MaxValue;
+
             _4puzzleUtils.TrySendOfflineScore();
-
-            Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-
-            localSettings.Values["SinglePlayerEasyWins"] = 0;
-
-            localSettings.Values["SinglePlayerEasyBestTime"] = int.MaxValue;
-
-            localSettings.Values["SinglePlayerMediumWins"] = 0;
-
-            localSettings.Values["SinglePlayerMediumBestTime"] = int.MaxValue;
-
-            localSettings.Values["SinglePlayerHardWins"] = 0;
-
-            localSettings.Values["SinglePlayerHardBestTime"] = int.MaxValue;
         }
 
         #endregion Constructors
@@ -74,24 +83,45 @@ namespace _4Puzzle
 
         private void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
         {
-            e.Handled = true;
-            if (Frame.CanGoBack)
-                Frame.GoBack();
+            //TO DO Try make app exit on back here
         }
 
         private void Tutorial_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Tutorial), null);
+            this.Frame.Navigate(typeof(Tutorial_information), null);
+            textBlockMessage.Text = String.Empty;
         }
 
         private void SinglePlayer_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(SinglePlayerMenu), null);
+            tutorialWins = localSettings.Values["TutorialWins"];
+
+            int tutorialWinsInt = int.MinValue;
+            if(tutorialWins != null)
+            {
+                tutorialWinsInt = (int)tutorialWins;
+            }
+
+            if (tutorialWins == null || tutorialWinsInt == 0)
+            {
+                this.Frame.Navigate(typeof(Tutorial_information), null);
+            }
+            else
+            {
+                this.Frame.Navigate(typeof(SinglePlayerMenu), null);
+            }
+            textBlockMessage.Text = String.Empty;
         }
 
         private void Rankings_Click(object sender, RoutedEventArgs e)
         {
+            if (!(NetworkInterface.GetIsNetworkAvailable()))
+            {
+                textBlockMessage.Text = "No internet connection!";
+                return;
+            }
             this.Frame.Navigate(typeof(Rankings), null);
+            textBlockMessage.Text = String.Empty;
         }
 
         #endregion Private Event Handlers

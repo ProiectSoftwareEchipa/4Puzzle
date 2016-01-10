@@ -55,6 +55,8 @@ namespace _4Puzzle
                 string number = String.Format("{0}.", i);
                 listNumbers.Add(number);
             }
+
+            buttonSinglePlayerEasy_Click(null, null);
         }
 
         #endregion Constructors
@@ -77,9 +79,11 @@ namespace _4Puzzle
 
         private void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
         {
-            e.Handled = true;
             if (Frame.CanGoBack)
-                Frame.GoBack();
+            {
+                e.Handled = true;
+                this.Frame.Navigate(typeof(MainPage), null);
+            }
         }
 
         #endregion Overrides

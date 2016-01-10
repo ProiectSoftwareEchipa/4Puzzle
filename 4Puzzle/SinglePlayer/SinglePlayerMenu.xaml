@@ -14,7 +14,7 @@
         </Grid.Background>
         <Viewbox Stretch="Fill">
             <Canvas Width="400" Height="640">
-                <Button x:Name="SinglePlayerEasy" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="316" Height="89" FontSize="29.333" Click="SinglePlayerEasy_Click" Canvas.Left="42" Canvas.Top="327" Foreground="White">
+                <Button x:Name="SinglePlayerEasy" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="316" Height="89" FontSize="29.333" Click="SinglePlayerEasy_Click" Canvas.Left="42" Canvas.Top="317" Foreground="White">
                     <Button.BorderBrush>
                         <ImageBrush Stretch="Fill"/>
                     </Button.BorderBrush>
@@ -22,7 +22,7 @@
                         <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Images/button_Easy.png"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="SinglePlayerMedium" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="316" Height="89" FontSize="29.333" Click="SinglePlayerMedium_Click" Canvas.Left="42" Canvas.Top="409" Foreground="White">
+                <Button x:Name="SinglePlayerMedium" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="316" Height="89" FontSize="29.333" Click="SinglePlayerMedium_Click" Canvas.Left="42" Canvas.Top="399" Foreground="White">
                     <Button.BorderBrush>
                         <ImageBrush Stretch="Fill"/>
                     </Button.BorderBrush>
@@ -30,7 +30,7 @@
                         <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Images/button_Medium.png"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="SinglePlayerHard" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="316" Height="89" FontSize="29.333" Click="SinglePlayerHard_Click" Canvas.Left="42" Canvas.Top="491" Foreground="White">
+                <Button x:Name="SinglePlayerHard" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="316" Height="89" FontSize="29.333" Click="SinglePlayerHard_Click" Canvas.Left="42" Canvas.Top="481" Foreground="White">
                     <Button.BorderBrush>
                         <ImageBrush Stretch="Fill"/>
                     </Button.BorderBrush>
@@ -39,6 +39,7 @@
                     </Button.Background>
                 </Button>
                 <Image x:Name="imageLogo" Height="338" Canvas.Left="10" Width="380" Source="ms-appx:///Images/logo.png" Canvas.Top="28" />
+                <TextBlock x:Name="textBlockMessage" TextWrapping="Wrap" Canvas.Left="10" Canvas.Top="561" Height="69" Width="380" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" FontSize="24" Foreground="Black" TextAlignment="Center"/>
             </Canvas>
         </Viewbox>
     </Grid>

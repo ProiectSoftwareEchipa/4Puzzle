@@ -104,6 +104,9 @@
     <Compile Include="SinglePlayer\SinglePlayerMenu.xaml.cs">
       <DependentUpon>SinglePlayerMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tutorial information.xaml.cs">
+      <DependentUpon>Tutorial information.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tutorial.xaml.cs">
       <DependentUpon>Tutorial.xaml</DependentUpon>
     </Compile>
@@ -131,13 +134,19 @@
     <Content Include="Assets\WideLogo.scale-140.png" />
     <Content Include="Assets\WideLogo.scale-240.png" />
     <Content Include="Images\4Puzzle Background.jpg" />
+    <Content Include="Images\arrow_left.png" />
+    <Content Include="Images\arrow_right.png" />
     <Content Include="Images\background.png" />
     <Content Include="Images\back_game.png" />
+    <Content Include="Images\block3_background - Copy.png" />
+    <Content Include="Images\block3_background.png" />
     <Content Include="Images\button_Easy.png" />
     <Content Include="Images\button_Easy_Smaller.png" />
     <Content Include="Images\button_Hard.png" />
+    <Content Include="Images\button_Hard_disabled.png" />
     <Content Include="Images\button_Hard_Smaller.png" />
     <Content Include="Images\button_Medium.png" />
+    <Content Include="Images\button_Medium_disabled.png" />
     <Content Include="Images\button_Medium_Smaller.png" />
     <Content Include="Images\button_NewGame.png" />
     <Content Include="Images\button_Rankings.png" />
@@ -157,8 +166,17 @@
     <Content Include="Images\logo.png" />
     <Content Include="Images\medium_game.png" />
     <Content Include="Images\Message Box Victory.png" />
+    <Content Include="Images\newgame_banner.png" />
     <Content Include="Images\Notebook background.png" />
     <Content Include="Images\Ok button.png" />
+    <Content Include="Images\rankings_banner.png" />
+    <Content Include="Images\tutorialPage2.png" />
+    <Content Include="Images\tutorialPage3.png" />
+    <Content Include="Images\tutorialPage4.png" />
+    <Content Include="Images\tutorialPage5.png" />
+    <Content Include="Images\tutorialPage6.png" />
+    <Content Include="Images\tutorial_banner.png" />
+    <Content Include="Sounds\Swap sound.mp3" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -186,6 +204,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SinglePlayer\SinglePlayerMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tutorial information.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
