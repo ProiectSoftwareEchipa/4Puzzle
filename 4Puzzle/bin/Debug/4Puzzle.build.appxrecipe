@@ -24,8 +24,24 @@
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\packages\Newtonsoft.Json.8.0.2\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Assets\Logo.scale-140.png">
+      <PackagePath>Assets\Logo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Assets\Logo.scale-240.png">
       <PackagePath>Assets\Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Assets\SmallLogo.scale-140.png">
+      <PackagePath>Assets\SmallLogo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Assets\SmallLogo.scale-240.png">
@@ -34,14 +50,37 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Assets\SplashScreen.scale-240.png">
       <PackagePath>Assets\SplashScreen.scale-240.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Assets\Square71x71Logo.scale-100.png">
+      <PackagePath>Assets\Square71x71Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Assets\Square71x71Logo.scale-140.png">
+      <PackagePath>Assets\Square71x71Logo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Assets\Square71x71Logo.scale-240.png">
       <PackagePath>Assets\Square71x71Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Assets\StoreLogo.scale-140.png">
+      <PackagePath>Assets\StoreLogo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Assets\StoreLogo.scale-240.png">
       <PackagePath>Assets\StoreLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Assets\WideLogo.scale-100.png">
+      <PackagePath>Assets\WideLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Assets\WideLogo.scale-140.png">
+      <PackagePath>Assets\WideLogo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Assets\WideLogo.scale-240.png">
