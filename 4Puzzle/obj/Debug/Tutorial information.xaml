@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="_4Puzzle.Tutorial_information"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_4Puzzle"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Images/background.png"/>
+        </Grid.Background>
+        <Viewbox Stretch="Fill">
+            <Canvas Width="400" Height="640">
+                <Image x:Name="imageTitle" Height="186" Canvas.Left="95" Canvas.Top="-17" Width="226" Source="ms-appx:///Images/tutorial_banner.png"/>
+                <Image x:Name="imageBackground" Height="497" Width="390" Source="Images/block3_background - Copy.png" Canvas.Left="10" Canvas.Top="116"/>
+                <Image x:Name="imageCurrentPage" Height="330" Width="290" Canvas.Left="60" Canvas.Top="200"/>
+                <TextBlock x:Name="textBlockTitle" Canvas.Left="55" TextWrapping="Wrap" Text="Welcome to 4Puzzle!" Canvas.Top="138" Height="115" Width="310" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" FontSize="48" TextAlignment="Center"/>
+                <TextBlock x:Name="textBlockText" Canvas.Left="55" TextWrapping="Wrap" Text="The next few images will teach you the basics about playing the game. After that you will get to try what you have learned. Please press the right button." Canvas.Top="258" Height="260" Width="310" TextAlignment="Center" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" FontSize="28"/>
+                <TextBlock x:Name="textBlockPageNumber" Canvas.Left="182" TextWrapping="Wrap" Text="-1-" Canvas.Top="543" Height="46" Width="56" TextAlignment="Center" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" FontSize="28"/>
+                <Button x:ConnectionId='1' x:Name="buttonRight" Content="" Canvas.Left="238" Canvas.Top="521" Height="80" Width="127"                          >
+                    <Button.BorderBrush>
+                        <ImageBrush Stretch="Fill"/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <ImageBrush Stretch="Uniform" ImageSource="Images/arrow_right.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:ConnectionId='2' x:Name="buttonLeft" Content="" Canvas.Left="55" Canvas.Top="521" Height="80" Width="127"                         >
+                    <Button.BorderBrush>
+                        <ImageBrush Stretch="Fill"/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <ImageBrush Stretch="Uniform" ImageSource="Images/arrow_left.png"/>
+                    </Button.Background>
+                </Button>
+            </Canvas>
+        </Viewbox>
+    </Grid>
+</Page>
+

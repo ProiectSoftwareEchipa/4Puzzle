@@ -55,6 +55,8 @@ namespace _4Puzzle
 
         private Tile[] blankTilePositions = new Tile[4];
 
+        Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+
         #endregion Private Members
 
         #region Constructors
@@ -89,6 +91,12 @@ namespace _4Puzzle
 
             InitializeTutorialImages();
 
+            //Popup elemets
+            PopupButtonCancel.Visibility = Visibility.Collapsed;
+            PopupButtonOk.Visibility = Visibility.Collapsed;
+            PopupRectangle.Visibility = Visibility.Collapsed;
+            PopupTextBlockMessagePlayAgain.Visibility = Visibility.Collapsed;
+
             _4puzzleUtils.TrySendOfflineScore();
         }
 
@@ -110,13 +118,23 @@ namespace _4Puzzle
 
         #region Event Handlers
 
+        private void buttonPopupCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage), null);
+        }
+
+        private void buttonPopupOk_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage), null);
+        }
+
         private void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
         {
-            e.Handled = true;
             if (Frame.CanGoBack)
             {
-                Frame.GoBack();
-            }          
+                e.Handled = true;
+                this.Frame.Navigate(typeof(MainPage), null);
+            }
         }
 
         /// <summary>
@@ -132,12 +150,13 @@ namespace _4Puzzle
 
             if (CheckEndGame)
             {
-                validationBlock.Text = "Victory!";
+                PopupButtonCancel.Visibility = Visibility.Visible;
+                PopupButtonOk.Visibility = Visibility.Visible;
+                PopupRectangle.Visibility = Visibility.Visible;
+                PopupTextBlockMessagePlayAgain.Visibility = Visibility.Visible;
+
+                localSettings.Values["TutorialWins"] = 1;
                 StopGame();
-            }
-            else
-            {
-                validationBlock.Text = String.Empty;
             }
         }
 

@@ -101,10 +101,16 @@ namespace _4Puzzle.Generators {
         }
 
         static void GetResponsetStreamCallback(IAsyncResult callbackResult) {
-            HttpWebRequest request = (HttpWebRequest)callbackResult.AsyncState;
-            HttpWebResponse response = (HttpWebResponse)request.EndGetResponse(callbackResult);
-            using (StreamReader httpWebStreamReader = new StreamReader(response.GetResponseStream())) {
-                string result = httpWebStreamReader.ReadToEnd();
+            try {
+                HttpWebRequest request = (HttpWebRequest)callbackResult.AsyncState;
+                HttpWebResponse response = (HttpWebResponse)request.EndGetResponse(callbackResult);
+                using (StreamReader httpWebStreamReader = new StreamReader(response.GetResponseStream())) {
+                    string result = httpWebStreamReader.ReadToEnd();
+                }
+            }
+            catch
+            {
+                return;
             }
         }
 

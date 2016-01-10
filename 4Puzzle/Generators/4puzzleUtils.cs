@@ -27,7 +27,7 @@ namespace _4Puzzle.Generators {
             if (name == null)
                 return null;
 
-            return Regex.Replace(name, "[^A-Za-z0-9 _]", "");
+            return Regex.Replace(name, "[^A-Za-z0-9_]", "");
         }
 
         static List<Score> GetScoreList() {

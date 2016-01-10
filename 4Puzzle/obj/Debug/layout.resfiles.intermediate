@@ -22,16 +22,23 @@ SinglePlayer\SinglePlayerEasy.xbf
 SinglePlayer\SinglePlayerHard.xbf
 SinglePlayer\SinglePlayerMedium.xbf
 SinglePlayer\SinglePlayerMenu.xbf
+Tutorial information.xbf
 Tutorial.xbf
 Fonts\RO-D3-Streetism.ttf
 Images\4Puzzle Background.jpg
+Images\arrow_left.png
+Images\arrow_right.png
 Images\back_game.png
 Images\background.png
+Images\block3_background - Copy.png
+Images\block3_background.png
 Images\button_Easy.png
 Images\button_Easy_Smaller.png
 Images\button_Hard.png
+Images\button_Hard_disabled.png
 Images\button_Hard_Smaller.png
 Images\button_Medium.png
+Images\button_Medium_disabled.png
 Images\button_Medium_Smaller.png
 Images\button_NewGame.png
 Images\button_Rankings.png
@@ -51,5 +58,14 @@ Images\hard_game.png
 Images\logo.png
 Images\medium_game.png
 Images\Message Box Victory.png
+Images\newgame_banner.png
 Images\Notebook background.png
 Images\Ok button.png
+Images\rankings_banner.png
+Images\tutorial_banner.png
+Images\tutorialPage2.png
+Images\tutorialPage3.png
+Images\tutorialPage4.png
+Images\tutorialPage5.png
+Images\tutorialPage6.png
+Sounds\Swap sound.mp3

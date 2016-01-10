@@ -206,10 +206,10 @@ namespace _4Puzzle
 
         private void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
         {
-            e.Handled = true;
             if (Frame.CanGoBack)
             {
-                Frame.GoBack();
+                e.Handled = true;
+                this.Frame.Navigate(typeof(SinglePlayerMenu), null);
             }
         }
 
@@ -534,6 +534,7 @@ namespace _4Puzzle
         {
             blankRectangle.Fill = imageRectangle.Fill;
             imageRectangle.Fill = imageBrushBlank;
+            //swapSound.Play();
         }
 
         private bool IsPositionInTheCenter(int position)

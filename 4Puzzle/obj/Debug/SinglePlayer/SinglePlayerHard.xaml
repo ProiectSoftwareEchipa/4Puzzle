@@ -84,12 +84,12 @@
                 <Rectangle x:ConnectionId='63' x:Name="Rectangle87" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="45" Stroke="Black" VerticalAlignment="Bottom" Width="45"                           Canvas.Left="298" Canvas.Top="518" StrokeThickness="0" Canvas.ZIndex="2"/>
                 <Rectangle x:ConnectionId='64' x:Name="Rectangle88" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="45" Stroke="Black" VerticalAlignment="Bottom" Width="45"                           Canvas.Left="343" Canvas.Top="518" StrokeThickness="0" Canvas.ZIndex="2"/>
                 <TextBlock x:Name="validationBlock" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="29.333" Width="380" TextAlignment="Center" Foreground="White" Canvas.Left="7" Canvas.Top="579"/>
-                <TextBlock x:Name="singlePlayerHardWinsText" Canvas.Left="105" TextWrapping="Wrap" Canvas.Top="131" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="Black"/>
-                <TextBlock x:Name="singlePlayerHardTimeText" Canvas.Left="173" TextWrapping="Wrap" Canvas.Top="131" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="Black"/>
-                <TextBlock x:Name="singlePlayerHardBestTimeText" Canvas.Left="264" TextWrapping="Wrap" Canvas.Top="131" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="Black"/>
-                <TextBlock x:Name="labelTimer" Canvas.Left="171" TextWrapping="Wrap" Text="Timer" Canvas.Top="104" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="Black"/>
-                <TextBlock x:Name="labelWins" Canvas.Left="89" TextWrapping="Wrap" Text="Wins" Canvas.Top="104" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="Black"/>
-                <TextBlock x:Name="labelBestTime" Canvas.Left="245" TextWrapping="Wrap" Text="Best Time" Canvas.Top="104" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="Black"/>
+                <TextBlock x:Name="singlePlayerHardWinsText" Canvas.Left="65" TextWrapping="Wrap" Canvas.Top="132" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="White"/>
+                <TextBlock x:Name="singlePlayerHardTimeText" Canvas.Left="177" TextWrapping="Wrap" Canvas.Top="132" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="White"/>
+                <TextBlock x:Name="singlePlayerHardBestTimeText" Canvas.Left="300" TextWrapping="Wrap" Canvas.Top="133" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="White"/>
+                <TextBlock x:Name="labelTimer" Canvas.Left="175" TextWrapping="Wrap" Text="Timer" Canvas.Top="107" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="White"/>
+                <TextBlock x:Name="labelWins" Canvas.Left="50" TextWrapping="Wrap" Text="Wins" Canvas.Top="107" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="White"/>
+                <TextBlock x:Name="labelBestTime" Canvas.Left="277" TextWrapping="Wrap" Text="Best Time" Canvas.Top="107" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="White"/>
                 <Rectangle x:Name="PopupRectangle" Height="166" Canvas.Left="52" Stroke="Black" Canvas.Top="219" Width="297" Canvas.ZIndex="3" RadiusX="40" RadiusY="40" StrokeThickness="3">
                     <Rectangle.Fill>
                         <ImageBrush ImageSource="ms-appx:///Images/Message Box Victory.png"/>
@@ -115,7 +115,10 @@
                     </Button.Background>
                 </Button>
                 <Image x:Name="imageTitle" Height="186" Canvas.Left="95" Canvas.Top="-43" Width="226" Source="ms-appx:///Images/hard_game.png"/>
-                <Image x:Name="imageHeaderBackground" Height="82" Canvas.Left="25" Canvas.Top="90" Width="353" Source="ms-appx:///Images/Notebook background.png"/>
+                <Image x:Name="imageHeaderBackground1" Height="82" Canvas.Left="10" Canvas.Top="90" Width="122" Source="ms-appx:///Images/block3_background.png"/>
+                <MediaElement x:Name="swapSound" Source="ms-appx:///Sounds/Swap sound.mp3" AutoPlay="False" Height="0" Width="0"/>
+                <Image x:Name="imageHeaderBackground2" Height="82" Canvas.Left="139" Canvas.Top="90" Width="122" Source="ms-appx:///Images/block3_background.png"/>
+                <Image x:Name="imageHeaderBackground3" Height="82" Canvas.Left="264" Canvas.Top="90" Width="122" Source="ms-appx:///Images/block3_background.png"/>
             </Canvas>
         </Viewbox>
     </Grid>
