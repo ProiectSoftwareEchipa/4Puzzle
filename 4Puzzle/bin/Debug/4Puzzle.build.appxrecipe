@@ -8,7 +8,7 @@
     <TargetOsDescription>Windows Phone 8.1</TargetOsDescription>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <PackageIdentityName>aa5e98f8-c865-4ef3-a4a3-869d783dcc14</PackageIdentityName>
+    <PackageIdentityName>155694c7-7c33-4ea2-8ec9-e311e781baf1</PackageIdentityName>
     <IntermediateOutputPath>C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\obj\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
@@ -105,6 +105,18 @@
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\block3_background.png">
       <PackagePath>Images\block3_background.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\btn_cancel.png">
+      <PackagePath>Images\btn_cancel.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\btn_next.png">
+      <PackagePath>Images\btn_next.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\btn_ok.png">
+      <PackagePath>Images\btn_ok.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\btn_prev.png">
+      <PackagePath>Images\btn_prev.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\button_Easy.png">
       <PackagePath>Images\button_Easy.png</PackagePath>
     </AppxPackagedFile>
@@ -147,29 +159,62 @@
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\easy_game.png">
       <PackagePath>Images\easy_game.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\errorMsjHardMode.png">
+      <PackagePath>Images\errorMsjHardMode.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\errorMsjMediumMode.png">
+      <PackagePath>Images\errorMsjMediumMode.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\errorMsjNoInternet.png">
+      <PackagePath>Images\errorMsjNoInternet.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig1.png">
       <PackagePath>Images\fig1.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig1_happy.png">
+      <PackagePath>Images\fig1_happy.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig2.png">
       <PackagePath>Images\fig2.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig2_happy.png">
+      <PackagePath>Images\fig2_happy.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig3.png">
       <PackagePath>Images\fig3.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig3_happy.png">
+      <PackagePath>Images\fig3_happy.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig4.png">
       <PackagePath>Images\fig4.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig4_happy.png">
+      <PackagePath>Images\fig4_happy.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig5.png">
       <PackagePath>Images\fig5.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig5_happy.png">
+      <PackagePath>Images\fig5_happy.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig6.png">
       <PackagePath>Images\fig6.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig6_happy.png">
+      <PackagePath>Images\fig6_happy.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig7.png">
       <PackagePath>Images\fig7.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig7_happy.png">
+      <PackagePath>Images\fig7_happy.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig8.png">
       <PackagePath>Images\fig8.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\fig8_happy.png">
+      <PackagePath>Images\fig8_happy.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\hard_game.png">
       <PackagePath>Images\hard_game.png</PackagePath>
@@ -192,8 +237,44 @@
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\Ok button.png">
       <PackagePath>Images\Ok button.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\popup3WinsEasy.png">
+      <PackagePath>Images\popup3WinsEasy.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\popup3WinsHard.png">
+      <PackagePath>Images\popup3WinsHard.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\popup3WinsMedium.png">
+      <PackagePath>Images\popup3WinsMedium.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\popupWinHighscore.png">
+      <PackagePath>Images\popupWinHighscore.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\popupWinHighscoreCancel.png">
+      <PackagePath>Images\popupWinHighscoreCancel.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\popupWinHighscoreNoName.png">
+      <PackagePath>Images\popupWinHighscoreNoName.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\popupWinSimple.png">
+      <PackagePath>Images\popupWinSimple.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\popupWinTutorial.png">
+      <PackagePath>Images\popupWinTutorial.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\rankings_banner.png">
       <PackagePath>Images\rankings_banner.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\soundoff-icon.png">
+      <PackagePath>Images\soundoff-icon.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\soundon-icon.png">
+      <PackagePath>Images\soundon-icon.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\top_board_bg.png">
+      <PackagePath>Images\top_board_bg.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\top_entry.png">
+      <PackagePath>Images\top_entry.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\tutorialPage2.png">
       <PackagePath>Images\tutorialPage2.png</PackagePath>
@@ -213,11 +294,20 @@
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\tutorial_banner.png">
       <PackagePath>Images\tutorial_banner.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\tutorial_pag.png">
+      <PackagePath>Images\tutorial_pag.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Images\4Puzzle Background.jpg">
       <PackagePath>Images\4Puzzle Background.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Sounds\Swap sound.mp3">
-      <PackagePath>Sounds\Swap sound.mp3</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Sounds\button_sound.wav">
+      <PackagePath>Sounds\button_sound.wav</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Sounds\swap_sound.wav">
+      <PackagePath>Sounds\swap_sound.wav</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Sounds\win_sound.wav">
+      <PackagePath>Sounds\win_sound.wav</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Documents\4Puzzle\4Puzzle\4Puzzle\Fonts\RO-D3-Streetism.ttf">
       <PackagePath>Fonts\RO-D3-Streetism.ttf</PackagePath>

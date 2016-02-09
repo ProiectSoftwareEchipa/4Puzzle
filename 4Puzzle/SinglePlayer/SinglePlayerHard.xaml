@@ -86,39 +86,36 @@
                 <TextBlock x:Name="validationBlock" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="29.333" Width="380" TextAlignment="Center" Foreground="White" Canvas.Left="7" Canvas.Top="579"/>
                 <TextBlock x:Name="singlePlayerHardWinsText" Canvas.Left="65" TextWrapping="Wrap" Canvas.Top="132" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="White"/>
                 <TextBlock x:Name="singlePlayerHardTimeText" Canvas.Left="177" TextWrapping="Wrap" Canvas.Top="132" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="White"/>
-                <TextBlock x:Name="singlePlayerHardBestTimeText" Canvas.Left="300" TextWrapping="Wrap" Canvas.Top="133" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="White"/>
+                <TextBlock x:Name="singlePlayerHardBestTimeText" Canvas.Left="277" TextWrapping="Wrap" Canvas.Top="133" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="White" Width="98" TextAlignment="Center"/>
                 <TextBlock x:Name="labelTimer" Canvas.Left="175" TextWrapping="Wrap" Text="Timer" Canvas.Top="107" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="White"/>
                 <TextBlock x:Name="labelWins" Canvas.Left="50" TextWrapping="Wrap" Text="Wins" Canvas.Top="107" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="White"/>
                 <TextBlock x:Name="labelBestTime" Canvas.Left="277" TextWrapping="Wrap" Text="Best Time" Canvas.Top="107" FontSize="21.333" Canvas.ZIndex="1" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="White"/>
-                <Rectangle x:Name="PopupRectangle" Height="166" Canvas.Left="52" Stroke="Black" Canvas.Top="219" Width="297" Canvas.ZIndex="3" RadiusX="40" RadiusY="40" StrokeThickness="3">
-                    <Rectangle.Fill>
-                        <ImageBrush ImageSource="ms-appx:///Images/Message Box Victory.png"/>
-                    </Rectangle.Fill>
-                </Rectangle>
-                <TextBox x:Name="PopupTextBoxUsername" Canvas.Left="64" Margin="0" TextWrapping="Wrap" Text="Register Name" Canvas.Top="296" Width="275" Canvas.ZIndex="4" GotFocus="PopupTextBoxUsername_GotFocus" Height="37" BorderBrush="Black"/>
-                <TextBlock x:Name="PopupTextBlockMessage" Canvas.Left="12" TextWrapping="Wrap" Text="New highscore!" Canvas.Top="267" Canvas.ZIndex="4" FontSize="24" Height="34" Foreground="Black" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" TextAlignment="Center" Width="376"/>
-                <TextBlock x:Name="PopupTextBlockMessagePlayAgain" Canvas.Left="12" TextWrapping="Wrap" Text="Play again?" Canvas.Top="282" Canvas.ZIndex="4" FontSize="32" Height="49" Foreground="Black" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" TextAlignment="Center" Width="376"/>
-                <Button x:Name="PopupButtonCancel" Content="" Canvas.Left="205" Canvas.Top="327" Canvas.ZIndex="4" Click="buttonPopupCancel_Click" Height="62">
+                <Image x:Name="PopupImage" Height="203" Canvas.Top="182" Width="380" Source="ms-appx:///Images/popupWinSimple.png" Canvas.ZIndex="3" Canvas.Left="10"/>
+                <TextBox x:Name="PopupTextBoxUsername" Canvas.Left="69" Margin="0" TextWrapping="Wrap" Text="Register Name" Canvas.Top="300" Width="275" Canvas.ZIndex="4" GotFocus="PopupTextBoxUsername_GotFocus" Height="37" BorderBrush="Black" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism"/>
+                <Button x:Name="PopupButtonCancel" Content="" Canvas.Left="215" Canvas.Top="339" Canvas.ZIndex="4" Click="buttonPopupCancel_Click" Height="98">
                     <Button.BorderBrush>
                         <ImageBrush Stretch="Fill"/>
                     </Button.BorderBrush>
                     <Button.Background>
-                        <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///Images/Cancel button.png"/>
+                        <ImageBrush ImageSource="ms-appx:///Images/btn_cancel.png" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="PopupButtonOk" Content="" Canvas.Left="85" Canvas.Top="328" Canvas.ZIndex="4" Click="buttonPopupOk_Click" Height="60" Width="99">
+                <Button x:Name="PopupButtonOk" Content="" Canvas.Left="89" Canvas.Top="339" Canvas.ZIndex="4" Click="buttonPopupOk_Click" Height="98" Width="88">
                     <Button.BorderBrush>
                         <ImageBrush Stretch="Fill"/>
                     </Button.BorderBrush>
                     <Button.Background>
-                        <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///Images/Ok button.png"/>
+                        <ImageBrush ImageSource="ms-appx:///Images/btn_ok.png" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
                 <Image x:Name="imageTitle" Height="186" Canvas.Left="95" Canvas.Top="-43" Width="226" Source="ms-appx:///Images/hard_game.png"/>
                 <Image x:Name="imageHeaderBackground1" Height="82" Canvas.Left="10" Canvas.Top="90" Width="122" Source="ms-appx:///Images/block3_background.png"/>
-                <MediaElement x:Name="swapSound" Source="ms-appx:///Sounds/Swap sound.mp3" AutoPlay="False" Height="0" Width="0"/>
+                <MediaElement x:Name="swapSound" Source="ms-appx:///Sounds/move_sound.wav" AutoPlay="False" Height="0" Width="0"/>
                 <Image x:Name="imageHeaderBackground2" Height="82" Canvas.Left="139" Canvas.Top="90" Width="122" Source="ms-appx:///Images/block3_background.png"/>
                 <Image x:Name="imageHeaderBackground3" Height="82" Canvas.Left="264" Canvas.Top="90" Width="122" Source="ms-appx:///Images/block3_background.png"/>
+                <Image x:Name="imageSound" Height="50" Canvas.Left="340" Width="50" Canvas.Top="10" Source="ms-appx:///Images/soundon-icon.png" Tapped="imageSound_Tapped" />
+                <MediaElement x:Name="winSound" Source="ms-appx:///Sounds/win_sound.wav" AutoPlay="False" Height="0" Width="0"/>
+                <MediaElement x:Name="buttonSound" Source="ms-appx:///Sounds/button_sound.wav" AutoPlay="False" Height="0" Width="0"/>
             </Canvas>
         </Viewbox>
     </Grid>

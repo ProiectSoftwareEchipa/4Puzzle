@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _4Puzzle.Generators;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -44,6 +45,8 @@ namespace _4Puzzle
 
             LoadStoredData();
 
+            imageError.Source = null;
+
             ImageBrush buttonMediumActive = new ImageBrush();
             buttonMediumActive.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/button_Medium.png"));
 
@@ -87,6 +90,15 @@ namespace _4Puzzle
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             Windows.Phone.UI.Input.HardwareButtons.BackPressed += HardwareButtons_BackPressed;
+
+            if (AppSettings.Sound)
+            {
+                imageSound.Source = new BitmapImage(new Uri("ms-appx:///Images/soundon-icon.png"));
+            }
+            else
+            {
+                imageSound.Source = new BitmapImage(new Uri("ms-appx:///Images/soundoff-icon.png"));
+            }
         }
 
         #endregion Overrides
@@ -104,30 +116,59 @@ namespace _4Puzzle
 
         private void SinglePlayerEasy_Click(object sender, RoutedEventArgs e)
         {
-            textBlockMessage.Text = String.Empty;
+            if (AppSettings.Sound)
+            {
+                buttonSound.Play();
+            }
+
+            imageError.Source = null;
             this.Frame.Navigate(typeof(SinglePlayerEasy), null);
         }
 
         private void SinglePlayerMedium_Click(object sender, RoutedEventArgs e)
         {
+            if (AppSettings.Sound)
+            {
+                buttonSound.Play();
+            }
+
             if (winsEasy < 3)
             {
-                textBlockMessage.Text = "You need at least 3 wins in Easy mode to unlock Medium!";
+                imageError.Source = new BitmapImage(new Uri("ms-appx:///Images/errorMsjMediumMode.png"));
                 return;
             }
-            textBlockMessage.Text = String.Empty;
+            imageError.Source = null;
             this.Frame.Navigate(typeof(SinglePlayerMedium), null);
         }
 
         private void SinglePlayerHard_Click(object sender, RoutedEventArgs e)
         {
+            if (AppSettings.Sound)
+            {
+                buttonSound.Play();
+            }
+
             if (winsMedium < 3)
             {
-                textBlockMessage.Text = "You need at least 3 wins in Medium mode to unlock Hard!";
+                imageError.Source = new BitmapImage(new Uri("ms-appx:///Images/errorMsjHardMode.png"));
                 return;
             }
-            textBlockMessage.Text = String.Empty;
+            imageError.Source = null;
             this.Frame.Navigate(typeof(SinglePlayerHard), null);
+        }
+
+        private void imageSound_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            if (AppSettings.Sound)
+            {
+                AppSettings.Sound = false;
+                imageSound.Source = new BitmapImage(new Uri("ms-appx:///Images/soundoff-icon.png"));
+            }
+            else
+            {
+                AppSettings.Sound = true;
+                imageSound.Source = new BitmapImage(new Uri("ms-appx:///Images/soundon-icon.png"));
+            }
         }
 
         #endregion Private Event Handlers

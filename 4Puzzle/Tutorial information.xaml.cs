@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _4Puzzle.Generators;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -49,9 +50,32 @@ namespace _4Puzzle
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             Windows.Phone.UI.Input.HardwareButtons.BackPressed += HardwareButtons_BackPressed;
+
+            if (AppSettings.Sound)
+            {
+                imageSound.Source = new BitmapImage(new Uri("ms-appx:///Images/soundon-icon.png"));
+            }
+            else
+            {
+                imageSound.Source = new BitmapImage(new Uri("ms-appx:///Images/soundoff-icon.png"));
+            }
         }
 
         #region Event Handlers
+
+        private void imageSound_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            if (AppSettings.Sound)
+            {
+                AppSettings.Sound = false;
+                imageSound.Source = new BitmapImage(new Uri("ms-appx:///Images/soundoff-icon.png"));
+            }
+            else
+            {
+                AppSettings.Sound = true;
+                imageSound.Source = new BitmapImage(new Uri("ms-appx:///Images/soundon-icon.png"));
+            }
+        }
 
         private void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
         {
@@ -66,12 +90,17 @@ namespace _4Puzzle
 
         private void buttonRight_Click(object sender, RoutedEventArgs e)
         {
-            if(pageNumber == 1)
+            if (AppSettings.Sound)
+            {
+                buttonSound.Play();
+            }
+
+            if (pageNumber == 1)
             {
                 pageNumber = 2;
                 textBlockText.Text = String.Empty;
                 textBlockTitle.Text = "The board";
-                textBlockPageNumber.Text = "-2-";
+                textBlockPageNumber.Text = "2";
                 imageCurrentPage.Source = new BitmapImage(new Uri("ms-appx:///Images/tutorialPage2.png"));
             }
             else if (pageNumber == 2)
@@ -79,7 +108,7 @@ namespace _4Puzzle
                 pageNumber = 3;
                 textBlockText.Text = String.Empty;
                 textBlockTitle.Text = "The goal";
-                textBlockPageNumber.Text = "-3-";
+                textBlockPageNumber.Text = "3";
                 imageCurrentPage.Source = new BitmapImage(new Uri("ms-appx:///Images/tutorialPage3.png"));
             }
             else if (pageNumber == 3)
@@ -87,7 +116,7 @@ namespace _4Puzzle
                 pageNumber = 4;
                 textBlockText.Text = String.Empty;
                 textBlockTitle.Text = "The goal";
-                textBlockPageNumber.Text = "-4-";
+                textBlockPageNumber.Text = "4";
                 imageCurrentPage.Source = new BitmapImage(new Uri("ms-appx:///Images/tutorialPage4.png"));
             }
             else if (pageNumber == 4)
@@ -95,7 +124,7 @@ namespace _4Puzzle
                 pageNumber = 5;
                 textBlockText.Text = String.Empty;
                 textBlockTitle.Text = "The moves";
-                textBlockPageNumber.Text = "-5-";
+                textBlockPageNumber.Text = "5";
                 imageCurrentPage.Source = new BitmapImage(new Uri("ms-appx:///Images/tutorialPage5.png"));
             }
             else if (pageNumber == 5)
@@ -103,7 +132,7 @@ namespace _4Puzzle
                 pageNumber = 6;
                 textBlockText.Text = String.Empty;
                 textBlockTitle.Text = "The moves";
-                textBlockPageNumber.Text = "-6-";
+                textBlockPageNumber.Text = "6";
                 imageCurrentPage.Source = new BitmapImage(new Uri("ms-appx:///Images/tutorialPage6.png"));
             }
             else if (pageNumber == 6)
@@ -111,7 +140,7 @@ namespace _4Puzzle
                 pageNumber = 7;
                 textBlockText.Text = "After all these infos I am sure you are ready to face the real challenge. Press the right button and try to the finish level. After you have won, Easy mode will be unlocked.";
                 textBlockTitle.Text = "The conclusions";
-                textBlockPageNumber.Text = "-7-";
+                textBlockPageNumber.Text = "7";
                 imageCurrentPage.Source = null;
             }
             else if (pageNumber == 7)
@@ -122,12 +151,17 @@ namespace _4Puzzle
 
         private void buttonLeft_Click(object sender, RoutedEventArgs e)
         {
+            if (AppSettings.Sound)
+            {
+                buttonSound.Play();
+            }
+
             if (pageNumber == 2)
             {
                 pageNumber = 1;
                 textBlockText.Text = "The next few images will teach you the basics about playing the game. After that you will get to try what you have learned. Please press the right button.";
                 textBlockTitle.Text = "Welcome to 4Puzzle!";
-                textBlockPageNumber.Text = "-1-";
+                textBlockPageNumber.Text = "1";
                 imageCurrentPage.Source = null;
             }
             else if (pageNumber == 3)
@@ -135,7 +169,7 @@ namespace _4Puzzle
                 pageNumber = 2;
                 textBlockText.Text = String.Empty;
                 textBlockTitle.Text = "The board";
-                textBlockPageNumber.Text = "-2-";
+                textBlockPageNumber.Text = "2";
                 imageCurrentPage.Source = new BitmapImage(new Uri("ms-appx:///Images/tutorialPage2.png"));
             }
             else if (pageNumber == 4)
@@ -143,7 +177,7 @@ namespace _4Puzzle
                 pageNumber = 3;
                 textBlockText.Text = String.Empty;
                 textBlockTitle.Text = "The goal";
-                textBlockPageNumber.Text = "-3-";
+                textBlockPageNumber.Text = "3";
                 imageCurrentPage.Source = new BitmapImage(new Uri("ms-appx:///Images/tutorialPage3.png"));
             }
             else if (pageNumber == 5)
@@ -151,7 +185,7 @@ namespace _4Puzzle
                 pageNumber = 4;
                 textBlockText.Text = String.Empty;
                 textBlockTitle.Text = "The goal";
-                textBlockPageNumber.Text = "-4-";
+                textBlockPageNumber.Text = "4";
                 imageCurrentPage.Source = new BitmapImage(new Uri("ms-appx:///Images/tutorialPage4.png"));
             }
             else if (pageNumber == 6)
@@ -159,7 +193,7 @@ namespace _4Puzzle
                 pageNumber = 5;
                 textBlockText.Text = String.Empty;
                 textBlockTitle.Text = "The moves";
-                textBlockPageNumber.Text = "-5-";
+                textBlockPageNumber.Text = "5";
                 imageCurrentPage.Source = new BitmapImage(new Uri("ms-appx:///Images/tutorialPage5.png"));
             }
             else if (pageNumber == 7)
@@ -167,7 +201,7 @@ namespace _4Puzzle
                 pageNumber = 6;
                 textBlockText.Text = String.Empty;
                 textBlockTitle.Text = "The moves";
-                textBlockPageNumber.Text = "-6-";
+                textBlockPageNumber.Text = "6";
                 imageCurrentPage.Source = new BitmapImage(new Uri("ms-appx:///Images/tutorialPage6.png"));
             }
         }

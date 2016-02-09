@@ -32,6 +32,10 @@ Images\back_game.png
 Images\background.png
 Images\block3_background - Copy.png
 Images\block3_background.png
+Images\btn_cancel.png
+Images\btn_next.png
+Images\btn_ok.png
+Images\btn_prev.png
 Images\button_Easy.png
 Images\button_Easy_Smaller.png
 Images\button_Hard.png
@@ -46,14 +50,25 @@ Images\button_Tutorial.png
 Images\Cancel button.png
 Images\Chalckboard rankings.png
 Images\easy_game.png
+Images\errorMsjHardMode.png
+Images\errorMsjMediumMode.png
+Images\errorMsjNoInternet.png
 Images\fig1.png
+Images\fig1_happy.png
 Images\fig2.png
+Images\fig2_happy.png
 Images\fig3.png
+Images\fig3_happy.png
 Images\fig4.png
+Images\fig4_happy.png
 Images\fig5.png
+Images\fig5_happy.png
 Images\fig6.png
+Images\fig6_happy.png
 Images\fig7.png
+Images\fig7_happy.png
 Images\fig8.png
+Images\fig8_happy.png
 Images\hard_game.png
 Images\logo.png
 Images\medium_game.png
@@ -61,11 +76,26 @@ Images\Message Box Victory.png
 Images\newgame_banner.png
 Images\Notebook background.png
 Images\Ok button.png
+Images\popup3WinsEasy.png
+Images\popup3WinsHard.png
+Images\popup3WinsMedium.png
+Images\popupWinHighscore.png
+Images\popupWinHighscoreCancel.png
+Images\popupWinHighscoreNoName.png
+Images\popupWinSimple.png
+Images\popupWinTutorial.png
 Images\rankings_banner.png
+Images\soundoff-icon.png
+Images\soundon-icon.png
+Images\top_board_bg.png
+Images\top_entry.png
 Images\tutorial_banner.png
+Images\tutorial_pag.png
 Images\tutorialPage2.png
 Images\tutorialPage3.png
 Images\tutorialPage4.png
 Images\tutorialPage5.png
 Images\tutorialPage6.png
-Sounds\Swap sound.mp3
+Sounds\button_sound.wav
+Sounds\swap_sound.wav
+Sounds\win_sound.wav

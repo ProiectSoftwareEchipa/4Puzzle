@@ -7,8 +7,8 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="aa5e98f8-c865-4ef3-a4a3-869d783dcc14" Publisher="CN=Andrei" Version="1.0.0.0" ProcessorArchitecture="neutral" />
-  <mp:PhoneIdentity PhoneProductId="aa5e98f8-c865-4ef3-a4a3-869d783dcc14" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="40989Andrion.4Puzzle" Publisher="CN=BACB4477-D092-4432-8C61-20DF32E9025B" Version="1.1.0.0" ProcessorArchitecture="neutral" />
+  <mp:PhoneIdentity PhoneProductId="155694c7-7c33-4ea2-8ec9-e311e781baf1" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>4Puzzle</DisplayName>
     <PublisherDisplayName>Andrion</PublisherDisplayName>
