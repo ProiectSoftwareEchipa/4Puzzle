@@ -14,6 +14,8 @@
     <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{76F1466A-8B6D-4E39-A767-685A06062A39};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -83,6 +85,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Generators\4puzzleUtils.cs" />
+    <Compile Include="Generators\AppSettings.cs" />
     <Compile Include="Generators\HttpRequestUtils.cs" />
     <Compile Include="Generators\size4Easy.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -140,6 +143,10 @@
     <Content Include="Images\back_game.png" />
     <Content Include="Images\block3_background - Copy.png" />
     <Content Include="Images\block3_background.png" />
+    <Content Include="Images\btn_cancel.png" />
+    <Content Include="Images\btn_next.png" />
+    <Content Include="Images\btn_ok.png" />
+    <Content Include="Images\btn_prev.png" />
     <Content Include="Images\button_Easy.png" />
     <Content Include="Images\button_Easy_Smaller.png" />
     <Content Include="Images\button_Hard.png" />
@@ -154,14 +161,25 @@
     <Content Include="Images\Cancel button.png" />
     <Content Include="Images\Chalckboard rankings.png" />
     <Content Include="Images\easy_game.png" />
+    <Content Include="Images\errorMsjHardMode.png" />
+    <Content Include="Images\errorMsjMediumMode.png" />
+    <Content Include="Images\errorMsjNoInternet.png" />
     <Content Include="Images\fig1.png" />
+    <Content Include="Images\fig1_happy.png" />
     <Content Include="Images\fig2.png" />
+    <Content Include="Images\fig2_happy.png" />
     <Content Include="Images\fig3.png" />
+    <Content Include="Images\fig3_happy.png" />
     <Content Include="Images\fig4.png" />
+    <Content Include="Images\fig4_happy.png" />
     <Content Include="Images\fig5.png" />
+    <Content Include="Images\fig5_happy.png" />
     <Content Include="Images\fig6.png" />
+    <Content Include="Images\fig6_happy.png" />
     <Content Include="Images\fig7.png" />
+    <Content Include="Images\fig7_happy.png" />
     <Content Include="Images\fig8.png" />
+    <Content Include="Images\fig8_happy.png" />
     <Content Include="Images\hard_game.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\medium_game.png" />
@@ -169,14 +187,30 @@
     <Content Include="Images\newgame_banner.png" />
     <Content Include="Images\Notebook background.png" />
     <Content Include="Images\Ok button.png" />
+    <Content Include="Images\popup3WinsEasy.png" />
+    <Content Include="Images\popup3WinsHard.png" />
+    <Content Include="Images\popup3WinsMedium.png" />
+    <Content Include="Images\popupWinHighscore.png" />
+    <Content Include="Images\popupWinHighscoreCancel.png" />
+    <Content Include="Images\popupWinHighscoreNoName.png" />
+    <Content Include="Images\popupWinSimple.png" />
+    <Content Include="Images\popupWinTutorial.png" />
     <Content Include="Images\rankings_banner.png" />
+    <Content Include="Images\soundoff-icon.png" />
+    <Content Include="Images\soundon-icon.png" />
+    <Content Include="Images\top_board_bg.png" />
+    <Content Include="Images\top_entry.png" />
     <Content Include="Images\tutorialPage2.png" />
     <Content Include="Images\tutorialPage3.png" />
     <Content Include="Images\tutorialPage4.png" />
     <Content Include="Images\tutorialPage5.png" />
     <Content Include="Images\tutorialPage6.png" />
     <Content Include="Images\tutorial_banner.png" />
-    <Content Include="Sounds\Swap sound.mp3" />
+    <Content Include="Sounds\button_sound.wav" />
+    <Content Include="Sounds\swap_sound.wav" />
+    <Content Include="Sounds\win_sound.wav" />
+    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Images\tutorial_pag.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

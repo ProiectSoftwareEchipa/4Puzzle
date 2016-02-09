@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
@@ -71,11 +72,34 @@ namespace _4Puzzle
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             Windows.Phone.UI.Input.HardwareButtons.BackPressed += HardwareButtons_BackPressed;
+
+            if (AppSettings.Sound)
+            {
+                imageSound.Source = new BitmapImage(new Uri("ms-appx:///Images/soundon-icon.png"));
+            }
+            else
+            {
+                imageSound.Source = new BitmapImage(new Uri("ms-appx:///Images/soundoff-icon.png"));
+            }
         }
 
         #endregion Overrides
 
         #region Private Event Handlers
+
+        private void imageSound_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            if (AppSettings.Sound)
+            {
+                AppSettings.Sound = false;
+                imageSound.Source = new BitmapImage(new Uri("ms-appx:///Images/soundoff-icon.png"));
+            }
+            else
+            {
+                AppSettings.Sound = true;
+                imageSound.Source = new BitmapImage(new Uri("ms-appx:///Images/soundon-icon.png"));
+            }
+        }
 
         private void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
         {
@@ -92,6 +116,11 @@ namespace _4Puzzle
 
         private void buttonSinglePlayerEasy_Click(object sender, RoutedEventArgs e)
         {
+            if (AppSettings.Sound)
+            {
+                buttonSound.Play();
+            }
+
             apiData = HttpRequestUtils.Select("SinglePlayerEasy");
 
             textBlockRankings.Text = "Top 10 Easy";
@@ -101,6 +130,11 @@ namespace _4Puzzle
 
         private void buttonbuttonSinglePlayerMedium_Click(object sender, RoutedEventArgs e)
         {
+            if (AppSettings.Sound)
+            {
+                buttonSound.Play();
+            }
+
             apiData = HttpRequestUtils.Select("SinglePlayerMedium");
 
             textBlockRankings.Text = "Top 10 Medium";
@@ -110,6 +144,11 @@ namespace _4Puzzle
 
         private void buttonSinglePlayerHard_Click(object sender, RoutedEventArgs e)
         {
+            if (AppSettings.Sound)
+            {
+                buttonSound.Play();
+            }
+
             apiData = HttpRequestUtils.Select("SinglePlayerHard");
 
             textBlockRankings.Text = "Top 10 Hard";

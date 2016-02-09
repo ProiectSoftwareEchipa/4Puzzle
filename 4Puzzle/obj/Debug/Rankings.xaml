@@ -14,7 +14,7 @@
         </Grid.Background>
         <Viewbox Stretch="Fill">
             <Canvas Width="400" Height="640">
-                <ListView x:Name="listViewNumbers" HorizontalAlignment="Left" Height="375" VerticalAlignment="Top" Width="32" Canvas.Left="85" Canvas.Top="229" FontSize="32" Canvas.ZIndex="1" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism">
+                <ListView x:Name="listViewNumbers" HorizontalAlignment="Left" Height="375" VerticalAlignment="Top" Width="32" Canvas.Left="53" Canvas.Top="229" FontSize="32" Canvas.ZIndex="2" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="#FF996A33">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
                             <Setter Property="FontSize" Value="20"/>
@@ -22,7 +22,7 @@
                         </Style>
                     </ListView.ItemContainerStyle>
                 </ListView>
-                <ListView x:Name="listViewPlayerNames" HorizontalAlignment="Left" Height="375" VerticalAlignment="Top" Width="136" Canvas.Left="121" Canvas.Top="229" FontSize="32" Canvas.ZIndex="1" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism">
+                <ListView x:Name="listViewPlayerNames" HorizontalAlignment="Left" Height="375" VerticalAlignment="Top" Width="192" Canvas.Left="95" Canvas.Top="229" FontSize="32" Canvas.ZIndex="2" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="#FF996A33">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
                             <Setter Property="FontSize" Value="20"/>
@@ -30,7 +30,7 @@
                         </Style>
                     </ListView.ItemContainerStyle>
                 </ListView>
-                <ListView x:Name="listViewPlayerScores" HorizontalAlignment="Left" Height="375" VerticalAlignment="Top" Width="88" Canvas.Left="257" Canvas.Top="229" FontSize="24" Canvas.ZIndex="1" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism">
+                <ListView x:Name="listViewPlayerScores" HorizontalAlignment="Left" Height="375" VerticalAlignment="Top" Width="77" Canvas.Left="287" Canvas.Top="229" FontSize="24" Canvas.ZIndex="2" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Foreground="#FF996A33">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
                             <Setter Property="FontSize" Value="20"/>
@@ -63,8 +63,20 @@
                     </Button.BorderBrush>
                 </Button>
                 <Image x:Name="imageTitle" Height="186" Canvas.Left="95" Canvas.Top="-43" Width="226" Source="ms-appx:///Images/rankings_banner.png"/>
-                <TextBlock x:Name="textBlockRankings" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="176" Height="53" Width="380" FontSize="37.333" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Text="Top 10 Easy" Canvas.ZIndex="1"/>
-                <Image x:Name="image" Height="481" Canvas.Top="149" Width="350" Source="ms-appx:///Images/Chalckboard rankings.png" Canvas.Left="25"/>
+                <TextBlock x:Name="textBlockRankings" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="175" Height="53" Width="380" FontSize="37.333" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" Text="Top 10 Easy" Canvas.ZIndex="2" Foreground="#FF996A33"/>
+                <Image x:Name="imageBackground" Height="500" Canvas.Top="143" Width="380" Source="ms-appx:///Images/top_board_bg.png" Canvas.Left="10"/>
+                <Image x:Name="imageRow1" Height="39" Canvas.Top="223" Width="380" Source="Images/top_entry.png" Canvas.Left="10"/>
+                <Image x:Name="imageRow2" Height="39" Canvas.Top="262" Width="380" Source="Images/top_entry.png" Canvas.Left="10"/>
+                <Image x:Name="imageRow3" Height="39" Canvas.Top="301" Width="380" Source="Images/top_entry.png" Canvas.Left="10"/>
+                <Image x:Name="imageRow4" Height="39" Canvas.Top="340" Width="380" Source="Images/top_entry.png" Canvas.Left="10"/>
+                <Image x:Name="imageRow5" Height="39" Canvas.Top="379" Width="380" Source="Images/top_entry.png" Canvas.Left="10"/>
+                <Image x:Name="imageRow6" Height="39" Canvas.Top="418" Width="380" Source="Images/top_entry.png" Canvas.Left="10"/>
+                <Image x:Name="imageRow7" Height="39" Canvas.Top="457" Width="380" Source="Images/top_entry.png" Canvas.Left="10"/>
+                <Image x:Name="imageRow8" Height="39" Canvas.Top="496" Width="380" Source="Images/top_entry.png" Canvas.Left="10"/>
+                <Image x:Name="imageRow9" Height="39" Canvas.Top="535" Width="380" Source="Images/top_entry.png" Canvas.Left="10"/>
+                <Image x:Name="imageRow10" Height="39" Canvas.Top="574" Width="380" Source="Images/top_entry.png" Canvas.Left="10"/>
+                <Image x:ConnectionId='4' x:Name="imageSound" Height="50" Canvas.Left="340" Width="50" Canvas.Top="10" Source="ms-appx:///Images/soundon-icon.png"                            />
+                <MediaElement x:Name="buttonSound" Source="ms-appx:///Sounds/button_sound.wav" AutoPlay="False" Height="0" Width="0"/>
             </Canvas>
         </Viewbox>
     </Grid>

@@ -17,15 +17,16 @@
                 <Image x:Name="imageTitle" Height="186" Canvas.Left="95" Canvas.Top="-17" Width="226" Source="ms-appx:///Images/tutorial_banner.png"/>
                 <Image x:Name="imageBackground" Height="497" Width="390" Source="Images/block3_background - Copy.png" Canvas.Left="10" Canvas.Top="116"/>
                 <Image x:Name="imageCurrentPage" Height="330" Width="290" Canvas.Left="60" Canvas.Top="200"/>
+                <Image x:Name="imagePageBackground" Height="34" Width="56" Canvas.Left="182" Canvas.Top="543" Source="Images/tutorial_pag.png"/>
                 <TextBlock x:Name="textBlockTitle" Canvas.Left="55" TextWrapping="Wrap" Text="Welcome to 4Puzzle!" Canvas.Top="138" Height="115" Width="310" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" FontSize="48" TextAlignment="Center"/>
                 <TextBlock x:Name="textBlockText" Canvas.Left="55" TextWrapping="Wrap" Text="The next few images will teach you the basics about playing the game. After that you will get to try what you have learned. Please press the right button." Canvas.Top="258" Height="260" Width="310" TextAlignment="Center" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" FontSize="28"/>
-                <TextBlock x:Name="textBlockPageNumber" Canvas.Left="182" TextWrapping="Wrap" Text="-1-" Canvas.Top="543" Height="46" Width="56" TextAlignment="Center" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" FontSize="28"/>
+                <TextBlock x:Name="textBlockPageNumber" Canvas.Left="182" TextWrapping="Wrap" Text="1" Canvas.Top="543" Height="46" Width="56" TextAlignment="Center" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" FontSize="28" Canvas.ZIndex="1" Foreground="Black"/>
                 <Button x:ConnectionId='1' x:Name="buttonRight" Content="" Canvas.Left="238" Canvas.Top="521" Height="80" Width="127"                          >
                     <Button.BorderBrush>
                         <ImageBrush Stretch="Fill"/>
                     </Button.BorderBrush>
                     <Button.Background>
-                        <ImageBrush Stretch="Uniform" ImageSource="Images/arrow_right.png"/>
+                        <ImageBrush Stretch="Uniform" ImageSource="Images/btn_next.png"/>
                     </Button.Background>
                 </Button>
                 <Button x:ConnectionId='2' x:Name="buttonLeft" Content="" Canvas.Left="55" Canvas.Top="521" Height="80" Width="127"                         >
@@ -33,9 +34,11 @@
                         <ImageBrush Stretch="Fill"/>
                     </Button.BorderBrush>
                     <Button.Background>
-                        <ImageBrush Stretch="Uniform" ImageSource="Images/arrow_left.png"/>
+                        <ImageBrush Stretch="Uniform" ImageSource="Images/btn_prev.png"/>
                     </Button.Background>
                 </Button>
+                <Image x:ConnectionId='3' x:Name="imageSound" Height="50" Canvas.Left="340" Width="50" Canvas.Top="10" Source="ms-appx:///Images/soundon-icon.png"                            />
+                <MediaElement x:Name="buttonSound" Source="ms-appx:///Sounds/button_sound.wav" AutoPlay="False" Height="0" Width="0"/>
             </Canvas>
         </Viewbox>
     </Grid>

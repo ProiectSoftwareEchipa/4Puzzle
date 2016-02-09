@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 using Windows.Web.Http;
 using System.Net;
 using System.IO;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace _4Puzzle.Generators {
     public class HttpRequestUtils {
@@ -13,8 +15,8 @@ namespace _4Puzzle.Generators {
         const string postStatsUrl = "http://puzzle.win2012r2.oasis.dnnsharp.com/DesktopModules/DnnSharp/DnnApiEndpoint/Api.ashx?method=PostStats";
 
         public static string Select(string gameType) {
-            string result = Task.Run(() => Get(gameType)).Result;
-            return result;
+            var result = Task.Run(() => Get(gameType)).Result;
+            return result.ToString();
         }
 
         static async Task<string> Get(string gameType) {
@@ -22,16 +24,16 @@ namespace _4Puzzle.Generators {
             string url = "http://puzzle.win2012r2.oasis.dnnsharp.com/DesktopModules/DnnSharp/DnnApiEndpoint/Api.ashx?method=Highscore&GameType=" + gameType; 
             
             try {
-                //Create Client 
+                //Create Client
                 var client = new HttpClient();
 
                 var uri = new Uri(url);
 
-                //Call. Get response by Async
+                //Call.Get response by Async
                 var Response = await client.GetAsync(uri);
 
                 //Result & Code
-                var statusCode = Response.StatusCode;
+                Windows.Web.Http.HttpStatusCode statusCode = Response.StatusCode;
 
                 //If Response is not Http 200 
                 //then EnsureSuccessStatusCode will throw an exception

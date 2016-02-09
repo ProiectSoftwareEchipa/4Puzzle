@@ -35,29 +35,28 @@
                 <Rectangle x:ConnectionId='14' x:Name="Rectangle43" Fill="#FFF4F4F5" Height="90" Stroke="Black" VerticalAlignment="Bottom" Width="90" HorizontalAlignment="Right"                           Canvas.Left="207" Canvas.Top="467" Canvas.ZIndex="2" StrokeThickness="0"/>
                 <Rectangle x:ConnectionId='15' x:Name="Rectangle41" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Stroke="Black" VerticalAlignment="Bottom" Width="90"                           Canvas.Left="12" Canvas.Top="467" Canvas.ZIndex="2" StrokeThickness="0"/>
                 <Rectangle x:ConnectionId='16' x:Name="Rectangle42" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Stroke="Black" VerticalAlignment="Bottom" Width="90"                           Canvas.Left="103" Canvas.Top="467" Canvas.ZIndex="2" StrokeThickness="0"/>
-                <Rectangle x:Name="PopupRectangle" Height="166" Canvas.Left="52" Stroke="Black" Canvas.Top="219" Width="297" Canvas.ZIndex="3" RadiusX="40" RadiusY="40" StrokeThickness="3">
-                    <Rectangle.Fill>
-                        <ImageBrush ImageSource="ms-appx:///Images/Message Box Victory.png"/>
-                    </Rectangle.Fill>
-                </Rectangle>
-                <TextBlock x:Name="PopupTextBlockMessagePlayAgain" Canvas.Left="52" TextWrapping="Wrap" Text="Easy mode unlocked!" Canvas.Top="268" Canvas.ZIndex="4" FontSize="32" Height="70" Foreground="Black" FontFamily="ms-appx:/Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" TextAlignment="Center" Width="297"/>
-                <Button x:ConnectionId='17' x:Name="PopupButtonCancel" Content="" Canvas.Left="205" Canvas.Top="327" Canvas.ZIndex="4"                                 Height="62">
+                <Image x:Name="PopupImage" Height="203" Canvas.Top="182" Width="380" Source="Images/popupWinTutorial.png" Canvas.ZIndex="3" Canvas.Left="10"/>
+                <Button x:ConnectionId='17' x:Name="PopupButtonCancel" Content="" Canvas.Left="215" Canvas.Top="339" Canvas.ZIndex="4"                                 Height="98">
                     <Button.BorderBrush>
                         <ImageBrush Stretch="Fill"/>
                     </Button.BorderBrush>
                     <Button.Background>
-                        <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///Images/Cancel button.png"/>
+                        <ImageBrush ImageSource="ms-appx:///Images/btn_cancel.png" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
-                <Button x:ConnectionId='18' x:Name="PopupButtonOk" Content="" Canvas.Left="85" Canvas.Top="328" Canvas.ZIndex="4"                             Height="60" Width="99">
+                <Button x:ConnectionId='18' x:Name="PopupButtonOk" Content="" Canvas.Left="89" Canvas.Top="339" Canvas.ZIndex="4"                             Height="98" Width="88">
                     <Button.BorderBrush>
                         <ImageBrush Stretch="Fill"/>
                     </Button.BorderBrush>
                     <Button.Background>
-                        <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///Images/Ok button.png"/>
+                        <ImageBrush ImageSource="ms-appx:///Images/btn_ok.png" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
                 <Image x:Name="imageTitle" Height="186" Canvas.Left="95" Canvas.Top="-17" Width="226" Source="ms-appx:///Images/tutorial_banner.png"/>
+                <Image x:ConnectionId='19' x:Name="imageSound" Height="50" Canvas.Left="340" Width="50" Canvas.Top="10" Source="ms-appx:///Images/soundon-icon.png"                            />
+                <MediaElement x:Name="swapSound" Source="ms-appx:///Sounds/move_sound.wav" AutoPlay="False" Height="0" Width="0"/>
+                <MediaElement x:Name="winSound" Source="ms-appx:///Sounds/win_sound.wav" AutoPlay="False" Height="0" Width="0"/>
+                <MediaElement x:Name="buttonSound" Source="ms-appx:///Sounds/button_sound.wav" AutoPlay="False" Height="0" Width="0"/>
             </Canvas>
         </Viewbox>
     </Grid>

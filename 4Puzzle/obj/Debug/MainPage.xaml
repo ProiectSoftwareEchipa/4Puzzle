@@ -39,7 +39,9 @@
                     </Button.Background>
                 </Button>
                 <Image x:Name="imageLogo" Height="338" Canvas.Left="10" Width="380" Source="Images/logo.png" Canvas.Top="28" />
-                <TextBlock x:Name="textBlockMessage" TextWrapping="Wrap" Canvas.Left="10" Canvas.Top="565" Height="65" Width="380" FontFamily="Fonts/RO-D3-Streetism.ttf#RO D3 Streetism" FontSize="24" Foreground="Black" TextAlignment="Center"/>
+                <Image x:Name="imageError" Height="77" Canvas.Left="10" Width="380" Canvas.Top="553" />
+                <Image x:ConnectionId='4' x:Name="imageSound" Height="50" Canvas.Left="340" Width="50" Canvas.Top="10" Source="Images/soundon-icon.png"                            />
+                <MediaElement x:Name="buttonSound" Source="ms-appx:///Sounds/button_sound.wav" AutoPlay="False" Height="0" Width="0"/>
             </Canvas>
         </Viewbox>
     </Grid>

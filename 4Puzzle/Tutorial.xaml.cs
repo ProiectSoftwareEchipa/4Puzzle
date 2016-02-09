@@ -45,7 +45,21 @@ namespace _4Puzzle
 
         private ImageBrush imageBrushBlank;
 
+        private ImageBrush imageBrushFig1_happy;
+
+        private ImageBrush imageBrushFig2_happy;
+
+        private ImageBrush imageBrushFig3_happy;
+
+        private ImageBrush imageBrushFig4_happy;
+
+        private List<int> happyLines;
+
+        private List<int> happyColumns;
+
         private Rectangle[,] rectangleMatrix;
+
+        private int[,] rectanglePositionMatrix;
 
         public struct Tile
         {
@@ -69,6 +83,8 @@ namespace _4Puzzle
 
             this.rectangleMatrix = new Rectangle[gameSize, gameSize];
 
+            this.rectanglePositionMatrix = new int[gameSize, gameSize];
+
             this.imageBrushFig1 = new ImageBrush();
             imageBrushFig1.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/fig1.png"));
 
@@ -81,9 +97,25 @@ namespace _4Puzzle
             this.imageBrushFig4 = new ImageBrush();
             imageBrushFig4.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/fig4.png"));
 
+            this.imageBrushFig1_happy = new ImageBrush();
+            imageBrushFig1_happy.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/fig1_happy.png"));
+
+            this.imageBrushFig2_happy = new ImageBrush();
+            imageBrushFig2_happy.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/fig2_happy.png"));
+
+            this.imageBrushFig3_happy = new ImageBrush();
+            imageBrushFig3_happy.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/fig3_happy.png"));
+
+            this.imageBrushFig4_happy = new ImageBrush();
+            imageBrushFig4_happy.ImageSource = new BitmapImage(new Uri("ms-appx:///Images/fig4_happy.png"));
+
             this.imageBrushBlank = new ImageBrush();
 
             this.blankTilePositions = new Tile[4];
+
+            this.happyLines = new List<int>();
+
+            this.happyColumns = new List<int>();
 
             this.NavigationCacheMode = NavigationCacheMode.Disabled;
 
@@ -91,11 +123,14 @@ namespace _4Puzzle
 
             InitializeTutorialImages();
 
+            InitializePositionMatrix();
+
+            InitializeHappyFaces();
+
             //Popup elemets
             PopupButtonCancel.Visibility = Visibility.Collapsed;
             PopupButtonOk.Visibility = Visibility.Collapsed;
-            PopupRectangle.Visibility = Visibility.Collapsed;
-            PopupTextBlockMessagePlayAgain.Visibility = Visibility.Collapsed;
+            PopupImage.Visibility = Visibility.Collapsed;
 
             _4puzzleUtils.TrySendOfflineScore();
         }
@@ -112,19 +147,52 @@ namespace _4Puzzle
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             Windows.Phone.UI.Input.HardwareButtons.BackPressed += HardwareButtons_BackPressed;
+
+            if (AppSettings.Sound)
+            {
+                imageSound.Source = new BitmapImage(new Uri("ms-appx:///Images/soundon-icon.png"));
+            }
+            else
+            {
+                imageSound.Source = new BitmapImage(new Uri("ms-appx:///Images/soundoff-icon.png"));
+            }
         }
 
         #endregion Overrides
 
         #region Event Handlers
 
+        private void imageSound_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            if (AppSettings.Sound)
+            {
+                AppSettings.Sound = false;
+                imageSound.Source = new BitmapImage(new Uri("ms-appx:///Images/soundoff-icon.png"));
+            }
+            else
+            {
+                AppSettings.Sound = true;
+                imageSound.Source = new BitmapImage(new Uri("ms-appx:///Images/soundon-icon.png"));
+            }
+        }
+
         private void buttonPopupCancel_Click(object sender, RoutedEventArgs e)
         {
+            if (AppSettings.Sound)
+            {
+                buttonSound.Play();
+            }
+
             this.Frame.Navigate(typeof(MainPage), null);
         }
 
         private void buttonPopupOk_Click(object sender, RoutedEventArgs e)
         {
+            if (AppSettings.Sound)
+            {
+                buttonSound.Play();
+            }
+
             this.Frame.Navigate(typeof(MainPage), null);
         }
 
@@ -150,10 +218,13 @@ namespace _4Puzzle
 
             if (CheckEndGame)
             {
+                if (AppSettings.Sound)
+                {
+                    winSound.Play();
+                }
                 PopupButtonCancel.Visibility = Visibility.Visible;
                 PopupButtonOk.Visibility = Visibility.Visible;
-                PopupRectangle.Visibility = Visibility.Visible;
-                PopupTextBlockMessagePlayAgain.Visibility = Visibility.Visible;
+                PopupImage.Visibility = Visibility.Visible;
 
                 localSettings.Values["TutorialWins"] = 1;
                 StopGame();
@@ -163,6 +234,147 @@ namespace _4Puzzle
         #endregion Event Handlers
 
         #region Private Methods
+
+        private void CheckCurrentHappyLinesAndColumns()
+        {
+            foreach (int i in happyLines.ToList())
+            {
+                CheckAndRemoveHappyLine(i);
+            }
+            foreach (int j in happyColumns.ToList())
+            {
+                CheckAndRemoveHappyColumn(j);
+            }
+            RemoveHappyFaces();
+        }
+
+        private void CheckAndRemoveHappyLine(int i)
+        {
+            List<int> currentList;
+
+            currentList = new List<int>();
+            for (int j = 0; j < gameSize; j++)
+                if (!currentList.Contains(rectanglePositionMatrix[i, j]))
+                    currentList.Add(rectanglePositionMatrix[i, j]);
+            if (currentList.Count != gameSize || currentList.Contains(0))
+            {
+                happyLines.Remove(i);
+            }
+        }
+
+        private void CheckAndRemoveHappyColumn(int j)
+        {
+            List<int> currentList;
+
+            currentList = new List<int>();
+            for (int i = 0; i < gameSize; i++)
+                if (!currentList.Contains(rectanglePositionMatrix[i, j]))
+                    currentList.Add(rectanglePositionMatrix[i, j]);
+            if (currentList.Count != gameSize || currentList.Contains(0))
+            {
+                happyColumns.Remove(j);
+            }
+        }
+
+        private void CheckNewHappyLine(int i)
+        {
+            List<int> currentList;
+
+            currentList = new List<int>();
+            for (int j = 0; j < gameSize; j++)
+                if (!currentList.Contains(rectanglePositionMatrix[i, j]))
+                    currentList.Add(rectanglePositionMatrix[i, j]);
+            if (currentList.Count == gameSize && !currentList.Contains(0))
+            {
+                happyLines.Add(i);
+
+                for (int j = 0; j < gameSize; j++)
+                {
+                    if (rectangleMatrix[i, j].Fill == imageBrushFig1)
+                    {
+                        rectangleMatrix[i, j].Fill = imageBrushFig1_happy;
+                    }
+                    if (rectangleMatrix[i, j].Fill == imageBrushFig2)
+                    {
+                        rectangleMatrix[i, j].Fill = imageBrushFig2_happy;
+                    }
+                    if (rectangleMatrix[i, j].Fill == imageBrushFig3)
+                    {
+                        rectangleMatrix[i, j].Fill = imageBrushFig3_happy;
+                    }
+                    if (rectangleMatrix[i, j].Fill == imageBrushFig4)
+                    {
+                        rectangleMatrix[i, j].Fill = imageBrushFig4_happy;
+                    }
+                }
+            }
+        }
+
+        private void CheckNewHappyColumn(int j)
+        {
+            List<int> currentList;
+
+            currentList = new List<int>();
+            for (int i = 0; i < gameSize; i++)
+                if (!currentList.Contains(rectanglePositionMatrix[i, j]))
+                    currentList.Add(rectanglePositionMatrix[i, j]);
+            if (currentList.Count == gameSize && !currentList.Contains(0))
+            {
+                happyColumns.Add(j);
+
+                for (int i = 0; i < gameSize; i++)
+                {
+                    if (rectangleMatrix[i, j].Fill == imageBrushFig1)
+                    {
+                        rectangleMatrix[i, j].Fill = imageBrushFig1_happy;
+                    }
+                    if (rectangleMatrix[i, j].Fill == imageBrushFig2)
+                    {
+                        rectangleMatrix[i, j].Fill = imageBrushFig2_happy;
+                    }
+                    if (rectangleMatrix[i, j].Fill == imageBrushFig3)
+                    {
+                        rectangleMatrix[i, j].Fill = imageBrushFig3_happy;
+                    }
+                    if (rectangleMatrix[i, j].Fill == imageBrushFig4)
+                    {
+                        rectangleMatrix[i, j].Fill = imageBrushFig4_happy;
+                    }
+                }
+            }
+        }
+
+        private void RemoveHappyFaces()
+        {
+            for (int i = 0; i < gameSize; i++)
+            {
+                if (happyLines.Contains(i))
+                    continue;
+
+                for (int j = 0; j < gameSize; j++)
+                {
+                    if (happyColumns.Contains(j))
+                        continue;
+
+                    if (rectangleMatrix[i, j].Fill == imageBrushFig1_happy)
+                    {
+                        rectangleMatrix[i, j].Fill = imageBrushFig1;
+                    }
+                    if (rectangleMatrix[i, j].Fill == imageBrushFig2_happy)
+                    {
+                        rectangleMatrix[i, j].Fill = imageBrushFig2;
+                    }
+                    if (rectangleMatrix[i, j].Fill == imageBrushFig3_happy)
+                    {
+                        rectangleMatrix[i, j].Fill = imageBrushFig3;
+                    }
+                    if (rectangleMatrix[i, j].Fill == imageBrushFig4_happy)
+                    {
+                        rectangleMatrix[i, j].Fill = imageBrushFig4;
+                    }
+                }
+            }
+        }
 
         /// <summary>
         /// Initializarea matricii
@@ -218,6 +430,45 @@ namespace _4Puzzle
             blankTilePositions[3].j = 2;
         }
 
+        private void InitializeHappyFaces()
+        {
+            for (int i = 0; i < gameSize; i++)
+            {
+                CheckNewHappyLine(i);
+                CheckNewHappyColumn(i);
+            }
+        }
+
+        private void InitializePositionMatrix()
+        {
+            for (int i = 0; i < gameSize; i++)
+            {
+                for (int j = 0; j < gameSize; j++)
+                {
+                    if (rectangleMatrix[i, j].Fill == imageBrushBlank)
+                    {
+                        rectanglePositionMatrix[i, j] = 0;
+                    }
+                    if (rectangleMatrix[i, j].Fill == imageBrushFig1)
+                    {
+                        rectanglePositionMatrix[i, j] = 1;
+                    }
+                    if (rectangleMatrix[i, j].Fill == imageBrushFig2)
+                    {
+                        rectanglePositionMatrix[i, j] = 2;
+                    }
+                    if (rectangleMatrix[i, j].Fill == imageBrushFig3)
+                    {
+                        rectanglePositionMatrix[i, j] = 3;
+                    }
+                    if (rectangleMatrix[i, j].Fill == imageBrushFig4)
+                    {
+                        rectanglePositionMatrix[i, j] = 4;
+                    }
+                }
+            }
+        }
+
         /// <summary>
         /// Opreste jocul prin eliminarea eventului de tapped
         /// </summary>
@@ -269,6 +520,7 @@ namespace _4Puzzle
             int areaNumber = GetSelectedAreaNumber(i, j);
 
             SwapRectanglesImages(rectangleMatrix[i, j], rectangleMatrix[blankTilePositions[areaNumber].i, blankTilePositions[areaNumber].j]);
+            SwapRectanglesIntPositions(i, j, blankTilePositions[areaNumber].i, blankTilePositions[areaNumber].j);
             blankTilePositions[areaNumber].i = i;
             blankTilePositions[areaNumber].j = j;
 
@@ -286,17 +538,17 @@ namespace _4Puzzle
                     if (!IsPositionInTheCenter(tile.i) || !IsPositionInTheCenter(tile.j))
                         return false;
 
-                List<Brush> currentList;
+                List<int> currentList;
 
                 //check per line
                 for (int i = 0; i < gameSize; i++)
                 {
                     if (IsPositionInTheCenter(i))
                         continue;
-                    currentList = new List<Brush>();
+                    currentList = new List<int>();
                     for (int j = 0; j < gameSize; j++)
-                        if (!currentList.Contains(rectangleMatrix[i, j].Fill))
-                            currentList.Add(rectangleMatrix[i, j].Fill);
+                        if (!currentList.Contains(rectanglePositionMatrix[i, j]))
+                            currentList.Add(rectanglePositionMatrix[i, j]);
                     if (currentList.Count < gameSize)
                         return false;
                 }
@@ -306,10 +558,10 @@ namespace _4Puzzle
                 {
                     if (IsPositionInTheCenter(j))
                         continue;
-                    currentList = new List<Brush>();
+                    currentList = new List<int>();
                     for (int i = 0; i < gameSize; i++)
-                        if (!currentList.Contains(rectangleMatrix[i, j].Fill))
-                            currentList.Add(rectangleMatrix[i, j].Fill);
+                        if (!currentList.Contains(rectanglePositionMatrix[i, j]))
+                            currentList.Add(rectanglePositionMatrix[i, j]);
                     if (currentList.Count < gameSize)
                         return false;
                 }
@@ -327,6 +579,20 @@ namespace _4Puzzle
         {
             blankRectangle.Fill = imagesRectangle.Fill;
             imagesRectangle.Fill = imageBrushBlank;
+            //if (AppSettings.Sound)
+            //{
+            //    swapSound.Play();
+            //}
+        }
+
+        private void SwapRectanglesIntPositions(int iFrom, int jFrom, int iTo, int jTo)
+        {
+            int aux = rectanglePositionMatrix[iFrom, jFrom];
+            rectanglePositionMatrix[iFrom, jFrom] = rectanglePositionMatrix[iTo, jTo];
+            rectanglePositionMatrix[iTo, jTo] = aux;
+            CheckCurrentHappyLinesAndColumns();
+            CheckNewHappyLine(iTo);
+            CheckNewHappyColumn(jTo);
         }
 
         private bool IsPositionInTheCenter(int position)

@@ -619,3 +619,4 @@ namespace _4Puzzle._Puzzle_XamlTypeInfo
 }
 
 
+

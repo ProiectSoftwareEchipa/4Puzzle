@@ -18,6 +18,7 @@ using Windows.UI.Xaml.Shapes;
 using Windows.Graphics.Display;
 using _4Puzzle.Generators;
 using System.Net.NetworkInformation;
+using Windows.UI.Xaml.Media.Imaging;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
@@ -46,19 +47,21 @@ namespace _4Puzzle
 
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Portrait;
 
-            textBlockMessage.Text = String.Empty;
+            imageError.Source = null;
 
-            //localSettings.Values["TutorialWins"] = 0;
+            //localSettings.Values["TutorialWins"] = 1;
 
-            //localSettings.Values["SinglePlayerEasyBestTime"] = int.MaxValue;
+            localSettings.Values["SinglePlayerEasyWins"] = 3;
 
-            //localSettings.Values["SinglePlayerMediumWins"] = 0;
+            localSettings.Values["SinglePlayerEasyBestTime"] = int.MaxValue;
 
-            //localSettings.Values["SinglePlayerMediumBestTime"] = int.MaxValue;
+            localSettings.Values["SinglePlayerMediumWins"] = 3;
 
-            //localSettings.Values["SinglePlayerHardWins"] = 0;
+            localSettings.Values["SinglePlayerMediumBestTime"] = int.MaxValue;
 
-            //localSettings.Values["SinglePlayerHardBestTime"] = int.MaxValue;
+            localSettings.Values["SinglePlayerHardWins"] = 3;
+
+            localSettings.Values["SinglePlayerHardBestTime"] = int.MaxValue;
 
             _4puzzleUtils.TrySendOfflineScore();
         }
@@ -75,6 +78,15 @@ namespace _4Puzzle
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             Windows.Phone.UI.Input.HardwareButtons.BackPressed += HardwareButtons_BackPressed;
+
+            if (AppSettings.Sound)
+            {
+                imageSound.Source = new BitmapImage(new Uri("ms-appx:///Images/soundon-icon.png"));
+            }
+            else
+            {
+                imageSound.Source = new BitmapImage(new Uri("ms-appx:///Images/soundoff-icon.png"));
+            }
         }
 
         #endregion Overrides
@@ -88,12 +100,22 @@ namespace _4Puzzle
 
         private void Tutorial_Click(object sender, RoutedEventArgs e)
         {
+            if (AppSettings.Sound)
+            {
+                buttonSound.Play();
+            }
+
             this.Frame.Navigate(typeof(Tutorial_information), null);
-            textBlockMessage.Text = String.Empty;
+            imageError.Source = null;
         }
 
         private void SinglePlayer_Click(object sender, RoutedEventArgs e)
         {
+            if (AppSettings.Sound)
+            {
+                buttonSound.Play();
+            }
+
             tutorialWins = localSettings.Values["TutorialWins"];
 
             int tutorialWinsInt = int.MinValue;
@@ -110,18 +132,37 @@ namespace _4Puzzle
             {
                 this.Frame.Navigate(typeof(SinglePlayerMenu), null);
             }
-            textBlockMessage.Text = String.Empty;
+            imageError.Source = null;
         }
 
         private void Rankings_Click(object sender, RoutedEventArgs e)
         {
+            if (AppSettings.Sound)
+            {
+                buttonSound.Play();
+            }
+
             if (!(NetworkInterface.GetIsNetworkAvailable()))
             {
-                textBlockMessage.Text = "No internet connection!";
+                imageError.Source = new BitmapImage(new Uri("ms-appx:///Images/errorMsjNoInternet.png"));
                 return;
             }
             this.Frame.Navigate(typeof(Rankings), null);
-            textBlockMessage.Text = String.Empty;
+            imageError.Source = null;
+        }
+
+        private void imageSound_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            if (AppSettings.Sound)
+            {
+                AppSettings.Sound = false;
+                imageSound.Source = new BitmapImage(new Uri("ms-appx:///Images/soundoff-icon.png"));
+            }
+            else
+            {
+                AppSettings.Sound = true;
+                imageSound.Source = new BitmapImage(new Uri("ms-appx:///Images/soundon-icon.png"));
+            }
         }
 
         #endregion Private Event Handlers
