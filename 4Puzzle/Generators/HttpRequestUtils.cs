@@ -21,7 +21,7 @@ namespace _4Puzzle.Generators {
 
         static async Task<string> Get(string gameType) {
             
-            string url = "http://puzzle.win2012r2.oasis.dnnsharp.com/DesktopModules/DnnSharp/DnnApiEndpoint/Api.ashx?method=Highscore&GameType=" + gameType; 
+            string url = "http://puzzle.win2012r2.oasis.dnnsharp.com/DesktopModules/DnnSharp/DnnApiEndpoint/Api.ashx?method=Highscore&GameType=" + gameType + "&datetime=" + DateTime.Now.ToString(); 
             
             try {
                 //Create Client
